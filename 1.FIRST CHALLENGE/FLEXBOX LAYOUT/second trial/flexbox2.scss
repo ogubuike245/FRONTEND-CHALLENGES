@@ -1,0 +1,254 @@
+/* TODO :  STATIC FONTS  */
+@font-face {
+  font-family: Inter-Regular;
+  src: url("./fonts/static/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: Inter-Bold;
+  src: url("./fonts/static/Inter-Bold.ttf");
+}
+@font-face {
+  font-family: Inter-ExtraBold;
+  src: url("./fonts/static/Inter-ExtraBold.ttf");
+}
+
+/* TODO : CUSTOM VARIABLES  */
+:root {
+  // colors
+  --backgroundColor: hsl(36, 100%, 99%);
+  --off__white: hsl(36, 100%, 99%);
+  --grayish__blue: hsl(233, 8%, 79%);
+  --very__dark__blue: hsl(240, 100%, 5%);
+  --dark__grayish__blue: hsl(236, 13%, 42%);
+  --soft__orange: hsl(35, 77%, 62%);
+  --soft__red: hsl(5, 85%, 63%);
+
+  /* TODO : CUSTOM FONTS  */
+  --Inter_Regular: Inter-Regular;
+  --Inter_Bold: Inter-Bold;
+  --Inter_ExtraBold: Inter-ExtraBold;
+}
+
+main {
+  padding: 0;
+  width: 100%;
+  margin: auto;
+  font-family: Inter-Regular;
+}
+
+// TODO: MEDIA QUERIES
+
+@media only screen and (max-width: 375px) {
+  body {
+    min-width: 100vw;
+  }
+  nav li {
+    visibility: hidden;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+
+    article {
+      height: 100%;
+    }
+
+    .top_level {
+      display: flex;
+      flex-direction: column;
+
+      .top_articles {
+        display: flex;
+        flex-direction: column;
+
+        .top_articles-image {
+          width: 375px;
+
+          img {
+            height: 100%;
+            width: 375px;
+            object-fit: contain;
+          }
+        }
+
+        .second {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+// TODO: HEADER STYLES REFACTORING FOR FLEXBOX LAYOUT
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    img {
+      object-fit: contain;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 60px;
+
+      li {
+        color: var(--dark__grayish__blue);
+        font-family: Inter;
+      }
+    }
+  }
+}
+
+// TODO: SECTION ONE STYLES REFACTORING FOR FLEXBOX LAYOUT
+section {
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5rem;
+
+  article {
+    height: 200px;
+    width: 450px;
+  }
+
+  .top_level {
+    display: flex;
+    height: 600px;
+    width: 98vw;
+    gap: 5px;
+
+    .top_articles {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 883px;
+
+      .first {
+        .top_articles-image {
+          width: 880px;
+          position: relative;
+          height: 400px;
+
+          img {
+            object-fit: cover;
+            position: absolute;
+            height: 100%;
+          }
+        }
+      }
+      .second {
+        display: flex;
+
+        article h1 {
+          font-size: 50px;
+        }
+
+        .desc {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+
+          p {
+            line-height: 30px;
+          }
+          button {
+            height: 50px;
+            width: 150px;
+            color: var(--off__white);
+            background: var(--soft__red);
+            outline: none;
+            border: none;
+            font-family: var(--Inter_Regular);
+            letter-spacing: 3px;
+          }
+        }
+      }
+    }
+
+    .third {
+      height: 600px;
+      width: 440px;
+      background: var(--very__dark__blue);
+      color: var(--off__white);
+      article {
+        margin: auto;
+        width: 350px;
+      }
+      article h1 {
+        color: var(--soft__orange);
+        font-family: var(--Inter_ExtraBold);
+        font-size: 40px;
+      }
+
+      article .firstParagraph,
+      article .secondParagraph {
+        color: var(--grayish__blue);
+        border-bottom: 2px solid var(--grayish__blue);
+
+        h6 {
+          font-family: var(--Inter_Bold);
+          font-size: 18px;
+        }
+      }
+
+      article .firstParagraph,
+      article .secondParagraph,
+      article .thirdParagraph {
+        h6 {
+          font-family: var(--Inter_Bold);
+          font-size: 18px;
+        }
+
+        p {
+          font-family: var(--Inter_Regular);
+          font-size: 15px;
+          color: var(--dark__grayish__blue);
+        }
+      }
+    }
+  }
+  .bottom_articles {
+    display: flex;
+
+    article {
+      display: flex;
+      justify-content: space-between;
+      height: 200px;
+      margin: 0;
+      padding: 0;
+
+      img {
+        height: 100%;
+        width: 200px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+
+      div {
+        h1 {
+          color: var(--grayish__blue);
+          font-family: var(--Inter_Bold);
+          font-size: 22px;
+        }
+
+        h6 {
+          color: var(--very__dark__blue);
+          font-family: var(--Inter_ExtraBold);
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// TODO: ASIDE STYLES REFACTORING FOR FLEXBOX LAYOUT
+
+// TODO: BOTTOM STYLES REFACTORING FOR FLEXBOX LAYOUT

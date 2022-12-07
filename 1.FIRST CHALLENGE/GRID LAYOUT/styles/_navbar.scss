@@ -1,0 +1,118 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--off__white);
+  .nav-links a {
+    color: var(--very__dark__blue);
+  }
+}
+
+/* NAVBAR MENU */
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+  li {
+    padding: 5px 14px;
+    a:hover {
+      color: var(--soft__red);
+      transition: 0.3s ease;
+    }
+  }
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+
+/* CHECKBOX HACK */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+// TODO: MOBILE NAVIGATION MENU
+@media all and (max-width: 599px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    img {
+      object-fit: contain;
+    }
+
+    input[type="checkbox"]:checked ~ .menu {
+      display: block;
+      // transition: 2s ease-in-out;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      background-color: var(--off__white);
+      top: 0;
+      right: 0;
+      text-align: center;
+      padding: 20px 0;
+      width: 250px;
+      height: 100vh;
+
+      label {
+        margin-left: 100px;
+        margin-bottom: 50px;
+      }
+      li {
+        margin-right: 200px;
+
+        a:hover {
+          display: inline-block;
+          color: var(--soft__red);
+          transition: 0.3s ease;
+        }
+
+        & + li {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}
+
+// TODO: DESKTOP NAVIGATION MENU
+@media (min-width: 600px) and (max-width: 1440px) {
+  // TODO: HEADER STYLES REFACTORING FOR FLEXBOX LAYOUT
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    img {
+      object-fit: contain;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 47px;
+
+      li {
+        color: var(--dark__grayish__blue);
+      }
+    }
+  }
+}

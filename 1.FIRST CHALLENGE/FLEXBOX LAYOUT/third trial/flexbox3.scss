@@ -1,0 +1,24 @@
+// TODO: CODE REFACTORING AND LEARNING OF SCSS SYNTAX AND SUPERPOWERS  AS WELL AS BEST PRACTICES
+
+/* TODO :  STATIC FONTS  */
+@import "./staticfonts";
+
+/* TODO : CUSTOM VARIABLES  */
+@import "./variables";
+
+/* UTILITIES */
+
+@import "./utilities";
+
+/* NAVBAR STYLING STARTS */
+@import "./navbar";
+
+/* APPLYING MEDIA QUERIES */
+
+//   TODO:  MOBILE VIEW
+
+@import "./mobileview";
+
+// TODO: DESKTOP VIEW
+
+@import "./desktopview";

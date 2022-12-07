@@ -1,0 +1,63 @@
+.animated-grid {
+  min-height: 100vh;
+  margin-bottom: 20px;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(5, 100px);
+  //   grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* grid-template-rows: 100px 100px 100px 100px 100px; */
+  /* grid-template-columns: 208px 208px 208px 208px 208px 208px; */
+}
+
+// /* Medium screens */
+@media screen and (min-width: 600px) {
+  .card {
+    background: red;
+  }
+
+  .card-one {
+    grid-area: 1 / 1 / 4 / 5;
+    /* grid-row: 1/3;
+            grid-column: 1/5; */
+  }
+
+  .card-two {
+    grid-row: span 5;
+    grid-column: span 2;
+    /* grid-area: 1 / 5 / 6 / 7; */
+  }
+
+  /* .card-three {
+            grid-area: 4 / 1 / 6 / 3;
+          }
+          .card-four {
+            grid-area: 4 / 3 / 6 / 5;
+          } */
+
+  .card-three,
+  .card-four,
+  .card-five,
+  .card-six,
+  .card-seven {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .card {
+    background: limegreen;
+  }
+  .card-two {
+    order: 3;
+  }
+  .card-three {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+  .card-four {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+}

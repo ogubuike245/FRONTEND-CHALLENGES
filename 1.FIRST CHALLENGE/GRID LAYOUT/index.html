@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>GRID LAYOUT</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- LOGO -->
+
+      <div class="logo">
+        <img src="./assets/images/logo.svg" alt="WEBSITE LOGO" />
+      </div>
+
+      <!-- NAVIGATION MENU -->
+
+      <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger"
+          ><img src="./assets/images/icon-menu.svg" alt="MENU ICON"
+        /></label>
+
+        <!-- NAVIGATION MENUS -->
+
+        <div class="menu">
+          <label for="checkbox_toggle" class="hamburger"
+            ><img src="./assets/images/icon-menu-close.svg" alt="MENU ICON"
+          /></label>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Categories</a></li>
+        </div>
+      </ul>
+    </nav>
+    <section class="container">
+      <div class="card card-one"></div>
+
+      <aside class="card card-two">
+        <h1>New</h1>
+        <div class="underline active">
+          <h6>Hydrogen VS Electric Cars</h6>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </div>
+        <div class="underline active">
+          <h6>The Downsides of AI Artistry</h6>
+          <p>
+            What are the possible adverse effects of on-demand AI image
+            generation
+          </p>
+        </div>
+
+        <div class="active">
+          <h6>Is VC Funding Drying Up?</h6>
+          <p>
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
+        </div>
+      </aside>
+      <div class="card card-three"><p>The Bright Future of Web 3.0?</p></div>
+      <div class="card card-four">
+        <p>
+          We dive into the next evolution of the web that claims to put the
+          power of the platforms back into the hands of the people . But is it
+          really fulfilling its promise?
+        </p>
+        <button>READ MORE</button>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="card card-five">
+        <article>
+          <div>
+            <img src="./assets/images/image-retro-pcs.jpg" alt="retro-pcs" />
+          </div>
+          <div class="active">
+            <h1>01</h1>
+            <h6>Reviving Retro PCs</h6>
+            <p>What happens when old PC's are given modern upgrades?</p>
+          </div>
+        </article>
+      </div>
+      <div class="card card-six">
+        <article>
+          <div>
+            <img
+              src="./assets/images/image-top-laptops.jpg"
+              alt="top-laptops"
+            />
+          </div>
+          <div class="active">
+            <h1>02</h1>
+            <h6>Top 10 Laptops of 2022</h6>
+            <p>Our best picks for various needs and budgets</p>
+          </div>
+        </article>
+      </div>
+      <div class="card card-seven">
+        <article class="grow">
+          <div>
+            <img
+              src="./assets/images/image-gaming-growth.jpg"
+              alt="gaming-growth"
+            />
+          </div>
+          <div class="active">
+            <h1>03</h1>
+            <h6>The Growth of Gaming</h6>
+            <p>How the pandemic has sparked fresh opportunities</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

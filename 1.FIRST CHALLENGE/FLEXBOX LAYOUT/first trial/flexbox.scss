@@ -1,0 +1,173 @@
+/* TODO : CUSTOM VARIABLES  */
+:root {
+  --backgroundColor: hsl(36, 100%, 99%);
+  --off__white: hsl(36, 100%, 99%);
+  --grayish__blue: hsl(233, 8%, 79%);
+  --very__dark__blue: hsl(240, 100%, 5%);
+  --dark__grayish__blue: hsl(236, 13%, 42%);
+  --soft__orange: hsl(35, 77%, 62%);
+  --soft__red: hsl(5, 85%, 63%);
+}
+
+/* TODO : CUSTOM FONTS  */
+@font-face {
+  font-family: Inter-Regular;
+  src: url("./fonts/static/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: Inter-Bold;
+  src: url("./fonts/static/Inter-Bold.ttf");
+}
+@font-face {
+  font-family: Inter-ExtraBold;
+  src: url("./fonts/static/Inter-ExtraBold.ttf");
+}
+
+main {
+  padding: 0;
+  width: 100%;
+  margin: auto;
+  font-family: Inter-Regular;
+  // border: 1px solid red;
+}
+
+// TODO: HEADER STYLES REFACTORING FOR FLEXBOX LAYOUT
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    img {
+      object-fit: contain;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 50px;
+
+      li {
+        color: var(--dark__grayish__blue);
+        font-family: Inter;
+      }
+    }
+  }
+}
+
+// TODO: SECTION ONE STYLES REFACTORING FOR FLEXBOX LAYOUT
+.section__one {
+  display: flex;
+  flex-direction: column;
+
+  .top_articles,
+  .bottom_articles,
+  .top_articles-description {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  article,
+  aside {
+    height: 200px;
+    width: 438px;
+  }
+
+  .top_articles-image {
+    width: 870px;
+    position: relative;
+    height: 400px;
+
+    img {
+      object-fit: cover;
+      position: absolute;
+      height: 100%;
+    }
+  }
+
+  // TODO:  STYLES REFACTORING FOR FLEXBOX LAYOUT
+  .top_articles-heading {
+    color: var(--very__dark__blue);
+
+    h1 {
+      font-size: 50px;
+      font-family: Inter-ExtraBold;
+    }
+  }
+
+  .top_articles-readmore {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    button {
+      background: var(--soft__red);
+      border-radius: 2px;
+      border: none;
+      width: 150px;
+      height: 50px;
+      color: var(--off__white);
+    }
+  }
+
+  // TODO: ASIDE STYLES REFACTORING FOR FLEXBOX LAYOUT
+  aside {
+    height: 600px;
+    background: var(--very__dark__blue);
+    color: var(--off__white);
+    padding-left: 40px;
+    padding-right: 40px;
+
+    > h1 {
+      color: var(--soft__orange);
+      font-family: Inter-ExtraBold;
+      font-size: 40px;
+    }
+    div {
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+      border-bottom: 1px solid var(--dark__grayish__blue);
+
+      h1 {
+        text-transform: capitalize;
+      }
+
+      p {
+        color: var(--grayish__blue);
+      }
+    }
+  }
+
+  // TODO: BOTTOM STYLES REFACTORING FOR FLEXBOX LAYOUT
+
+  .bottom_articles {
+    margin-top: 50px;
+
+    article {
+      height: 190px;
+      width: 453px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        height: 190px;
+        h1 {
+          color: var(--grayish__blue);
+          font-family: Inter-Bold;
+          font-size: 26px;
+        }
+        h6 {
+          font-family: Inter-ExtraBold;
+        }
+      }
+    }
+  }
+}
