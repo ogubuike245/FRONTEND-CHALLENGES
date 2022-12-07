@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Outfit-Black;
+  src: url("../../assets/fonts/Outfit-Black.ttf");
+}
+@font-face {
+  font-family: Outfit-Bold;
+  src: url("../../assets/fonts/Outfit-Bold.ttf");
+}
+
+@font-face {
+  font-family: Outfit-ExtraBold;
+  src: url("../../assets/fonts/Outfit-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: Outfit-ExtraLight;
+  src: url("../../assets/fonts/Outfit-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: Outfit-Light;
+  src: url("../../assets/fonts/Outfit-Light.ttf");
+}
+
+@font-face {
+  font-family: Outfit-Medium;
+  src: url("../../assets/fonts/Outfit-Medium.ttf");
+}
+@font-face {
+  font-family: Outfit-Regular;
+  src: url("../../assets/fonts/Outfit-Regular.ttf");
+}
+@font-face {
+  font-family: Outfit-SemiBold;
+  src: url("../../assets/fonts/Outfit-SemiBold.ttf");
+}
+@font-face {
+  font-family: Outfit-Thin;
+  src: url("../../assets/fonts/Outfit-Thin.ttf");
+}
+
+:root {
+  /* TODO : CUSTOM FONTS  */
+
+  --Outfit__Black: Outfit-Black;
+  --Outfit__Bold: Outfit-Bold;
+  --Outfit__ExtraBold: Outfit-ExtraBold;
+  --Outfit__ExtraLight: Outfit-ExtraLight;
+  --Outfit__Light: Outfit-Light;
+  --Outfit__Medium: Outfit-Medium;
+  --Outfit__Regular: Outfit-Regular;
+  --Outfit__SemiBold: Outfit-SemiBold;
+  --Outfit__Thin: Outfit-Thin;
+}

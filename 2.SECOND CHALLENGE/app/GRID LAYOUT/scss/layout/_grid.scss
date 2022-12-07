@@ -1,0 +1,43 @@
+@use "../globals/colors";
+
+body {
+  background: var(--Lightgray);
+  display: grid;
+  grid-template-columns: 1fr 350px 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  min-height: 100vh;
+
+  .container {
+    background: var(--White);
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    place-items: center;
+    height: 500px;
+    padding: 20px 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 25px;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 330px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+    }
+    h1 {
+      color: var(--Darkblue);
+      text-align: center;
+      font-family: var(--Outfit__ExtraBold);
+      font-size: 25px;
+    }
+
+    p {
+      color: var(--Grayishblue);
+      text-align: center;
+      font-family: var(--Outfit__Regular);
+      font-size: 16px;
+    }
+  }
+}
