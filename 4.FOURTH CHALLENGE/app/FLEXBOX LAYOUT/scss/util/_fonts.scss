@@ -1,0 +1,40 @@
+// TODO: POPPINS STATIC FONTS
+@font-face {
+  font-family: Poppins__Black;
+  src: url("../../assets/fonts/Poppins/Poppins-Black.ttf");
+}
+@font-face {
+  font-family: Poppins__Bold;
+  src: url("../../assets/fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: Poppins__ExtraLight;
+  src: url("../../assets/fonts/Poppins/Poppins-ExtraLight.ttf");
+}
+@font-face {
+  font-family: Poppins__Medium;
+  src: url("../../assets/fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: Poppins__Regular;
+  src: url("../../assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins__Thin;
+  src: url("../../assets/fonts/Poppins/Poppins-Thin.ttf");
+}
+@font-face {
+  font-family: Poppins__Light;
+  src: url("../../assets/fonts/Poppins/Poppins-Light.ttf");
+}
+:root {
+  // TODO: POPPINS STATIC FONTS VARIABLES
+  --Poppins__Black: Poppins__Black;
+  --Poppins__Bold: Poppins__Bold;
+  --Poppins__ExtraLight: Poppins__ExtraLight;
+  --Poppins__Medium: Poppins__Medium;
+  --Poppins__Regular: Poppins__Regular;
+  --Poppins__Thin: Poppins__Thin;
+  --Poppins__Light: Poppins__Light;
+}

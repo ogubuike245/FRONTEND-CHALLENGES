@@ -1,0 +1,46 @@
+// TODO: MONTSERRAT STATIC FONTS
+
+@font-face {
+  font-family: Montserrat__Light;
+  src: url("../../assets/fonts/Montserrat/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: Montserrat__ExtraBold;
+  src: url("../../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf");
+}
+@font-face {
+  font-family: Montserrat__Bold;
+  src: url("../../assets/fonts/Outfit-SemiBold.ttf");
+}
+@font-face {
+  font-family: Montserrat__Black;
+  src: url("../../assets/fonts/Montserrat/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: Montserrat__Regular;
+  src: url("../../assets/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+// TODO: FRAUNCES STATIC FONTS
+
+@font-face {
+  font-family: Fraunces__SoftBlack;
+  src: url("../../assets/fonts/Fraunces/static/Fraunces_144pt_Soft/Fraunces_144pt_Soft-Black.ttf");
+}
+@font-face {
+  font-family: Fraunces__SoftLight;
+  src: url("../../assets/fonts/Fraunces/static/Fraunces_144pt_Soft/Fraunces_144pt_Soft-Light.ttf");
+}
+
+:root {
+  // TODO: MONTSERRAT STATIC FONTS
+  --Montserrat__Light: Montserrat__Light;
+  --Montserrat__Bold: Montserrat__Bold;
+  --Montserrat__ExtraBold: Montserrat__ExtraBold;
+  --Montserrat__Black: Montserrat__Black;
+  --Montserrat__Regular: Montserrat__Regular;
+
+  // TODO: FRAUNCES STATIC FONTS
+  --Fraunces__SoftBlack: Fraunces__SoftBlack;
+  --Fraunces__SoftLight: Fraunces__SoftLight;
+}
