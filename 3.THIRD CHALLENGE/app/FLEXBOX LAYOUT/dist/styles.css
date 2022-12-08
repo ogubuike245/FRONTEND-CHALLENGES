@@ -80,85 +80,171 @@ body {
   justify-content: center;
   align-items: center;
 }
-body article {
-  height: 400px;
-  width: 500px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 15px;
+@media screen and (min-width: 601px) {
+  body article {
+    height: 400px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+  }
+  body article .content__1 {
+    flex: 1;
+    width: 250px;
+    height: 400px;
+    background: url("../../assets/images/image-product-desktop.jpg");
+    background-size: 110%;
+    background-position: center;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  body article .content__2 {
+    flex: 1;
+    background: var(--White);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  body article .content__2 div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    gap: 0.5rem;
+  }
+  body article .content__2 div h6 {
+    color: var(--Dark__grayish__blue);
+    font-family: var(--Montserrat__Light);
+    letter-spacing: 7px;
+  }
+  body article .content__2 div h1 {
+    color: var(--Very__dark__blue);
+    font-family: var(--Fraunces__SoftBlack);
+    font-size: 30px;
+  }
+  body article .content__2 div p {
+    color: var(--Dark__grayish__blue);
+    font-family: var(--Montserrat__Regular);
+    font-size: small;
+  }
+  body article .content__2 div span {
+    color: var(--Dark__cyan);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }
+  body article .content__2 div span strong {
+    font-family: var(--Fraunces__SoftBlack);
+    font-size: 25px;
+  }
+  body article .content__2 div span s {
+    color: var(--Dark__grayish__blue);
+    font-family: var(--Montserrat__Regular);
+    font-size: 10px;
+    font-weight: 2px;
+  }
+  body article .content__2 div button {
+    background: var(--Dark__cyan);
+    color: var(--White);
+    height: 35px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  body article .content__2 div button span {
+    color: var(--White);
+  }
+  body article .content__2 div button:hover {
+    background: var(--Very__Dark__cyan);
+    transition: 0.3s ease-in;
+  }
 }
-body article .content__1 {
-  flex: 1;
-  width: 250px;
-}
-body article .content__1 img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-}
-body article .content__2 {
-  flex: 1;
-  background: var(--White);
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
-}
-body article .content__2 div {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 20px;
-  gap: 0.5rem;
-}
-body article .content__2 div h6 {
-  font-family: var(--Montserrat__Light);
-  letter-spacing: 7px;
-}
-body article .content__2 div h1 {
-  font-family: var(--Fraunces__SoftBlack);
-  font-size: 30px;
-  color: var(--Very__dark__blue);
-}
-body article .content__2 div p {
-  font-family: var(--Montserrat__Regular);
-  font-size: small;
-  color: var(--Dark__grayish__blue);
-}
-body article .content__2 div span {
-  color: var(--Dark__cyan);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 3rem;
-}
-body article .content__2 div span strong {
-  font-family: var(--Fraunces__SoftBlack);
-  font-size: 25px;
-}
-body article .content__2 div span s {
-  font-size: 10px;
-  font-weight: 2px;
-  font-family: var(--Montserrat__Light);
-}
-body article .content__2 div button {
-  background: var(--Dark__cyan);
-  color: var(--White);
-  height: 35px;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-body article .content__2 div button span {
-  color: var(--White);
-}
-body article .content__2 div button:hover {
-  background: var(--Very__Dark__cyan);
-  transition: 0.3s ease-in;
+@media screen and (max-width: 600px) {
+  body article {
+    height: 600px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px;
+    padding: 30px;
+  }
+  body article .content__1 {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 100%;
+    width: 100%;
+    background: url("../../assets/images/image-product-mobile.jpg");
+    background-size: 125%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  body article .content__2 {
+    display: flex;
+    border-radius: 0px;
+    height: 500px;
+    width: 300px;
+    background: var(--White);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  body article .content__2 div {
+    height: 100%;
+    padding: 30px 20px;
+  }
+  body article .content__2 div h6 {
+    color: var(--Dark__grayish__blue);
+    font-family: var(--Montserrat__Light);
+    letter-spacing: 7px;
+  }
+  body article .content__2 div h1 {
+    color: var(--Very__dark__blue);
+    font-family: var(--Fraunces__SoftBlack);
+    font-size: 30px;
+  }
+  body article .content__2 div p {
+    color: var(--Dark__grayish__blue);
+    font-family: var(--Montserrat__Regular);
+    font-size: small;
+  }
+  body article .content__2 div span {
+    color: var(--Dark__cyan);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }
+  body article .content__2 div span strong {
+    font-family: var(--Fraunces__SoftBlack);
+    font-size: 25px;
+  }
+  body article .content__2 div span s {
+    color: var(--Dark__grayish__blue);
+    font-family: var(--Montserrat__Regular);
+    font-size: 10px;
+    font-weight: 2px;
+  }
+  body article .content__2 div button {
+    background: var(--Dark__cyan);
+    color: var(--White);
+    height: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  body article .content__2 div button span {
+    color: var(--White);
+  }
+  body article .content__2 div button:hover {
+    background: var(--Very__Dark__cyan);
+    transition: 0.3s ease-in;
+  }
 }/*# sourceMappingURL=styles.css.map */
