@@ -1,50 +1,39 @@
 @font-face {
-  font-family: Outfit-Black;
-  src: url("../../assets/fonts/Outfit-Black.ttf");
+  font-family: Montserrat__Light;
+  src: url("../../assets/fonts/Montserrat/Montserrat-Light.ttf");
 }
 @font-face {
-  font-family: Outfit-Bold;
-  src: url("../../assets/fonts/Outfit-Bold.ttf");
+  font-family: Montserrat__ExtraBold;
+  src: url("../../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf");
 }
 @font-face {
-  font-family: Outfit-ExtraBold;
-  src: url("../../assets/fonts/Outfit-ExtraBold.ttf");
-}
-@font-face {
-  font-family: Outfit-ExtraLight;
-  src: url("../../assets/fonts/Outfit-ExtraLight.ttf");
-}
-@font-face {
-  font-family: Outfit-Light;
-  src: url("../../assets/fonts/Outfit-Light.ttf");
-}
-@font-face {
-  font-family: Outfit-Medium;
-  src: url("../../assets/fonts/Outfit-Medium.ttf");
-}
-@font-face {
-  font-family: Outfit-Regular;
-  src: url("../../assets/fonts/Outfit-Regular.ttf");
-}
-@font-face {
-  font-family: Outfit-SemiBold;
+  font-family: Montserrat__Bold;
   src: url("../../assets/fonts/Outfit-SemiBold.ttf");
 }
 @font-face {
-  font-family: Outfit-Thin;
-  src: url("../../assets/fonts/Outfit-Thin.ttf");
+  font-family: Montserrat__Black;
+  src: url("../../assets/fonts/Montserrat/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: Montserrat__Regular;
+  src: url("../../assets/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: Fraunces__SoftBlack;
+  src: url("../../assets/fonts/Fraunces/static/Fraunces_144pt_Soft/Fraunces_144pt_Soft-Black.ttf");
+}
+@font-face {
+  font-family: Fraunces__SoftLight;
+  src: url("../../assets/fonts/Fraunces/static/Fraunces_144pt_Soft/Fraunces_144pt_Soft-Light.ttf");
 }
 :root {
-  /* TODO : CUSTOM FONTS  */
-  --Outfit__Black: Outfit-Black;
-  --Outfit__Bold: Outfit-Bold;
-  --Outfit__ExtraBold: Outfit-ExtraBold;
-  --Outfit__ExtraLight: Outfit-ExtraLight;
-  --Outfit__Light: Outfit-Light;
-  --Outfit__Medium: Outfit-Medium;
-  --Outfit__Regular: Outfit-Regular;
-  --Outfit__SemiBold: Outfit-SemiBold;
-  --Outfit__Thin: Outfit-Thin;
+  --Montserrat__Light: Montserrat__Light;
+  --Montserrat__Bold: Montserrat__Bold;
+  --Montserrat__ExtraBold: Montserrat__ExtraBold;
+  --Montserrat__Black: Montserrat__Black;
+  --Montserrat__Regular: Montserrat__Regular;
+  --Fraunces__SoftBlack: Fraunces__SoftBlack;
+  --Fraunces__SoftLight: Fraunces__SoftLight;
 }
 
 *::before,
@@ -55,13 +44,7 @@
 body {
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --White: hsl(0, 0%, 100%);
-  --Lightgray: hsl(212, 45%, 89%);
-  --Grayishblue: hsl(220, 15%, 55%);
-  --Darkblue: hsl(218, 44%, 22%);
+  background: var(--Cream);
 }
 
 h1,
@@ -82,42 +65,125 @@ a:active {
   text-decoration: none;
 }
 
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Very__dark__blue: hsl(212, 21%, 14%);
+  --Dark__grayish__blue: hsl(228, 12%, 48%);
+  --Dark__cyan: hsl(158, 36%, 37%);
+  --Very__Dark__cyan: hsl(157, 67%, 8%);
+  --Cream: hsl(30, 38%, 92%);
+}
+
 body {
-  background: var(--Lightgray);
-  display: grid;
-  grid-template-columns: 1fr 350px 1fr;
-  grid-template-rows: repeat(3, 1fr);
   min-height: 100vh;
-}
-body .container {
-  background: var(--White);
-  grid-row: 2/3;
-  grid-column: 2/3;
+  display: grid;
+  background: var(--Cream);
   place-items: center;
-  height: 500px;
-  padding: 20px 1px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border-radius: 25px;
 }
-body .container img {
-  -o-object-fit: cover;
-     object-fit: cover;
+body article {
+  height: 400px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+body article .content__1 {
   height: 100%;
-  width: 330px;
-  margin-bottom: 20px;
-  border-radius: 15px;
+  width: 250px;
+  grid-area: 1/1/4/2;
+  background: url("../../assets/images/image-product-desktop.jpg");
+  background-size: 120%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
-body .container h1 {
-  color: var(--Darkblue);
-  text-align: center;
-  font-family: var(--Outfit__ExtraBold);
+body article .content__2 {
+  width: 250px;
+  grid-area: 1/2/4/3;
+  background: var(--White);
+  display: grid;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  gap: 0.01rem;
+  padding: 5px 30px 10px 30px;
+}
+body article .content__2 h6 {
+  color: var(--Dark__grayish__blue);
+  font-family: var(--Montserrat__Light);
+  letter-spacing: 7px;
+}
+body article .content__2 h1 {
+  color: var(--Very__dark__blue);
+  font-family: var(--Fraunces__SoftBlack);
+  font-size: 40px;
+}
+body article .content__2 p {
+  color: var(--Dark__grayish__blue);
+  font-family: var(--Montserrat__Regular);
+  font-size: medium;
+}
+body article .content__2 span {
+  color: var(--Dark__cyan);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+}
+body article .content__2 span strong {
+  font-family: var(--Fraunces__SoftBlack);
   font-size: 25px;
 }
-body .container p {
-  color: var(--Grayishblue);
-  text-align: center;
-  font-family: var(--Outfit__Regular);
-  font-size: 16px;
+body article .content__2 span s {
+  color: var(--Dark__grayish__blue);
+  font-family: var(--Montserrat__Regular);
+  font-size: 10px;
+  font-weight: 2px;
+}
+body article .content__2 button {
+  background: var(--Dark__cyan);
+  color: var(--White);
+  height: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body article .content__2 button span {
+  color: var(--White);
+}
+body article .content__2 button:hover {
+  background: var(--Very__Dark__cyan);
+  transition: 0.3s ease-in;
+}
+@media screen and (max-width: 588px) {
+  body {
+    display: grid;
+  }
+  body article {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 250px 350px;
+    width: 310px;
+  }
+  body article .content__1 {
+    width: 100%;
+    grid-area: span 1/span 1;
+    background: url("../../assets/images/image-product-mobile.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 0px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  body article .content__2 {
+    grid-area: span 2/span 1;
+    width: 310px;
+    border-radius: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 }/*# sourceMappingURL=styles.css.map */
