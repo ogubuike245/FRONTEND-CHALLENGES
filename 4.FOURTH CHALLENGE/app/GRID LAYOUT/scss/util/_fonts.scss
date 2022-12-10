@@ -1,46 +1,40 @@
-// TODO: MONTSERRAT STATIC FONTS
-
+// TODO: POPPINS STATIC FONTS
 @font-face {
-  font-family: Montserrat__Light;
-  src: url("../../assets/fonts/Montserrat/Montserrat-Light.ttf");
+  font-family: Poppins__Black;
+  src: url("../../assets/fonts/Poppins/Poppins-Black.ttf");
 }
 @font-face {
-  font-family: Montserrat__ExtraBold;
-  src: url("../../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf");
-}
-@font-face {
-  font-family: Montserrat__Bold;
-  src: url("../../assets/fonts/Outfit-SemiBold.ttf");
-}
-@font-face {
-  font-family: Montserrat__Black;
-  src: url("../../assets/fonts/Montserrat/Montserrat-Black.ttf");
-}
-@font-face {
-  font-family: Montserrat__Regular;
-  src: url("../../assets/fonts/Montserrat/Montserrat-Regular.ttf");
+  font-family: Poppins__Bold;
+  src: url("../../assets/fonts/Poppins/Poppins-Bold.ttf");
 }
 
-// TODO: FRAUNCES STATIC FONTS
-
 @font-face {
-  font-family: Fraunces__SoftBlack;
-  src: url("../../assets/fonts/Fraunces/static/Fraunces_144pt_Soft/Fraunces_144pt_Soft-Black.ttf");
+  font-family: Poppins__ExtraLight;
+  src: url("../../assets/fonts/Poppins/Poppins-ExtraLight.ttf");
 }
 @font-face {
-  font-family: Fraunces__SoftLight;
-  src: url("../../assets/fonts/Fraunces/static/Fraunces_144pt_Soft/Fraunces_144pt_Soft-Light.ttf");
+  font-family: Poppins__Medium;
+  src: url("../../assets/fonts/Poppins/Poppins-Medium.ttf");
 }
-
+@font-face {
+  font-family: Poppins__Regular;
+  src: url("../../assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins__Thin;
+  src: url("../../assets/fonts/Poppins/Poppins-Thin.ttf");
+}
+@font-face {
+  font-family: Poppins__Light;
+  src: url("../../assets/fonts/Poppins/Poppins-Light.ttf");
+}
 :root {
-  // TODO: MONTSERRAT STATIC FONTS
-  --Montserrat__Light: Montserrat__Light;
-  --Montserrat__Bold: Montserrat__Bold;
-  --Montserrat__ExtraBold: Montserrat__ExtraBold;
-  --Montserrat__Black: Montserrat__Black;
-  --Montserrat__Regular: Montserrat__Regular;
-
-  // TODO: FRAUNCES STATIC FONTS
-  --Fraunces__SoftBlack: Fraunces__SoftBlack;
-  --Fraunces__SoftLight: Fraunces__SoftLight;
+  // TODO: POPPINS STATIC FONTS VARIABLES
+  --Poppins__Black: Poppins__Black;
+  --Poppins__Bold: Poppins__Bold;
+  --Poppins__ExtraLight: Poppins__ExtraLight;
+  --Poppins__Medium: Poppins__Medium;
+  --Poppins__Regular: Poppins__Regular;
+  --Poppins__Thin: Poppins__Thin;
+  --Poppins__Light: Poppins__Light;
 }

@@ -1,3 +1,5 @@
+@use "./colors";
+
 *::before,
 *::after {
   box-sizing: inherit;
@@ -6,5 +8,5 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--Cream);
+  background: hsl(0, 0%, 100%);
 }

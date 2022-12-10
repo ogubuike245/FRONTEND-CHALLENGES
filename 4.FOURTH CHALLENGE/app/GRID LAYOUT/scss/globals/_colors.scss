@@ -1,11 +1,27 @@
 :root {
-  // TODO: NEUTRAL COLORS
-  --White: hsl(0, 0%, 100%);
-  --Very__dark__blue: hsl(212, 21%, 14%);
-  --Dark__grayish__blue: hsl(228, 12%, 48%);
+  // ### Primary
 
-  // TODO: PRIMARY COLORS
-  --Dark__cyan: hsl(158, 36%, 37%);
-  --Very__Dark__cyan: hsl(157, 67%, 8%);
-  --Cream: hsl(30, 38%, 92%);
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  // ### Neutral
+
+  --Very_Dark_Blue: hsl(234, 12%, 34%);
+  --Grayish_Blue: hsl(229, 6%, 66%);
+  --Very_Light_Gray: hsl(0, 0%, 98%);
 }
+
+// // ### Primary
+
+// $Red: hsl(0, 78%, 62%);
+// $Cyan: hsl(180, 62%, 55%);
+// $Orange: hsl(34, 97%, 64%);
+// $Blue: hsl(212, 86%, 64%);
+
+// // ### Neutral
+
+// $Very_Dark_Blue: hsl(234, 12%, 34%);
+// $Grayish_Blue: hsl(229, 6%, 66%);
+// $Very_Light_Gray: hsl(0, 0%, 98%);
