@@ -1,0 +1,62 @@
+body {
+  background: var(--LightGrayishBlue);
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: 10px;
+
+  article {
+    border: 2px solid red;
+  }
+  .daniel_clifford {
+    grid-area: 1 / 1 / 2 / 3;
+    background: var(--ModerateViolet);
+    background-image: url("../../assets/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 80px;
+  }
+  .jonathan_walters {
+    grid-area: 1 / 3 / 2 / 4;
+    background: var(--VeryDarkGrayishBlue);
+  }
+  .jeanette_harmon {
+    grid-area: 2 / 1 / 3 / 2;
+    background: var(--White);
+  }
+
+  .patrick_abrams {
+    grid-area: 2 / 2 / 3 / 4;
+    background: var(--VeryDarkBlackishBlue);
+  }
+  .kira_whittle {
+    grid-area: 1 / 4 / 3 / 5;
+    background: var(--White);
+  }
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    article {
+      border: 2px solid blue;
+      width: 350px;
+      height: 300px;
+    }
+
+    .daniel_clifford {
+      background-position: top right;
+      height: 500px;
+    }
+
+    .patrick_abrams {
+      height: 400px;
+    }
+    .kira_whittle {
+      height: 500px;
+    }
+  }
+}
