@@ -80,9 +80,9 @@ body {
   padding: 50px;
 }
 body .content__1 {
+  border: 2px solid red;
+  text-align: center;
   width: 550px;
-  display: grid;
-  place-items: center;
   margin: auto;
 }
 body .content__1 h1 {
@@ -96,70 +96,84 @@ body .content__1 h2 {
 body .content__1 p {
   color: var(--Grayish_Blue);
   font-family: var(--Poppins__Regular);
-  text-align: center;
   font-size: medium;
 }
-body .content__2 {
+@media screen and (max-width: 800px) {
+  body .content__1 {
+    width: 350px;
+  }
+  body .content__1 h1 {
+    font-size: 15px;
+  }
+}
+body .content {
   display: grid;
+  grid-template-rows: 100px 100px 100px 100px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 100px);
   gap: 2rem;
   padding: 40px;
 }
-body .content__2 div {
+body .content div {
   padding: 20px;
   display: grid;
   background: white;
   filter: drop-shadow(1px 8px 9px var(--Grayish_Blue));
+  border: 2px solid green;
 }
-body .content__2 div h1 {
+body .content div h1 {
   color: var(--Very_Dark_Blue);
   font-family: var(--Poppins__Bold);
 }
-body .content__2 div p {
+body .content div p {
   color: var(--Very_Dark_Blue);
   font-family: var(--Poppins__Regular);
   font-size: medium;
 }
-body .content__2 div img {
+body .content div img {
   justify-self: end;
 }
-body .content__2 .supervisor {
-  grid-area: 2/1/4/2;
-  position: relative;
+body .content .supervisor {
   border-top: 2px solid var(--Cyan);
+  grid-row: 2/4;
+  grid-column: 1/2;
 }
-body .content__2 .teamBuilder {
-  grid-area: 1/2/3/3;
+body .content .teamBuilder {
   border-top: 2px solid var(--Red);
+  grid-row: 1/3;
+  grid-column: 2/3;
 }
-body .content__2 .karma {
-  grid-area: 3/2/5/3;
+body .content .karma {
   border-top: 2px solid var(--Orange);
+  grid-row: 3/5;
+  grid-column: 2/3;
 }
-body .content__2 .calculator {
-  grid-area: 2/3/4/4;
+body .content .calculator {
   border-top: 2px solid var(--Blue);
+  grid-row: 2/4;
+  grid-column: 3/4;
 }
-@media screen and (max-width: 990px) {
-  body .content__2 {
-    width: 400px;
-    justify-self: center;
-    padding: 40px;
-    border: 2px solid red;
-    grid-template-columns: 300px;
-    grid-template-rows: repeat(4, 1fr);
+@media screen and (max-width: 800px) {
+  body .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 400px);
+    margin: auto;
+    padding: auto;
   }
-  body .content__2 .supervisor {
-    grid-area: 1/1/2/2;
+  body .content .supervisor {
+    grid-row: 1/2;
+    grid-column: 1/3;
   }
-  body .content__2 .teamBuilder {
-    grid-area: 2/1/3/2;
+  body .content .teamBuilder {
+    grid-row: 2/3;
+    grid-column: 1/3;
   }
-  body .content__2 .karma {
-    grid-area: 3/1/4/2;
+  body .content .karma {
+    grid-row: 3/4;
+    grid-column: 1/3;
   }
-  body .content__2 .calculator {
-    grid-area: 4/1/5/2;
+  body .content .calculator {
+    grid-row: 4/5;
+    grid-column: 1/3;
   }
 }/*# sourceMappingURL=styles.css.map */
