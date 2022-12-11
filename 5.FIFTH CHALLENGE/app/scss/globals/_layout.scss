@@ -8,9 +8,8 @@ section {
   grid-template-rows: repeat(2, 300px);
   gap: 10px;
 
-  article {
-    border: 2px solid red;
-  }
+  //   article {
+  //   }
   .daniel_clifford {
     grid-area: 1 / 1 / 2 / 3;
     background: var(--ModerateViolet);
@@ -42,7 +41,6 @@ section {
     align-items: center;
 
     article {
-      border: 2px solid blue;
       width: 350px;
       height: 300px;
     }

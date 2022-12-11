@@ -62,9 +62,6 @@ section {
   grid-template-rows: repeat(2, 300px);
   gap: 10px;
 }
-section article {
-  border: 2px solid red;
-}
 section .daniel_clifford {
   grid-area: 1/1/2/3;
   background: var(--ModerateViolet);
@@ -95,7 +92,6 @@ section .kira_whittle {
     align-items: center;
   }
   section article {
-    border: 2px solid blue;
     width: 350px;
     height: 300px;
   }
