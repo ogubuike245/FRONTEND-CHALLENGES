@@ -1,0 +1,131 @@
+@font-face {
+  font-family: LeagueSpartan_Black;
+  src: url("../../assets/fonts/LeagueSpartan-Black.ttf");
+}
+@font-face {
+  font-family: LeagueSpartan_Bold;
+  src: url("../../assets/fonts/LeagueSpartan-Bold.ttf");
+}
+@font-face {
+  font-family: LeagueSpartan_ExtraBold;
+  src: url("../../assets/fonts/LeagueSpartan-ExtraBold.ttf");
+}
+@font-face {
+  font-family: LeagueSpartan_Regular;
+  src: url("../../assets/fonts/LeagueSpartan-Regular.ttf");
+}
+@font-face {
+  font-family: LeagueSpartan_ExtraLight;
+  src: url("../../assets/fonts/LeagueSpartan-ExtraLight.ttf");
+}
+@font-face {
+  font-family: LeagueSpartan_Light;
+  src: url("../../assets/fonts/LeagueSpartan-Light.ttf");
+}
+@font-face {
+  font-family: LeagueSpartan_Thin;
+  src: url("../../assets/fonts/LeagueSpartan-Thin.ttf");
+}
+@font-face {
+  font-family: LeagueSpartan_Medium;
+  src: url("../../assets/fonts/LeagueSpartan-Medium.ttf");
+}
+:root {
+  --LeagueSpartan_Medium: LeagueSpartan_Medium;
+  --LeagueSpartan_Bold: LeagueSpartan_Bold;
+  --LeagueSpartan_ExtraBold: LeagueSpartan_ExtraBold;
+  --LeagueSpartan_Regular: LeagueSpartan_Regular;
+  --LeagueSpartan_Thin: LeagueSpartan_Thin;
+  --LeagueSpartan_Light: LeagueSpartan_Light;
+  --LeagueSpartan_ExtraLight: LeagueSpartan_ExtraLight;
+  --LeagueSpartan_Medium: LeagueSpartan_Medium;
+}
+
+:root {
+  --VeryDarkDesaturatedBlueMain: hsl(222, 26%, 31%);
+  --VeryDarkDesaturatedBlueToggle: hsl(223, 31%, 20%);
+  --VeryDarkDesaturatedBlueScreen: hsl(224, 36%, 15%);
+  --DesaturatedDarkBlueKeyBackground: hsl(225, 21%, 49%);
+  --DesaturatedDarkBlueKeyShadow: hsl(224, 28%, 35%);
+  --Red: hsl(6, 63%, 50%);
+  --DarkRed: hsl(6, 70%, 34%);
+  --LightGrayishOrange: hsl(30, 25%, 89%);
+  --GrayishOrange: hsl(28, 16%, 65%);
+  --VeryDarkGrayishBlue: hsl(221, 14%, 31%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background: var(--VeryDarkDesaturatedBlueMain);
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  height: 600px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 100px 1fr;
+  gap: 1rem;
+}
+section article {
+  border-radius: 10px;
+}
+section .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  color: var(--White);
+  font-family: var(--LeagueSpartan_ExtraBold);
+}
+section .heading :first-child {
+  flex: 1;
+}
+section .display {
+  background: var(--VeryDarkDesaturatedBlueScreen);
+  color: var(--White);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2rem;
+  font-family: var(--LeagueSpartan_ExtraBold);
+  font-size: 35px;
+}
+section .digits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 50px);
+  gap: 1rem;
+  padding: 15px;
+  background: var(--VeryDarkDesaturatedBlueToggle);
+}
+section .digits span {
+  border-radius: 10px;
+  background: var(--LightGrayishOrange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--LeagueSpartan_ExtraBold);
+  color: var(--VeryDarkDesaturatedBlueMain);
+  font-size: 25px;
+  box-shadow: 1px 3px 1px var(--GrayishOrange);
+}
+section .digits .delete,
+section .digits .reset {
+  color: var(--White);
+  background: var(--DesaturatedDarkBlueKeyBackground);
+  box-shadow: 1px 3px 1px var(--DesaturatedDarkBlueKeyShadow);
+}
+section .digits .reset {
+  grid-area: 5/1/6/3;
+}
+section .digits .equals {
+  grid-area: 5/3/6/5;
+  background: var(--Red);
+  color: var(--White);
+  box-shadow: 1px 3px 1px var(--DarkRed);
+}/*# sourceMappingURL=styles.css.map */

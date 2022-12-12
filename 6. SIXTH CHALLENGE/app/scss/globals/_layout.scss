@@ -1,0 +1,82 @@
+body {
+  background: var(--VeryDarkDesaturatedBlueMain);
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  height: 600px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 100px 1fr;
+  gap: 1rem;
+
+  article {
+    border-radius: 10px;
+  }
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    color: var(--White);
+    font-family: var(--LeagueSpartan_ExtraBold);
+
+    :first-child {
+      flex: 1;
+    }
+  }
+
+  .display {
+    background: var(--VeryDarkDesaturatedBlueScreen);
+    color: var(--White);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+    font-family: var(--LeagueSpartan_ExtraBold);
+    font-size: 35px;
+  }
+  .digits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 50px);
+    gap: 1rem;
+    padding: 15px;
+    background: var(--VeryDarkDesaturatedBlueToggle);
+
+    span {
+      border-radius: 10px;
+      background: var(--LightGrayishOrange);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--LeagueSpartan_ExtraBold);
+      color: var(--VeryDarkDesaturatedBlueMain);
+      font-size: 25px;
+      box-shadow: 1px 3px 1px var(--GrayishOrange);
+    }
+
+    .delete,
+    .reset {
+      color: var(--White);
+      background: var(--DesaturatedDarkBlueKeyBackground);
+      box-shadow: 1px 3px 1px var(--DesaturatedDarkBlueKeyShadow);
+    }
+
+    .reset {
+      grid-area: 5 / 1 / 6 / 3;
+    }
+
+    .equals {
+      grid-area: 5 / 3 / 6 / 5;
+      background: var(--Red);
+      color: var(--White);
+      box-shadow: 1px 3px 1px var(--DarkRed);
+    }
+  }
+}
