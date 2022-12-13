@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-one">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,33 +15,57 @@
   <body>
     <section>
       <article class="heading">
-        <h1>calc</h1>
-        <h1>THEME</h1>
-        <h1>SWITCHER</h1>
+        <div class="left">
+          <h1>calc</h1>
+        </div>
+
+        <div class="right">
+          <label for="themeSwitcher">THEME</label><br />
+
+          <div class="slider__area">
+            <article>
+              <p id="slider__area_valueOne">1</p>
+              <p id="slider__area_valueTwo">2</p>
+              <p id="slider__area_valueThree">3</p>
+            </article>
+
+            <input
+              type="range"
+              id="themeSwitcher"
+              name="themeSwitcher"
+              value="1"
+              min="1"
+              max="3"
+              step="1"
+            />
+          </div>
+        </div>
       </article>
       <article class="display">
-        <h1>399,981</h1>
+        <input type="text" id="displayArea" name="displayArea" />
       </article>
       <article class="digits">
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span class="delete">DEL</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>+</span>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>-</span>
-        <span>.</span>
-        <span>0</span>
-        <span>/</span>
-        <span>X</span>
-        <span class="reset">RESET</span>
-        <span class="equals">=</span>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="backSpace()" class="del">DEL</button>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button onclick="display('+')">+</button>
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button onclick="display('-')">-</button>
+        <button onclick="display('.')">.</button>
+        <button onclick="display('0')">0</button>
+        <button onclick="display('/')">/</button>
+        <button onclick="display('*')">X</button>
+        <button onclick="clearScreen()" class="reset">RESET</button>
+        <button onclick="solve()" class="equals">=</button>
       </article>
     </section>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>

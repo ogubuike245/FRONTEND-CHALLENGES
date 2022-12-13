@@ -41,26 +41,19 @@
   --LeagueSpartan_Medium: LeagueSpartan_Medium;
 }
 
-:root {
-  --VeryDarkDesaturatedBlueMain: hsl(222, 26%, 31%);
-  --VeryDarkDesaturatedBlueToggle: hsl(223, 31%, 20%);
-  --VeryDarkDesaturatedBlueScreen: hsl(224, 36%, 15%);
-  --DesaturatedDarkBlueKeyBackground: hsl(225, 21%, 49%);
-  --DesaturatedDarkBlueKeyShadow: hsl(224, 28%, 35%);
-  --Red: hsl(6, 63%, 50%);
-  --DarkRed: hsl(6, 70%, 34%);
-  --LightGrayishOrange: hsl(30, 25%, 89%);
-  --GrayishOrange: hsl(28, 16%, 65%);
-  --VeryDarkGrayishBlue: hsl(221, 14%, 31%);
-  --White: hsl(0, 0%, 100%);
-}
-
 body {
-  background: var(--VeryDarkDesaturatedBlueMain);
+  background: var(--mainBackground);
   padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 section {
@@ -77,23 +70,90 @@ section article {
 section .heading {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 1rem;
   color: var(--White);
   font-family: var(--LeagueSpartan_ExtraBold);
+  position: relative;
 }
-section .heading :first-child {
-  flex: 1;
+section .heading article {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  width: 55px;
+}
+section .heading article p {
+  letter-spacing: 5px;
+  font-size: 11px;
+  font-family: var(--LeagueSpartan_Regular);
+  cursor: pointer;
+}
+section .heading article :nth-child(2) {
+  color: red;
+}
+section .heading .left {
+  width: 100px;
+}
+section .heading .left h1 {
+  font-size: 20px;
+}
+section .heading .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}
+section .heading .right .slider__area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+section .heading .right .slider__area input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background: var(--toggleBackground);
+  cursor: pointer;
+  height: 1rem;
+  width: 3.5rem;
+  border-radius: 20px;
+  padding: 0.06rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /***** Thumb Styles *****/
+  /***** Chrome, Safari, Opera, and Edge Chromium *****/
+}
+section .heading .right .slider__area input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  border-radius: 20px;
+  background: var(--Red);
+  height: 0.8rem;
+  width: 0.8rem;
 }
 section .display {
-  background: var(--VeryDarkDesaturatedBlueScreen);
+  background: var(--screenBackground);
   color: var(--White);
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 2rem;
+  padding: 10px;
+}
+section .display input {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--VeryDarkDesaturatedBlueScreen);
+  text-align: right;
+  padding-right: 25px;
+  color: var(--White);
   font-family: var(--LeagueSpartan_ExtraBold);
-  font-size: 35px;
+  font-size: 45px;
+  outline: none;
+  border: none;
 }
 section .digits {
   display: grid;
@@ -103,7 +163,7 @@ section .digits {
   padding: 15px;
   background: var(--VeryDarkDesaturatedBlueToggle);
 }
-section .digits span {
+section .digits button {
   border-radius: 10px;
   background: var(--LightGrayishOrange);
   display: flex;
@@ -113,8 +173,15 @@ section .digits span {
   color: var(--VeryDarkDesaturatedBlueMain);
   font-size: 25px;
   box-shadow: 1px 3px 1px var(--GrayishOrange);
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
-section .digits .delete,
+section .digits button:hover {
+  box-shadow: 3px 5px 1px var(--GrayishOrange);
+  transition: 0.3s ease-in;
+}
+section .digits .del,
 section .digits .reset {
   color: var(--White);
   background: var(--DesaturatedDarkBlueKeyBackground);
@@ -128,4 +195,46 @@ section .digits .equals {
   background: var(--Red);
   color: var(--White);
   box-shadow: 1px 3px 1px var(--DarkRed);
+}
+
+.theme-one {
+  --mainBackground: hsl(222, 26%, 31%);
+  --toggleBackground: hsl(223, 31%, 20%);
+  --screenBackground: hsl(224, 36%, 15%);
+  --resetKeyBackground: hsl(225, 21%, 49%);
+  --resetKeyBackgroundShadow: hsl(224, 28%, 35%);
+  --equalsKeyBackground: hsl(6, 63%, 50%);
+  --equalsKeyBackgroundShadow: hsl(6, 70%, 34%);
+  --digitsKeyBackground: hsl(30, 25%, 89%);
+  --digitsKeyBackgroundShadow: hsl(28, 16%, 65%);
+  --digitsColor: hsl(221, 14%, 31%);
+  --White: hsl(0, 0%, 100%);
+}
+
+.theme-two {
+  --mainBackground: hsl(0, 0%, 90%);
+  --toggleBackground: hsl(0, 5%, 81%);
+  --screenBackground: hsl(0, 0%, 93%);
+  --resetKeyBackground: hsl(185, 42%, 37%);
+  --resetKeyBackgroundShadow: hsl(185, 58%, 25%);
+  --equalsKeyBackground: hsl(25, 98%, 40%);
+  --equalsKeyBackgroundShadow: hsl(25, 99%, 27%);
+  --digitsKeyBackground: hsl(45, 7%, 89%);
+  --digitsKeyBackgroundShadow: hsl(35, 11%, 61%);
+  --digitsColor: hsl(60, 10%, 19%);
+  --White: hsl(0, 0%, 100%);
+}
+
+.theme-three {
+  --mainBackground: hsl(268, 75%, 9%);
+  --toggleBackground: hsl(268, 71%, 12%);
+  --screenBackground: hsl(268, 71%, 12%);
+  --resetKeyBackground: hsl(281, 89%, 26%);
+  --resetKeyBackgroundShadow: hsl(285, 91%, 52%);
+  --equalsKeyBackground: hsl(176, 100%, 44%);
+  --equalsKeyBackgroundShadow: hsl(177, 92%, 70%);
+  --digitsKeyBackground: hsl(268, 47%, 21%);
+  --digitsKeyBackgroundShadow: hsl(290, 70%, 36%);
+  --digitsColor: hsl(52, 100%, 62%);
+  --White: hsl(0, 0%, 100%);
 }/*# sourceMappingURL=styles.css.map */
