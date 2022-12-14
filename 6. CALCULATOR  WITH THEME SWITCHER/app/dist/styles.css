@@ -47,6 +47,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.4s;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -72,7 +73,7 @@ section .heading {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  color: var(--White);
+  color: var(--calc);
   font-family: var(--LeagueSpartan_ExtraBold);
   position: relative;
 }
@@ -81,17 +82,16 @@ section .heading article {
   justify-content: space-around;
   position: absolute;
   top: 15px;
-  right: 0px;
+  right: 2px;
   width: 55px;
+  gap: 10px;
 }
 section .heading article p {
   letter-spacing: 5px;
   font-size: 11px;
   font-family: var(--LeagueSpartan_Regular);
   cursor: pointer;
-}
-section .heading article :nth-child(2) {
-  color: red;
+  color: var(--calc);
 }
 section .heading .left {
   width: 100px;
@@ -125,14 +125,13 @@ section .heading .right .slider__area input[type=range] {
   display: flex;
   justify-content: center;
   align-items: center;
-  /***** Thumb Styles *****/
-  /***** Chrome, Safari, Opera, and Edge Chromium *****/
+  padding: 0.2rem;
 }
 section .heading .right .slider__area input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none; /* OVERRIDE DEFAULT LOOK */
   appearance: none;
   border-radius: 20px;
-  background: var(--Red);
+  background: var(--sliderButton);
   height: 0.8rem;
   width: 0.8rem;
 }
@@ -146,10 +145,10 @@ section .display input {
   height: 100%;
   width: 100%;
   border-radius: 10px;
-  background: var(--VeryDarkDesaturatedBlueScreen);
+  background: var(--screenBackground);
   text-align: right;
   padding-right: 25px;
-  color: var(--White);
+  color: var(--calc);
   font-family: var(--LeagueSpartan_ExtraBold);
   font-size: 45px;
   outline: none;
@@ -161,40 +160,49 @@ section .digits {
   grid-template-rows: repeat(5, 50px);
   gap: 1rem;
   padding: 15px;
-  background: var(--VeryDarkDesaturatedBlueToggle);
+  background: var(--toggleBackground);
 }
 section .digits button {
   border-radius: 10px;
-  background: var(--LightGrayishOrange);
+  background: var(--digitsKeyBackground);
+  color: var(--digitsColor);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--LeagueSpartan_ExtraBold);
-  color: var(--VeryDarkDesaturatedBlueMain);
   font-size: 25px;
-  box-shadow: 1px 3px 1px var(--GrayishOrange);
+  box-shadow: 1px 3px 1px var(--digitsKeyBackgroundShadow);
   cursor: pointer;
   outline: none;
   border: none;
 }
 section .digits button:hover {
-  box-shadow: 3px 5px 1px var(--GrayishOrange);
-  transition: 0.3s ease-in;
+  box-shadow: 3px 5px 1px var(--digitsKeyBackgroundShadow);
+  transition: 0.3s;
 }
 section .digits .del,
 section .digits .reset {
   color: var(--White);
-  background: var(--DesaturatedDarkBlueKeyBackground);
-  box-shadow: 1px 3px 1px var(--DesaturatedDarkBlueKeyShadow);
+  background: var(--resetKeyBackground);
+  box-shadow: 1px 3px 1px var(--resetKeyBackgroundShadow);
+}
+section .digits .del:hover,
+section .digits .reset:hover {
+  box-shadow: 3px 5px 1px var(--resetKeyBackgroundShadow);
+  transition: 0.3s ease-in-out;
 }
 section .digits .reset {
   grid-area: 5/1/6/3;
 }
 section .digits .equals {
   grid-area: 5/3/6/5;
-  background: var(--Red);
-  color: var(--White);
-  box-shadow: 1px 3px 1px var(--DarkRed);
+  background: var(--equalsKeyBackground);
+  color: var(--equalsText);
+  box-shadow: 1px 3px 1px var(--equalsKeyBackgroundShadow);
+}
+section .digits .equals:hover {
+  box-shadow: 3px 5px 1px var(--equalsKeyBackgroundShadow);
+  transition: 0.3s ease-in-out;
 }
 
 .theme-one {
@@ -207,8 +215,11 @@ section .digits .equals {
   --equalsKeyBackgroundShadow: hsl(6, 70%, 34%);
   --digitsKeyBackground: hsl(30, 25%, 89%);
   --digitsKeyBackgroundShadow: hsl(28, 16%, 65%);
+  --sliderButton: hsl(6, 70%, 34%);
   --digitsColor: hsl(221, 14%, 31%);
   --White: hsl(0, 0%, 100%);
+  --calc: hsl(0, 0%, 100%);
+  --equalsText: hsl(0, 0%, 100%);
 }
 
 .theme-two {
@@ -221,8 +232,11 @@ section .digits .equals {
   --equalsKeyBackgroundShadow: hsl(25, 99%, 27%);
   --digitsKeyBackground: hsl(45, 7%, 89%);
   --digitsKeyBackgroundShadow: hsl(35, 11%, 61%);
+  --sliderButton: hsl(25, 98%, 40%);
   --digitsColor: hsl(60, 10%, 19%);
   --White: hsl(0, 0%, 100%);
+  --calc: hsl(0, 0%, 2%);
+  --equalsText: hsl(0, 0%, 100%);
 }
 
 .theme-three {
@@ -235,6 +249,9 @@ section .digits .equals {
   --equalsKeyBackgroundShadow: hsl(177, 92%, 70%);
   --digitsKeyBackground: hsl(268, 47%, 21%);
   --digitsKeyBackgroundShadow: hsl(290, 70%, 36%);
+  --sliderButton: hsl(176, 100%, 44%);
   --digitsColor: hsl(52, 100%, 62%);
   --White: hsl(0, 0%, 100%);
+  --calc: hsl(52, 100%, 62%);
+  --equalsText: hsl(0, 0%, 2%);
 }/*# sourceMappingURL=styles.css.map */

@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.4s;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -30,7 +31,7 @@ section {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    color: var(--White);
+    color: var(--calc);
     font-family: var(--LeagueSpartan_ExtraBold);
     position: relative;
 
@@ -39,17 +40,16 @@ section {
       justify-content: space-around;
       position: absolute;
       top: 15px;
-      right: 0px;
+      right: 2px;
       width: 55px;
+      gap: 10px;
 
       p {
         letter-spacing: 5px;
         font-size: 11px;
         font-family: var(--LeagueSpartan_Regular);
         cursor: pointer;
-      }
-      & :nth-child(2) {
-        color: red;
+        color: var(--calc);
       }
     }
 
@@ -85,14 +85,13 @@ section {
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: 0.2rem;
 
-          /***** Thumb Styles *****/
-          /***** Chrome, Safari, Opera, and Edge Chromium *****/
           &::-webkit-slider-thumb {
-            -webkit-appearance: none; /* Override default look */
+            -webkit-appearance: none; /* OVERRIDE DEFAULT LOOK */
             appearance: none;
             border-radius: 20px;
-            background: var(--Red);
+            background: var(--sliderButton);
             height: 0.8rem;
             width: 0.8rem;
           }
@@ -111,10 +110,10 @@ section {
       height: 100%;
       width: 100%;
       border-radius: 10px;
-      background: var(--VeryDarkDesaturatedBlueScreen);
+      background: var(--screenBackground);
       text-align: right;
       padding-right: 25px;
-      color: var(--White);
+      color: var(--calc);
       font-family: var(--LeagueSpartan_ExtraBold);
       font-size: 45px;
       outline: none;
@@ -127,32 +126,37 @@ section {
     grid-template-rows: repeat(5, 50px);
     gap: 1rem;
     padding: 15px;
-    background: var(--VeryDarkDesaturatedBlueToggle);
+    background: var(--toggleBackground);
 
     button {
       border-radius: 10px;
-      background: var(--LightGrayishOrange);
+      background: var(--digitsKeyBackground);
+      color: var(--digitsColor);
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: var(--LeagueSpartan_ExtraBold);
-      color: var(--VeryDarkDesaturatedBlueMain);
       font-size: 25px;
-      box-shadow: 1px 3px 1px var(--GrayishOrange);
+      box-shadow: 1px 3px 1px var(--digitsKeyBackgroundShadow);
       cursor: pointer;
       outline: none;
       border: none;
       &:hover {
-        box-shadow: 3px 5px 1px var(--GrayishOrange);
-        transition: 0.3s ease-in;
+        box-shadow: 3px 5px 1px var(--digitsKeyBackgroundShadow);
+        transition: 0.3s;
       }
     }
 
     .del,
     .reset {
       color: var(--White);
-      background: var(--DesaturatedDarkBlueKeyBackground);
-      box-shadow: 1px 3px 1px var(--DesaturatedDarkBlueKeyShadow);
+      background: var(--resetKeyBackground);
+      box-shadow: 1px 3px 1px var(--resetKeyBackgroundShadow);
+
+      &:hover {
+        box-shadow: 3px 5px 1px var(--resetKeyBackgroundShadow);
+        transition: 0.3s ease-in-out;
+      }
     }
 
     .reset {
@@ -161,9 +165,14 @@ section {
 
     .equals {
       grid-area: 5 / 3 / 6 / 5;
-      background: var(--Red);
-      color: var(--White);
-      box-shadow: 1px 3px 1px var(--DarkRed);
+      background: var(--equalsKeyBackground);
+      color: var(--equalsText);
+      box-shadow: 1px 3px 1px var(--equalsKeyBackgroundShadow);
+
+      &:hover {
+        box-shadow: 3px 5px 1px var(--equalsKeyBackgroundShadow);
+        transition: 0.3s ease-in-out;
+      }
     }
   }
 }

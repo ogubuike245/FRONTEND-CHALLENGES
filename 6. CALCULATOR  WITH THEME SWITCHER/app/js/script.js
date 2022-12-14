@@ -1,25 +1,48 @@
-let inputOne = document.getElementById("slider__area_valueOne");
-let inputTwo = document.getElementById("slider__area_valueTwo");
-let inputThree = document.getElementById("slider__area_valueThree");
-let slider = document.querySelector("input[type='range']");
+let slider = document.getElementById("themeSwitcher");
 
-// function to set a given theme/color-scheme
+// FIXME: THEME SWITCHER
+
+// FUNCTION TO SET A GIVEN THEME
 function setTheme(themeName) {
   localStorage.setItem("theme", themeName);
   document.documentElement.className = themeName;
 }
 
-inputOne.addEventListener("click", function () {
-  slider.value = inputOne.innerHTML;
-  setTheme("theme-one");
-});
-inputTwo.addEventListener("click", function () {
-  slider.value = inputTwo.innerHTML;
-  setTheme("theme-two");
-});
-inputThree.addEventListener("click", function () {
-  slider.value = inputThree.innerHTML;
-  setTheme("theme-three");
+// SET THEME ON RELOAD FROM LOCAL STORAGE
+(function () {
+  let Theme = localStorage.getItem("theme");
+  setTheme(Theme);
+
+  if (Theme === "theme-one") return (slider.value = 1);
+
+  if (Theme === "theme-two") return (slider.value = 2);
+
+  if (Theme === "theme-three") return (slider.value = 3);
+})();
+
+// THEME SELECTION BY CLICKING ON THUMB OF INPUT RANGE TYPE
+function SelectTheme() {
+  const theme = slider.value;
+  switch (theme) {
+    case "1":
+      setTheme("theme-one");
+      break;
+    case "2":
+      setTheme("theme-two");
+      break;
+    case "3":
+      setTheme("theme-three");
+      break;
+  }
+}
+
+// THEME SELECTION BY CLICKING ON NUMBERS ABOVE INPUT RANGE TYPE
+document.querySelectorAll("p").forEach(function (item) {
+  item.addEventListener("click", function () {
+    slider.value = item.innerHTML;
+    SelectTheme();
+    console.log(item.innerHTML);
+  });
 });
 
 // TODO: DISPLAY INPUTTED DIGIT
@@ -40,22 +63,9 @@ function solve() {
   } else {
     let Variable = eval(document.getElementById("displayArea").value);
     document.getElementById("displayArea").value = Variable;
+    return Variable;
   }
-
-  return Variable;
 }
-
-// TODO: ADDITION
-function addition() {}
-
-// TODO: SUBTRACTION
-function subtraction() {}
-
-// TODO: MULTIPLICATION
-function multiplication() {}
-
-// TODO: DIVISION
-function division() {}
 
 // TODO: RESET
 function clearScreen() {
@@ -67,18 +77,3 @@ function backSpace() {
   displayArea.value = displayArea.value.slice(0, -1);
 }
 // TODO: ADD ANIMATIONS WHEN BUTTON IS CLICKED
-
-// TODO: THEME SWITCHER
-
-// Immediately invoked function to set the theme on initial load
-(function () {
-  let Item = localStorage.getItem("theme");
-
-  if (Item === "theme-one") {
-    setTheme("theme-one");
-  } else if (Item === "theme-two") {
-    setTheme("theme-two");
-  } else {
-    setTheme("theme-three");
-  }
-})();
