@@ -1,0 +1,28 @@
+@font-face {
+  font-family: RedHatDisplay_Black;
+  src: url("../../assets/fonts/RedHatDisplay-Black.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Bold;
+  src: url("../../assets/fonts/RedHatDisplay-Bold.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Light;
+  src: url("../../assets/fonts/RedHatDisplay-Light.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Medium;
+  src: url("../../assets/fonts/RedHatDisplay-Medium.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Regular;
+  src: url("../../assets/fonts/RedHatDisplay-Regular.ttf");
+}
+
+:root {
+  --RedHatDisplay_Regular: RedHatDisplay_Regular;
+  --RedHatDisplay_Medium: RedHatDisplay_Medium;
+  --RedHatDisplay_Light: RedHatDisplay_Light;
+  --RedHatDisplay_Bold: RedHatDisplay_Bold;
+  --RedHatDisplay_Black: RedHatDisplay_Black;
+}

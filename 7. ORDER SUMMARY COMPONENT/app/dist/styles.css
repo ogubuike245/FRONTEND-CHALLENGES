@@ -1,0 +1,147 @@
+:root {
+  --PaleBlue: hsl(225, 100%, 94%);
+  --BrightBlue: hsl(245, 75%, 52%);
+  --VeryPaleBlue: hsl(225, 100%, 98%);
+  --DarkBlue: hsl(223, 47%, 23%);
+  --DesaturatedBlue: hsl(224, 23%, 55%);
+  --White: hsl(0, 0%, 100%);
+}
+
+@font-face {
+  font-family: RedHatDisplay_Black;
+  src: url("../../assets/fonts/RedHatDisplay-Black.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Bold;
+  src: url("../../assets/fonts/RedHatDisplay-Bold.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Light;
+  src: url("../../assets/fonts/RedHatDisplay-Light.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Medium;
+  src: url("../../assets/fonts/RedHatDisplay-Medium.ttf");
+}
+@font-face {
+  font-family: RedHatDisplay_Regular;
+  src: url("../../assets/fonts/RedHatDisplay-Regular.ttf");
+}
+:root {
+  --RedHatDisplay_Regular: RedHatDisplay_Regular;
+  --RedHatDisplay_Medium: RedHatDisplay_Medium;
+  --RedHatDisplay_Light: RedHatDisplay_Light;
+  --RedHatDisplay_Bold: RedHatDisplay_Bold;
+  --RedHatDisplay_Black: RedHatDisplay_Black;
+}
+
+body {
+  background: url("../../assets/images/pattern-background-desktop.svg");
+  background-color: var(--PaleBlue);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 370px;
+}
+.container .top {
+  height: 170px;
+  background: url("../../assets/images/illustration-hero.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.container .bottom {
+  background: var(--White);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 50px;
+}
+.container .bottom h1 {
+  font-family: var(--RedHatDisplay_Black);
+  color: var(--DarkBlue);
+  font-size: 20px;
+  text-align: center;
+}
+.container .bottom p {
+  font-family: var(--RedHatDisplay_Light);
+  color: var(--DesaturatedBlue);
+  text-align: center;
+}
+.container .bottom .pricing {
+  display: grid;
+  grid-template-columns: 50px 100px 1fr;
+  background: var(--VeryPaleBlue);
+  padding: 15px;
+  border-radius: 15px;
+}
+.container .bottom .pricing img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  justify-items: center;
+  align-self: center;
+}
+.container .bottom .pricing div {
+  justify-items: center;
+  align-self: center;
+  padding-left: 5px;
+}
+.container .bottom .pricing h2 {
+  font-family: var(--RedHatDisplay_Black);
+  color: var(--DarkBlue);
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+.container .bottom .pricing h4 {
+  font-family: var(--RedHatDisplay_Light);
+  padding: 0;
+  margin: 0;
+  color: var(--DesaturatedBlue);
+}
+.container .bottom .pricing a {
+  justify-items: center;
+  align-self: center;
+  text-decoration: underline;
+  color: var(--BrightBlue);
+  font-family: var(--RedHatDisplay_Black);
+  padding-left: 30px;
+  cursor: pointer;
+}
+.container .bottom .pricing a:hover {
+  color: var(--DesaturatedBlue);
+}
+.container .bottom .action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 10px;
+}
+.container .bottom .action button {
+  height: 40px;
+  width: 100%;
+  background: var(--BrightBlue);
+  color: var(--White);
+  font-family: var(--RedHatDisplay_Bold);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.container .bottom .action button:hover {
+  background: var(--DesaturatedBlue);
+}
+.container .bottom .action a {
+  color: var(--BrightBlue);
+  font-family: var(--RedHatDisplay_Black);
+  cursor: pointer;
+}
+.container .bottom .action a:hover {
+  color: var(--DarkBlue);
+}/*# sourceMappingURL=styles.css.map */
