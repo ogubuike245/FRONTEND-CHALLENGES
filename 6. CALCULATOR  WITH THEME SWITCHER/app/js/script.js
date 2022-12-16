@@ -48,8 +48,16 @@ document.querySelectorAll("p").forEach(function (item) {
 // TODO: DISPLAY INPUTTED DIGIT
 
 function display(number) {
-  variable = document.getElementById("displayArea").value += number;
-  return number;
+  let variable = number.toString();
+  document.getElementById("displayArea").value += variable;
+  let StringVariable = parseFloat(variable.split(".")[0]);
+
+  // f = new Intl.NumberFormat("en-us");
+  // console.log(f.format(Variable));
+
+  console.log(StringVariable);
+
+  return StringVariable.toLocaleString("en");
 }
 
 //FIXME: ADD CALCULATION FUNCTIONS
@@ -63,6 +71,7 @@ function solve() {
   } else {
     let Variable = eval(document.getElementById("displayArea").value);
     document.getElementById("displayArea").value = Variable;
+
     return Variable;
   }
 }

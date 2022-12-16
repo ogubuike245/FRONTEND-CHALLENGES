@@ -141,6 +141,7 @@ section {
       cursor: pointer;
       outline: none;
       border: none;
+      transition: 0.4s;
       &:hover {
         box-shadow: 3px 5px 1px var(--digitsKeyBackgroundShadow);
         transition: 0.3s;
@@ -152,6 +153,7 @@ section {
       color: var(--White);
       background: var(--resetKeyBackground);
       box-shadow: 1px 3px 1px var(--resetKeyBackgroundShadow);
+      transition: 0.4s;
 
       &:hover {
         box-shadow: 3px 5px 1px var(--resetKeyBackgroundShadow);
@@ -161,6 +163,7 @@ section {
 
     .reset {
       grid-area: 5 / 1 / 6 / 3;
+      transition: 0.4s;
     }
 
     .equals {

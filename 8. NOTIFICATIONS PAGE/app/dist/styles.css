@@ -1,0 +1,143 @@
+:root {
+  --Red: hsl(1, 90%, 64%);
+  --Blue: hsl(219, 85%, 26%);
+  --White: hsl(0, 0%, 100%);
+  --VeryLightGrayishBlue: hsl(210, 60%, 98%);
+  --LightGrayishBlue1: hsl(211, 68%, 94%);
+  --LightGrayishBlue2: hsl(205, 33%, 90%);
+  --GrayishBlue: hsl(219, 14%, 63%);
+  --DarkGrayishBlue: hsl(219, 12%, 42%);
+  --VeryDarkBlue: hsl(224, 21%, 14%);
+}
+
+@font-face {
+  font-family: PlusJakartaSans__ExtraBold;
+  src: url("../../assets/fonts/static/PlusJakartaSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: PlusJakartaSans__Medium;
+  src: url("../../assets/fonts/static/PlusJakartaSans-Medium.ttf");
+}
+:root {
+  --PlusJakartaSans__ExtraBold: PlusJakartaSans__ExtraBold;
+  --PlusJakartaSans__Medium: PlusJakartaSans__Medium;
+}
+
+body {
+  background: var(--LightGrayishBlue1);
+  display: grid;
+  place-items: center;
+  margin: auto;
+  min-height: 100vh;
+  font-family: var(--PlusJakartaSans__ExtraBold);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  background: var(--White);
+  height: 500px;
+  width: 500px;
+  padding: 15px;
+  border-radius: 15px;
+}
+section strong {
+  cursor: pointer;
+  font-size: 14px;
+}
+section strong:hover {
+  color: var(--Blue);
+}
+section .headings {
+  display: flex;
+  justify-content: space-between;
+}
+section .headings h1 {
+  display: flex;
+  gap: 10px;
+  font-family: var(--PlusJakartaSans__ExtraBold);
+}
+section .headings h1 span {
+  background: var(--Blue);
+  color: var(--White);
+  width: 10px;
+  padding: 5px;
+  font-family: var(--PlusJakartaSans__Medium);
+  font-size: 10px;
+  border-radius: 5px;
+}
+section .headings button {
+  color: var(--DarkGrayishBlue);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+section .headings button:hover {
+  color: var(--Blue);
+}
+section .unread__notification,
+section .read__notification {
+  background: var(--VeryLightGrayishBlue);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  height: 30px;
+}
+section .unread__notification img,
+section .read__notification img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 30px;
+  width: 30px;
+}
+section .unread__notification p,
+section .read__notification p {
+  display: flex;
+  gap: 1rem;
+}
+section .unread__notification p span,
+section .read__notification p span {
+  border-radius: 50%;
+  background: var(--Red);
+  padding: 1px 6px;
+}
+section .read__notification {
+  background: transparent;
+}
+section .message {
+  height: 50px;
+  height: 120px;
+}
+section .message img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 30px;
+  width: 30px;
+}
+section .message div {
+  background: var(--VeryLightGrayishBlue);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  height: 30px;
+}
+section .message article {
+  height: 50px;
+  width: 420px;
+  margin-left: 45px;
+  border-radius: 5px;
+  border: none;
+  background: var(--LightGrayishBlue1);
+  padding: 8px;
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */

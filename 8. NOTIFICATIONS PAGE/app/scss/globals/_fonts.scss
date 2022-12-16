@@ -1,0 +1,12 @@
+@font-face {
+  font-family: PlusJakartaSans__ExtraBold;
+  src: url("../../assets/fonts/static/PlusJakartaSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: PlusJakartaSans__Medium;
+  src: url("../../assets/fonts/static/PlusJakartaSans-Medium.ttf");
+}
+:root {
+  --PlusJakartaSans__ExtraBold: PlusJakartaSans__ExtraBold;
+  --PlusJakartaSans__Medium: PlusJakartaSans__Medium;
+}

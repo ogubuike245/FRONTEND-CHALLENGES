@@ -175,6 +175,7 @@ section .digits button {
   cursor: pointer;
   outline: none;
   border: none;
+  transition: 0.4s;
 }
 section .digits button:hover {
   box-shadow: 3px 5px 1px var(--digitsKeyBackgroundShadow);
@@ -185,6 +186,7 @@ section .digits .reset {
   color: var(--White);
   background: var(--resetKeyBackground);
   box-shadow: 1px 3px 1px var(--resetKeyBackgroundShadow);
+  transition: 0.4s;
 }
 section .digits .del:hover,
 section .digits .reset:hover {
@@ -193,6 +195,7 @@ section .digits .reset:hover {
 }
 section .digits .reset {
   grid-area: 5/1/6/3;
+  transition: 0.4s;
 }
 section .digits .equals {
   grid-area: 5/3/6/5;

@@ -1,0 +1,130 @@
+body {
+  background: var(--LightGrayishBlue1);
+  display: grid;
+  place-items: center;
+  margin: auto;
+  min-height: 100vh;
+  font-family: var(--PlusJakartaSans__ExtraBold);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  background: var(--White);
+  height: 500px;
+  width: 500px;
+  padding: 15px;
+  border-radius: 15px;
+
+  strong {
+    cursor: pointer;
+    font-size: 14px;
+    &:hover {
+      color: var(--Blue);
+    }
+  }
+
+  .headings {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      display: flex;
+      gap: 10px;
+      font-family: var(--PlusJakartaSans__ExtraBold);
+
+      span {
+        background: var(--Blue);
+        color: var(--White);
+        width: 10px;
+        padding: 5px;
+        font-family: var(--PlusJakartaSans__Medium);
+        font-size: 10px;
+        border-radius: 5px;
+      }
+    }
+    button {
+      color: var(--DarkGrayishBlue);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--Blue);
+      }
+    }
+  }
+
+  .unread__notification,
+  .read__notification {
+    background: var(--VeryLightGrayishBlue);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    height: 30px;
+
+    img {
+      object-fit: contain;
+      height: 30px;
+      width: 30px;
+    }
+
+    p {
+      // width: 100%;
+      display: flex;
+      gap: 1rem;
+      span {
+        // border: 2px solid red;
+        border-radius: 50%;
+        background: var(--Red);
+        padding: 1px 6px;
+        // width: 50px;
+        // height: 10px;
+      }
+    }
+  }
+
+  .read__notification {
+    background: transparent;
+  }
+  .message {
+    height: 50px;
+    // border: 2px solid red;
+    height: 120px;
+
+    img {
+      object-fit: contain;
+      height: 30px;
+      width: 30px;
+    }
+
+    div {
+      background: var(--VeryLightGrayishBlue);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 10px;
+      padding: 5px;
+      height: 30px;
+    }
+
+    article {
+      height: 50px;
+      width: 420px;
+      margin-left: 45px;
+      border-radius: 5px;
+      border: none;
+      background: var(--LightGrayishBlue1);
+      padding: 8px;
+      cursor: pointer;
+    }
+  }
+}
