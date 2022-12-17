@@ -1,0 +1,204 @@
+@font-face {
+  font-family: JosefinSans_Bold;
+  src: url("../../assets/fonts/JosefinSans-Bold.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Light;
+  src: url("../../assets/fonts/JosefinSans-Light.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Medium;
+  src: url("../../assets/fonts/JosefinSans-Medium.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Regular;
+  src: url("../../assets/fonts/JosefinSans-Regular.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Thin;
+  src: url("../../assets/fonts/JosefinSans-Thin.ttf");
+}
+:root {
+  --JosefinSans_Bold: JosefinSans_Bold;
+  --JosefinSans_Regular: JosefinSans_Regular;
+  --JosefinSans_Medium: JosefinSans_Medium;
+  --JosefinSans_Thin: JosefinSans_Thin;
+  --JosefinSans_Light: JosefinSans_Light;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  background-image: url("../../assets/images/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 500ms ease-in, color 800ms ease-in-out;
+}
+
+input:focus {
+  outline: 0;
+}
+
+section {
+  height: 600px;
+  width: 600px;
+  display: grid;
+  grid-template-rows: 80px 80px 1fr;
+  gap: 2rem;
+}
+section article {
+  padding: auto;
+}
+section .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+section .header h1 {
+  font-family: var(--JosefinSans_Bold);
+  color: var(--White);
+  font-size: 30px;
+  letter-spacing: 15px;
+}
+section .header img {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  transition: visibility 0.2s ease-in-out, opacity 0.8s ease-in-out;
+}
+section .TodoInput,
+section .todoList {
+  width: 590px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--TodoBackground);
+  padding-left: 10px;
+  padding-right: -40px;
+  border-radius: 10px;
+  box-shadow: var(--boxShadow);
+}
+section .TodoInput .border,
+section .todoList .border {
+  border-bottom: 2px solid var(--LightGrayishBlue);
+  padding-bottom: 10px;
+}
+section .TodoInput .checkbox,
+section .todoList .checkbox {
+  position: relative;
+}
+section .TodoInput .checkbox label,
+section .todoList .checkbox label {
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  left: 0;
+  top: -5px;
+  border: 1px solid var(--VeryDarkGrayishBlue);
+  background: var(--TodoBackground);
+  border-radius: 50%;
+  cursor: pointer;
+}
+section .TodoInput .checkbox label:after,
+section .todoList .checkbox label:after {
+  content: url("../../assets/images/icon-check.svg");
+  height: 8px;
+  width: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  left: 10px;
+  opacity: 0;
+}
+section .TodoInput .checkbox input[type=checkbox],
+section .todoList .checkbox input[type=checkbox] {
+  visibility: hidden;
+}
+section .TodoInput .checkbox input[type=checkbox]:checked + label,
+section .todoList .checkbox input[type=checkbox]:checked + label {
+  background: rgb(98, 99, 172);
+  background: linear-gradient(135deg, rgb(98, 99, 172) 37%, rgb(183, 158, 187) 100%);
+}
+section .TodoInput .checkbox input[type=checkbox]:checked + label:after,
+section .todoList .checkbox input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+section .TodoInput input[type=text],
+section .todoList input[type=text] {
+  height: 100%;
+  width: 75%;
+  background: var(--TodoBackground);
+  color: var(--textInput);
+  font-family: var(--JosefinSans_Regular);
+  border: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: color 1s ease-in-out;
+}
+section .TodoInput input[type=text]:focus,
+section .todoList input[type=text]:focus {
+  caret-color: hsl(240deg, 49%, 44%);
+}
+section .todoList {
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-columns: 1fr;
+  background: var(--TodoBackground);
+}
+section .todoList div {
+  display: flex;
+  gap: 2.2rem;
+}
+section .todoList .TodoListItem {
+  cursor: pointer;
+}
+section .todoList span {
+  cursor: pointer;
+}
+section .todoList .footer {
+  color: var(--VeryDarkGrayishBlue);
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px;
+}
+section .todoList .footer h1 {
+  font-family: var(--JosefinSans_Regular);
+  font-size: 15px;
+}
+section .todoList .footer h1:hover {
+  color: blue;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.light-theme {
+  --backgroundColor: hsl(0, 0%, 98%);
+  --TodoBackground: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+  --White: hsl(0, 0%, 100%);
+  --boxShadow: 0 3px 10px rgba(0, 0, 0, 0.308);
+  --textInput: hsl(235, 21%, 11%);
+}
+
+.dark-theme {
+  --backgroundColor: hsl(235, 21%, 11%);
+  --TodoBackground: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBlue/*(hover)*/: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+  --White: hsl(0, 0%, 100%);
+  --boxShadow: 0 5px 10px rgb(0, 0, 0);
+  --textInput: hsl(234, 39%, 85%);
+}/*# sourceMappingURL=styles.css.map */

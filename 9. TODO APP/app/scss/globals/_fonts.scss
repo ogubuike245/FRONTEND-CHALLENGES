@@ -1,0 +1,28 @@
+@font-face {
+  font-family: JosefinSans_Bold;
+  src: url("../../assets/fonts/JosefinSans-Bold.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Light;
+  src: url("../../assets/fonts/JosefinSans-Light.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Medium;
+  src: url("../../assets/fonts/JosefinSans-Medium.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Regular;
+  src: url("../../assets/fonts/JosefinSans-Regular.ttf");
+}
+@font-face {
+  font-family: JosefinSans_Thin;
+  src: url("../../assets/fonts/JosefinSans-Thin.ttf");
+}
+
+:root {
+  --JosefinSans_Bold: JosefinSans_Bold;
+  --JosefinSans_Regular: JosefinSans_Regular;
+  --JosefinSans_Medium: JosefinSans_Medium;
+  --JosefinSans_Thin: JosefinSans_Thin;
+  --JosefinSans_Light: JosefinSans_Light;
+}

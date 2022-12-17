@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>TODO APP</title>
+  </head>
+  <body class="light">
+    <section>
+      <article class="header">
+        <h1>TODO</h1>
+        <img
+          src="./assets/images/icon-sun.svg"
+          alt="SWITCHER"
+          id="light"
+          class="lightSwitch"
+          onclick="lightTheme()"
+        />
+        <img
+          src="./assets/images/icon-moon.svg"
+          alt="SWITCHER"
+          id="dark"
+          class="darkSwitch"
+          onclick="darkTheme()"
+        />
+      </article>
+      <article class="TodoInput">
+        <div class="checkbox">
+          <input type="checkbox" checked id="checkbox" />
+          <label for="checkbox"></label>
+        </div>
+        <input
+          type="text"
+          name="Createtodo"
+          id="Createtodo"
+          placeholder="Create New Todo"
+        />
+      </article>
+      <article class="todoList">
+        <div class="border">
+          <div class="checkbox">
+            <input type="checkbox" checked id="checkbox1" />
+            <label for="checkbox1"></label>
+          </div>
+          <input
+            type="text"
+            class="TodoListItem"
+            id="TodoListItem"
+            placeholder="Create New Todo"
+            value="TODO ITEM ONE"
+          />
+
+          <span><img src="./assets/images/icon-cross.svg" alt="" /></span>
+        </div>
+
+        <div class="footer">
+          <h1>items left</h1>
+          <div>
+            <h1>All</h1>
+            <h1>Active</h1>
+            <h1>Completed</h1>
+          </div>
+          <h1>Clear Completed</h1>
+        </div>
+      </article>
+    </section>
+
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/themeSwitcher.js"></script>
+  </body>
+</html>
