@@ -107,9 +107,16 @@ section {
       }
     }
 
+    form {
+      height: 100%;
+      width: 90%;
+      border-radius: 10px;
+      // border: 2px solid red;
+    }
+
     input[type="text"] {
       height: 100%;
-      width: 75%;
+      width: 100%;
       background: var(--TodoBackground);
       color: var(--textInput);
       font-family: var(--JosefinSans_Regular);
