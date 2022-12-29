@@ -1,0 +1,84 @@
+body {
+  background: var(--DarkBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--DarkGrayishBlue);
+  height: 250px;
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  border-radius: 20px;
+}
+.container h1 {
+  color: var(--NeonGreen);
+  font-family: var(--Manrope__Regular);
+  font-size: 0.6rem;
+  letter-spacing: 0.3rem;
+}
+.container h2 {
+  color: var(--LightCyan);
+  font-family: var(--Manrope__Bold);
+}
+.container .divider {
+  width: 90%;
+  display: flex;
+}
+.container .divider img {
+  width: 100%;
+}
+.container .dice-image {
+  position: absolute;
+  bottom: -1.5rem;
+  background: var(--NeonGreen);
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .dice-image:hover {
+  box-shadow: 0 3px 30px var(--NeonGreen);
+}
+
+@font-face {
+  font-family: Manrope__Bold;
+  src: url("../../assets/fonts/Manrope-Bold.ttf");
+}
+@font-face {
+  font-family: Manrope__ExtraBold;
+  src: url("../../assets/fonts/Manrope-ExtraBold.ttf");
+}
+@font-face {
+  font-family: Manrope__Regular;
+  src: url("../../assets/fonts/Manrope-Regular.ttf");
+}
+@font-face {
+  font-family: Manrope__Light;
+  src: url("../../assets/fonts/Manrope-Light.ttf");
+}
+:root {
+  --Manrope__ExtraBold: Manrope__ExtraBold;
+  --Manrope__Bold: Manrope__Bold;
+  --Manrope__Regular: Manrope__Regular;
+  --Manrope__Light: Manrope__Light;
+}
+
+:root {
+  --LightCyan: hsl(193, 38%, 86%);
+  --NeonGreen: hsl(150, 100%, 66%);
+  --GrayishBlue: hsl(217, 19%, 38%);
+  --DarkGrayishBlue: hsl(217, 19%, 24%);
+  --DarkBlue: hsl(218, 23%, 16%);
+}/*# sourceMappingURL=styles.css.map */
