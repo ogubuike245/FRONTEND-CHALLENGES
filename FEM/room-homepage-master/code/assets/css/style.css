@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* mobile first approach  */
+
+section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.hamburger-icon {
+  cursor: pointer;
+}
+
+section article {
+  height: 100%;
+  width: 100%;
+}
+section article:first-child {
+  padding-block: 1rem;
+  padding-inline-start: 2rem;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+section article:first-child nav {
+  display: none;
+}
+
+section article:nth-child(2) {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+section article:nth-child(2) h1 {
+  font-size: 2rem;
+}
+
+/* section one  */
+.section-one article:last-child a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 10px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: 100%;
+  gap: 3rem;
+  font-weight: 900;
+}
+.section-one article:first-child {
+  background-image: url("../images/mobile-image-hero-1.jpg");
+  position: relative;
+  display: flex;
+  gap: 10rem;
+}
+
+.section-one article:first-child .arrows {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  background-color: black;
+}
+
+/* section two  */
+.section-two article:nth-child(1) {
+  background-image: url("../images/image-about-dark.jpg");
+}
+.section-two article:nth-child(2) h1 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.section-two article:nth-child(3) {
+  background-image: url("../images/image-about-light.jpg");
+}
+
+footer {
+  background-color: black;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  word-spacing: 5px;
+  gap: 1rem;
+}
+
+/* media queries  */
+@media screen and (min-width: 678px) {
+  section article:first-child .hamburger-icon {
+    display: none;
+  }
+  section article:first-child nav {
+    display: block;
+  }
+  section article:first-child nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+  section article:first-child nav ul li {
+    color: whitesmoke;
+  }
+
+  /* section one  */
+  .section-one {
+    flex-direction: row;
+  }
+  .section-one article:first-child {
+    flex: 2;
+  }
+  .section-one article:last-child {
+    flex: 1;
+    justify-content: center;
+    height: 100%;
+  }
+  .section-one article:first-child .arrows {
+    right: -120px;
+  }
+
+  /* section two  */
+  .section-two {
+    flex-direction: row;
+    height: 300px;
+  }
+  .section-two article {
+    height: 100%;
+  }
+  .section-two article:nth-child(1) {
+    flex: 1;
+  }
+  .section-two article:nth-child(2) {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    text-align: left;
+  }
+  .section-two article:nth-child(2) h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-two article:nth-child(3) {
+    flex: 1;
+  }
+}
