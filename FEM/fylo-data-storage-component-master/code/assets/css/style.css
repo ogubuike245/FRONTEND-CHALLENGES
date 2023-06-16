@@ -1,0 +1,186 @@
+:root {
+  /* Colors */
+  --primary-gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+  --neutral-pale-blue: hsl(243, 100%, 93%);
+  --neutral-grayish-blue: hsl(229, 7%, 55%);
+  --neutral-dark-blue: hsl(228, 56%, 26%);
+  --neutral-very-dark-blue: hsl(229, 57%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+/* mobile first approach  */
+section {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.components {
+  height: 400px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.components .component {
+  background-color: var(--neutral-dark-blue);
+  border-radius: 0.5rem;
+}
+
+/* first article component  */
+.components .component:first-child {
+  height: 200px;
+  border-top-right-radius: 7rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-inline-start: 2rem;
+}
+.components .component:first-child .content {
+  height: 70px;
+  padding: 0.1rem;
+  display: flex;
+  align-items: center;
+}
+.components .component:first-child .content:last-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.components .component:first-child .content:last-child .icon {
+  height: 50px;
+  width: 50px;
+  padding: 1rem;
+  background-color: var(--neutral-very-dark-blue);
+  border-radius: 0.5rem;
+}
+.components .component:first-child .content:last-child .icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.2rem;
+}
+.components .component:last-child {
+  height: 150px;
+  padding-inline: 2rem;
+}
+
+/* second article component  */
+
+.components .component:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+.components .component:last-child .content {
+  height: 20px;
+  /* border: 1px solid pink; */
+}
+.components .component:last-child .content:nth-child(1) p {
+  text-align: center;
+}
+.components .component:last-child .content:nth-child(1) p strong {
+  color: var(--neutral-pale-blue);
+  font-weight: 900;
+}
+
+.components .component:last-child .content:nth-child(2) .progress {
+  height: 100%;
+  background-color: var(--neutral-very-dark-blue);
+  border-radius: 1rem;
+  padding: 0.3rem;
+  border: none;
+}
+.components
+  .component:last-child
+  .content:nth-child(2)
+  .progress
+  .progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary-gradient));
+  border-radius: 1rem;
+  width: 75%;
+}
+
+.components .component:last-child .content:nth-child(3) {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+}
+.components .component:last-child .content:nth-child(3) span {
+  color: whitesmoke;
+}
+
+.components .component:last-child .content:nth-child(4) {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  padding: 2rem;
+  background-color: whitesmoke;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 40%;
+}
+.components .component:last-child .content:nth-child(4) p {
+  font-size: 1.8rem;
+}
+.components .component:last-child .content:nth-child(4) span {
+  color: var(--neutral-grayish-blue);
+}
+
+/* media queries  */
+@media screen and (min-width: 678px) {
+  section {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--neutral-very-dark-blue);
+    background-image: url("../images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .components {
+    height: 250px;
+    width: 80%;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .components .component:first-child {
+    width: 40%;
+  }
+  .components .component:last-child {
+    width: 60%;
+  }
+
+  .components .component:last-child .content:nth-child(4) {
+    top: 0;
+    transform: translate(-5%, -50%);
+    padding: 2rem;
+    white-space: nowrap;
+  }
+}
