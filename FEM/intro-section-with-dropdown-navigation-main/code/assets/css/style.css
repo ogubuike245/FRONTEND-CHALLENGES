@@ -1,0 +1,121 @@
+:root {
+  --AlmostWhite: hsl(0, 0%, 98%);
+  --MediumGray: hsl(0, 0%, 41%);
+  --AlmostBlack: hsl(0, 0%, 8%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 120px;
+  border: 1px solid var(--MediumGray);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  background-color: var(--AlmostWhite);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-start: 1rem;
+  padding-inline: 2rem;
+  height: 50px;
+}
+
+header .nav-links {
+  height: 100%;
+  display: flex;
+  /* align-items: center; */
+  gap: 2rem;
+}
+
+header ul {
+  display: flex;
+  gap: 2rem;
+}
+
+header button:nth-child(1) {
+  border: none;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding-inline: 5rem;
+  padding-block: 5rem;
+}
+
+section button {
+  background-color: var(--AlmostBlack);
+  color: var(--AlmostWhite);
+  text-transform: capitalize;
+  width: 140px;
+  border-radius: 0.5rem;
+}
+
+section article {
+  height: 100%;
+  /* border: 1px solid red; */
+}
+section article:nth-child(1) {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section article:nth-child(1) h1 {
+  font-size: 70px;
+}
+section article:nth-child(1) p {
+  width: 83%;
+}
+section article:nth-child(1) .sponsors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 85%;
+}
+section article:nth-child(1) .sponsors div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section article:nth-child(2) {
+  width: 50%;
+  background-image: url("../images/image-hero-desktop.png");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+}
+
+/* section article:nth-child(2) img {
+  width: 100%;
+  height: 100%;
+} */
