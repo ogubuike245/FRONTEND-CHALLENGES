@@ -8,7 +8,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./assets/images/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
@@ -17,11 +17,16 @@
   </head>
   <body>
     <header>
-      <nav class="nav-links">
+      <nav>
         <div class="logo">
           <img src="./assets/images/logo.svg" alt="" />
+          <img
+            src="./assets/images/icon-menu.svg"
+            alt=""
+            class="hamburger-icon"
+          />
         </div>
-        <ul>
+        <ul class="nav-links">
           <li>
             Features
             <div class="arrows">
@@ -90,7 +95,7 @@
         </ul>
       </nav>
 
-      <div class="cta">
+      <div class="call-to-action">
         <button>Login</button>
         <button>Register</button>
       </div>
@@ -99,7 +104,8 @@
     <section>
       <article>
         <div class="text-content">
-          <h1>Make <br />remote work</h1>
+          <h1 class="with-br">Make <br />remote work</h1>
+          <h1 class="without-br">Make remote work</h1>
 
           <p>
             Get your team in sync, no matter your location. Streamline

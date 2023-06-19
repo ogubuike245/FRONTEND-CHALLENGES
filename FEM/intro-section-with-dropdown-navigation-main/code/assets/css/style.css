@@ -28,6 +28,7 @@ button {
   width: 120px;
   border: 1px solid var(--MediumGray);
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 img {
@@ -48,7 +49,10 @@ header {
   padding-block-start: 1rem;
   padding-inline: 2rem;
   height: 50px;
-  /* margin-block-end: 2rem; */
+}
+
+.hamburger-icon {
+  display: none;
 }
 
 header nav {
@@ -57,6 +61,7 @@ header nav {
   gap: 8rem;
 }
 
+/* header list item first level  */
 header nav ul {
   display: flex;
   gap: 3rem;
@@ -71,27 +76,56 @@ header nav ul li {
   transition: all 0.5s ease;
   color: var(--MediumGray);
 }
-header nav ul li:hover {
-  color: var(--AlmostBlack);
-}
+
 header nav ul > li img {
   width: 100%;
   height: 20%;
 }
 
+header nav ul li:hover {
+  color: var(--AlmostBlack);
+}
+
+header nav ul li .arrows {
+  position: relative;
+  width: 20px;
+  height: 100%;
+}
+header nav ul li .arrows .arrow-up,
+header nav ul li .arrows .arrow-down {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.5s ease;
+}
+header nav ul li .arrows .arrow-up {
+  opacity: 0;
+}
+
+header nav ul li:hover .arrow-down {
+  opacity: 0;
+}
+header nav ul li:hover .arrow-up {
+  opacity: 1;
+}
+
+/* header list item second level  */
 header nav ul li ul {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  background-color: white;
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
-  position: absolute;
-  top: 2rem;
-  left: 0;
   padding-inline: 3rem;
   padding-block: 1rem;
   border-radius: 0.5rem;
-  background-color: white;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
 }
@@ -99,90 +133,43 @@ header nav ul li ul {
 header nav ul li ul li {
   white-space: nowrap;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  /* justify-content: space-between; */
   width: 120%;
   color: var(--MediumGray);
-  /* border: 1px solid red; */
-}
-header nav ul li ul li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 header nav ul li:nth-child(1) ul {
   left: -100%;
 }
 
-header nav ul li:nth-child(2) ul {
-  /* height: 100px; */
-}
-
-.arrows {
+header nav ul li:hover > ul {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 20px;
-  height: 100%;
-}
-.arrow-up,
-.arrow-down {
-  position: absolute;
-  top: 0%;
-  left: 0;
-  transition: all 0.5s ease;
-  width: 50%;
-  height: 100%;
-  object-fit: contain;
-}
-.arrow-up {
-  opacity: 0;
 }
 
-ul li:hover > ul {
-  /* opacity: 1; */
-  display: flex; /* Show nested ul on hover */
-}
-ul li:hover .arrow-down {
-  opacity: 0;
-}
-ul li:hover .arrow-up {
-  opacity: 1;
-}
-header .cta button:nth-child(1) {
+/* header call to action  */
+header .call-to-action button:nth-child(1) {
   border: none;
+}
+header .call-to-action button:nth-child(2):hover {
+  border: 1px solid var(--AlmostBlack);
+  transform: scale(0.95);
 }
 
 /* hero section  */
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 5rem; */
   padding-inline: 5rem;
-  /* padding-block: 3rem; */
-}
-
-section button {
-  background-color: var(--AlmostBlack);
-  color: var(--AlmostWhite);
-  text-transform: capitalize;
-  width: 140px;
-  border-radius: 0.5rem;
-  transition: all 0.5s ease;
-}
-section button:hover {
-  background-color: var(--AlmostWhite);
-  color: var(--AlmostBlack);
 }
 
 section article {
   height: 80vh;
-  /* border: 1px solid red; */
 }
+
+/* hero section left article  */
 section article:nth-child(1) {
   padding-block-start: 2rem;
   width: 50%;
@@ -196,13 +183,31 @@ section article:nth-child(1) .text-content {
   justify-content: center;
   gap: 2rem;
   height: 60vh;
-  /* border: 1px solid red; */
+}
+section article:nth-child(1) .text-content .with-br {
+  display: block;
+}
+section article:nth-child(1) .text-content .without-br {
+  display: none;
 }
 section article:nth-child(1) .text-content h1 {
   font-size: 70px;
 }
 section article:nth-child(1) .text-content p {
   width: 83%;
+}
+
+section article:nth-child(1) button {
+  background-color: var(--AlmostBlack);
+  color: var(--AlmostWhite);
+  text-transform: capitalize;
+  width: 140px;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+}
+section article:nth-child(1) button:hover {
+  background-color: var(--AlmostWhite);
+  color: var(--AlmostBlack);
 }
 section article:nth-child(1) .sponsors {
   display: flex;
@@ -216,6 +221,8 @@ section article:nth-child(1) .sponsors div {
   justify-content: center;
   align-items: center;
 }
+
+/* hero section right article  */
 section article:nth-child(2) {
   width: 50%;
   background-image: url("../images/image-hero-desktop.png");
@@ -224,9 +231,99 @@ section article:nth-child(2) {
   background-position: center;
 }
 
+/* attribution  */
 .attribution {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+@media screen and (max-width: 678px) {
+  header {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 100%;
+    padding-inline-start: 1rem;
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+  header .logo img {
+    object-fit: cover;
+    width: 100%;
+    height: 50%;
+  }
+  header .nav-links {
+    display: none;
+  }
+
+  header .call-to-action {
+    display: none;
+  }
+
+  /* hero section  */
+  section {
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 100vh;
+    padding-inline: 0;
+    margin-block-end: 3rem;
+  }
+
+  /* hero section left article  */
+  section article:nth-child(1) {
+    padding-block-start: 1rem;
+    padding-inline: 1rem;
+    width: 100%;
+  }
+  section article:nth-child(1) .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+  }
+  section article:nth-child(1) .text-content .with-br {
+    display: none;
+  }
+  section article:nth-child(1) .text-content .without-br {
+    display: block;
+  }
+  section article:nth-child(1) .text-content h1 {
+    font-size: 40px;
+  }
+  section article:nth-child(1) .text-content p {
+    gap: 2rem;
+    width: 100%;
+    line-height: 24px;
+  }
+
+  section article:nth-child(1) .sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  section article:nth-child(2) {
+    width: 100%;
+    background-image: url("../images/image-hero-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 }
