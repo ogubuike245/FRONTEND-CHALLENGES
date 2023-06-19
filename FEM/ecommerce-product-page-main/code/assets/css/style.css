@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --Orange: hsl(26, 100%, 55%);
+  --PaleOrange: hsl(25, 100%, 94%);
+
+  /* ### Neutral */
+
+  --VeryDarkBlue: hsl(220, 13%, 13%);
+  --DarkGrayishBlue: hsl(219, 9%, 45%);
+  --GrayishBlue: hsl(220, 14%, 75%);
+  --LightGrayishBlue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  /* --Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
+  --Black: hsl(0, 0%, 0%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  box-shadow: none;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+li {
+  list-style: none;
+  color: var(--GrayishBlue);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-inline: 5rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--LightGrayishBlue);
+}
+header img,
+header li {
+  cursor: pointer;
+}
+header img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .hamburger-icon {
+  display: none;
+}
+
+header .logo-area {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+header nav .call-to-action {
+  display: flex;
+  align-items: center;
+}
+header nav .call-to-action div {
+  height: 100%;
+}
+
+/* hero section  */
+
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 10rem;
+}
+
+section article {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+section article img {
+  border-radius: 0.5rem;
+}
+section article .thumbnails {
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+section article .thumbnails img {
+}
+
+.attribution .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
