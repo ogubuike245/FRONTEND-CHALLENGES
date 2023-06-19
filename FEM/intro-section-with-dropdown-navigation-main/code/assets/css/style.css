@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400&display=swap");
 :root {
   --AlmostWhite: hsl(0, 0%, 98%);
   --MediumGray: hsl(0, 0%, 41%);
@@ -8,10 +9,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Epilogue", sans-serif;
 }
 
 li {
   list-style: none;
+  text-transform: capitalize;
 }
 
 a {
@@ -24,6 +27,7 @@ button {
   border-radius: 1rem;
   width: 120px;
   border: 1px solid var(--MediumGray);
+  cursor: pointer;
 }
 
 img {
@@ -36,6 +40,7 @@ body {
   background-color: var(--AlmostWhite);
 }
 
+/* header  */
 header {
   display: flex;
   justify-content: space-between;
@@ -43,32 +48,122 @@ header {
   padding-block-start: 1rem;
   padding-inline: 2rem;
   height: 50px;
+  /* margin-block-end: 2rem; */
 }
 
-header .nav-links {
+header nav {
   height: 100%;
   display: flex;
-  /* align-items: center; */
-  gap: 2rem;
+  gap: 8rem;
 }
 
-header ul {
+header nav ul {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
+}
+header nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: var(--MediumGray);
+}
+header nav ul li:hover {
+  color: var(--AlmostBlack);
+}
+header nav ul > li img {
+  width: 100%;
+  height: 20%;
 }
 
-header button:nth-child(1) {
+header nav ul li ul {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+header nav ul li ul li {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 120%;
+  color: var(--MediumGray);
+  /* border: 1px solid red; */
+}
+header nav ul li ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header nav ul li:nth-child(1) ul {
+  left: -100%;
+}
+
+header nav ul li:nth-child(2) ul {
+  /* height: 100px; */
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 100%;
+}
+.arrow-up,
+.arrow-down {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  transition: all 0.5s ease;
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+.arrow-up {
+  opacity: 0;
+}
+
+ul li:hover > ul {
+  /* opacity: 1; */
+  display: flex; /* Show nested ul on hover */
+}
+ul li:hover .arrow-down {
+  opacity: 0;
+}
+ul li:hover .arrow-up {
+  opacity: 1;
+}
+header .cta button:nth-child(1) {
   border: none;
 }
 
+/* hero section  */
 section {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  /* gap: 5rem; */
   padding-inline: 5rem;
-  padding-block: 5rem;
+  /* padding-block: 3rem; */
 }
 
 section button {
@@ -77,22 +172,36 @@ section button {
   text-transform: capitalize;
   width: 140px;
   border-radius: 0.5rem;
+  transition: all 0.5s ease;
+}
+section button:hover {
+  background-color: var(--AlmostWhite);
+  color: var(--AlmostBlack);
 }
 
 section article {
-  height: 100%;
+  height: 80vh;
   /* border: 1px solid red; */
 }
 section article:nth-child(1) {
+  padding-block-start: 2rem;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-section article:nth-child(1) h1 {
+section article:nth-child(1) .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  height: 60vh;
+  /* border: 1px solid red; */
+}
+section article:nth-child(1) .text-content h1 {
   font-size: 70px;
 }
-section article:nth-child(1) p {
+section article:nth-child(1) .text-content p {
   width: 83%;
 }
 section article:nth-child(1) .sponsors {
@@ -115,7 +224,9 @@ section article:nth-child(2) {
   background-position: center;
 }
 
-/* section article:nth-child(2) img {
-  width: 100%;
-  height: 100%;
-} */
+.attribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
