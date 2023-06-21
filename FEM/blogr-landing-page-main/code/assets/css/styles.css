@@ -95,7 +95,7 @@ body {
   font-weight: 700;
 }
 
-/* header area  */
+/* header area  styles */
 header {
   height: 100vh;
   display: grid;
@@ -176,8 +176,73 @@ header .hero .hero-cta {
 /* intro section  */
 
 .intro-section {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--GrayishBlue);
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  padding-inline: 5rem;
+  padding-block: 3rem;
+}
+
+.intro-section .heading {
+  text-align: center;
+  color: var(--VeryDarkBlue);
+}
+.intro-section .heading h1 {
+  font-size: 30px;
+}
+
+.intro-section .content {
+  display: grid;
+  grid-template-columns: auto 55%;
+  align-items: center;
+  gap: 3rem;
+  /* border: 2px solid red; */
+}
+.intro-section .content div {
+  /* width: 50%; */
+  height: 100%;
+}
+
+/* left  */
+.intro-section .content .info {
+  /* height: 100%; */
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 25%;
+  /* border: 2px solid green; */
+
+  row-gap: 3rem;
+}
+.intro-section .content .info article {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+  /* margin-bottom: 1rem; */
+}
+.intro-section .content .info article h2 {
+  font-size: 23px;
+  color: var(--VeryDarkBlue);
+}
+.intro-section .content .info article p {
+  font-size: 15px;
+  color: var(--VeryDarkGrayishBlue);
+  line-height: 24px;
+}
+
+/* right */
+.intro-section .content aside {
+  /* border: 2px solid red; */
+  width: 100%;
+}
+.intro-section .content aside {
+  height: 100%;
 }
 /* attr  */
 .attribution {
