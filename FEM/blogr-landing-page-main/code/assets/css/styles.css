@@ -1,8 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass&family=Ubuntu&display=swap");
+
 :root {
-  /* --VeryLightRed: rgba(255, 143, 112, 0.91);
-    --LightRed: rgba(255, 61, 84, 0.89); */
+  /* ## Colors */
+
+  /* ### Primary */
+
+  /* - Light red (CTA text) */
+  --LightRed: hsl(356, 100%, 66%);
+  /* --VeryLightRed (CTA hover background): */
+  --VeryLightRed: hsl(355, 100%, 74%);
+  /* --Very dark blue (headings)  */
+  --VeryDarkBlue: hsl(208, 49%, 24%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  /* --GrayishBlue (footer text); */
+  --GrayishBlue: hsl(240, 2%, 96%);
+  /* --Grayish blue (footer text); */
+  --VeryDarkGrayishBlue: hsl(207, 13%, 34%);
+  /* --Very dark black blue*/
+  --VeryDarkBlackBlue: hsl(240, 10%, 16%);
+
+  /* ### Gradient */
+
+  /* Background gradient - Intro/CTA mobile nav: */
+
   --VeryLightRed: hsl(13, 100%, 72%);
   --LightRed: hsl(353, 100%, 62%);
+
+  /* Background gradient - body: */
+
+  --VeryDarkGrayBlue: hsl(237, 17%, 21%);
+  --VeryDarkDeSaturatedBlue: hsl(237, 23%, 32%);
 }
 
 * {
@@ -10,6 +40,16 @@
   padding: 0;
   box-sizing: border-box;
   box-shadow: none;
+  font-family: "Overpass", sans-serif;
+  /* font-family: "Ubuntu", sans-serif; */
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
 }
 
 img {
@@ -18,22 +58,61 @@ img {
   object-fit: cover;
 }
 
+body {
+  background-color: var(--GrayishBlue);
+}
+
+/* utility classes  */
+
+/* buttons */
+.button {
+  all: unset;
+  padding: 1rem;
+  border-radius: 5rem;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.plain {
+  background-color: transparent;
+  color: var(--White);
+  font-weight: 500;
+}
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid var(--White);
+  color: var(--White);
+  font-weight: 500;
+}
+
+.filled {
+  background-color: var(--White);
+  color: var(--LightRed);
+  font-weight: 700;
+}
+
+/* header area  */
 header {
   height: 100vh;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 20vh 50vh;
-  gap: 1rem;
+  grid-template-rows: 10vh 50vh;
+  gap: 5rem;
   padding-inline: 5rem;
-  padding-block: 1rem;
+  padding-block: 3rem;
   background: linear-gradient(to right, var(--VeryLightRed), var(--LightRed));
   background-repeat: no-repeat;
   background-position: 27% 53%;
   border-bottom-left-radius: 5rem;
   position: relative;
+  overflow: hidden;
 }
 
-header img {
+header .hero-bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -41,14 +120,65 @@ header img {
   width: 200%;
 }
 
-header * {
-  border: 2px solid red;
-}
 header nav,
 header div {
   z-index: 99;
 }
 
+/* nav  */
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+header nav ul .logo {
+  cursor: pointer;
+}
+header nav ul li {
+  color: var(--GrayishBlue);
+}
+header nav .nav-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* hero  */
+header .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero .hero-header h1 {
+  font-size: 65px;
+  color: var(--White);
+}
+.hero .hero-info p {
+  font-size: 15px;
+  color: var(--GrayishBlue);
+}
+header .hero .hero-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* intro section  */
+
+.intro-section {
+  height: 100vh;
+  background-color: var(--GrayishBlue);
+}
 /* attr  */
 .attribution {
   font-size: 11px;
