@@ -1,0 +1,59 @@
+:root {
+  /* --VeryLightRed: rgba(255, 143, 112, 0.91);
+    --LightRed: rgba(255, 61, 84, 0.89); */
+  --VeryLightRed: hsl(13, 100%, 72%);
+  --LightRed: hsl(353, 100%, 62%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20vh 50vh;
+  gap: 1rem;
+  padding-inline: 5rem;
+  padding-block: 1rem;
+  background: linear-gradient(to right, var(--VeryLightRed), var(--LightRed));
+  background-repeat: no-repeat;
+  background-position: 27% 53%;
+  border-bottom-left-radius: 5rem;
+  position: relative;
+}
+
+header img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(40%);
+  width: 200%;
+}
+
+header * {
+  border: 2px solid red;
+}
+header nav,
+header div {
+  z-index: 99;
+}
+
+/* attr  */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
