@@ -106,19 +106,24 @@ section article {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-height: 70vh;
 }
-section article img {
+section .image-gallery img {
   border-radius: 0.5rem;
 }
-section article .thumbnails {
+section .image-gallery .main-view {
+  height: 60vh;
+}
+section .image-gallery .thumbnails {
   display: flex;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
-section article .thumbnails img {
+section .image-details {
+  border: 1px solid red;
 }
-
+/* attribution  */
 .attribution .attribution {
   font-size: 11px;
   text-align: center;
