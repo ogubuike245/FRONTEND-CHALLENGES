@@ -5,21 +5,18 @@
 
   /* ### Primary */
 
-  /* - Light red (CTA text) */
+  /* (CTA text) */
   --LightRed: hsl(356, 100%, 66%);
-  /* --VeryLightRed (CTA hover background): */
+  /*(CTA hover background): */
   --VeryLightRed: hsl(355, 100%, 74%);
-  /* --Very dark blue (headings)  */
+  /*(headings)  */
   --VeryDarkBlue: hsl(208, 49%, 24%);
 
   /* ### Neutral */
 
   --White: hsl(0, 0%, 100%);
-  /* --GrayishBlue (footer text); */
-  --GrayishBlue: hsl(240, 2%, 96%);
-  /* --Grayish blue (footer text); */
+  --GrayishBlue: hsl(240, 2%, 91%);
   --VeryDarkGrayishBlue: hsl(207, 13%, 34%);
-  /* --Very dark black blue*/
   --VeryDarkBlackBlue: hsl(240, 10%, 16%);
 
   /* ### Gradient */
@@ -95,7 +92,9 @@ body {
   font-weight: 700;
 }
 
-/* header area  styles */
+/*--------
+HEADER AREA STYLES
+-----------*/
 header {
   height: 100vh;
   display: grid;
@@ -138,6 +137,9 @@ header nav ul {
 }
 header nav ul .logo {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 header nav ul li {
   color: var(--GrayishBlue);
@@ -149,7 +151,9 @@ header nav .nav-cta {
   gap: 1rem;
 }
 
-/* hero  */
+/*--------
+HERO AREA STYLES
+-----------*/
 header .hero {
   display: flex;
   justify-content: center;
@@ -160,6 +164,7 @@ header .hero {
 
 .hero .hero-header h1 {
   font-size: 65px;
+  text-align: center;
   color: var(--White);
 }
 .hero .hero-info p {
@@ -173,16 +178,18 @@ header .hero .hero-cta {
   gap: 1rem;
 }
 
-/* intro section  */
+/*--------
+INTRO SECTION STYLES
+-----------*/
 
 .intro-section {
   min-height: 100vh;
   background-color: var(--GrayishBlue);
   display: flex;
   flex-direction: column;
-  /* gap: 2rem; */
-  padding-inline: 5rem;
+  padding-inline-start: 5rem;
   padding-block: 3rem;
+  overflow: hidden;
 }
 
 .intro-section .heading {
@@ -195,27 +202,22 @@ header .hero .hero-cta {
 
 .intro-section .content {
   display: grid;
-  grid-template-columns: auto 55%;
+  grid-template-columns: 50% 50%;
   align-items: center;
   gap: 3rem;
-  /* border: 2px solid red; */
 }
 .intro-section .content div {
-  /* width: 50%; */
   height: 100%;
 }
 
-/* left  */
+/* INTRO SECTION - LEFT */
 .intro-section .content .info {
-  /* height: 100%; */
   width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-block: 25%;
-  /* border: 2px solid green; */
-
   row-gap: 3rem;
 }
 .intro-section .content .info article {
@@ -224,7 +226,6 @@ header .hero .hero-cta {
   justify-content: flex-start;
   flex-direction: column;
   gap: 2rem;
-  /* margin-bottom: 1rem; */
 }
 .intro-section .content .info article h2 {
   font-size: 23px;
@@ -236,19 +237,320 @@ header .hero .hero-cta {
   line-height: 24px;
 }
 
-/* right */
+/* INTRO SECTION - RIGHT */
 .intro-section .content aside {
-  /* border: 2px solid red; */
   width: 100%;
 }
 .intro-section .content aside {
   height: 100%;
 }
-/* attr  */
+.intro-section .content aside img {
+  transform: translateX(17%);
+}
+
+/*--------
+ SECTION THREE STYLES
+-----------*/
+.section-three {
+  margin-block-start: 3rem;
+  margin-block-end: 10rem;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 5rem;
+  background: linear-gradient(
+    to right,
+    var(--VeryDarkGrayBlue),
+    var(--VeryDarkDeSaturatedBlue)
+  );
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  position: relative;
+}
+.section-three::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: url("../images/bg-pattern-circles.svg") no-repeat;
+  background-size: cover;
+  background-position: -23% 87%;
+  transform: translateX(-35%);
+  height: 100%;
+  width: 100%;
+}
+
+.section-three .state-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: scale(0.98) translateX(-40%) translateY(-10%);
+  width: 100%;
+}
+.section-three .image {
+  flex: 1;
+  transform: scale(0.95) translateY(5%);
+  z-index: 99;
+}
+
+.section-three .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 99;
+}
+.section-three .content > :nth-of-type(1) {
+  color: var(--White);
+}
+.section-three .content > :nth-child(2) {
+  color: var(--GrayishBlue);
+  line-height: 24px;
+}
+
+/*--------
+ SECTION  FOUR STYLES
+-----------*/
+.section-four {
+  display: grid;
+  grid-template-columns: auto 40%;
+  align-items: center;
+  gap: 2rem;
+  padding-inline-end: 2rem;
+}
+.section-four aside {
+  transform: translateX(-28%);
+}
+
+.section-four .info {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 25%;
+  row-gap: 3rem;
+}
+.section-four .info article {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.section-four .info article h2 {
+  font-size: 23px;
+  color: var(--VeryDarkBlue);
+}
+.section-four .info article p {
+  font-size: 15px;
+  color: var(--VeryDarkGrayishBlue);
+  line-height: 24px;
+}
+
+/*--------
+FOOTER SECTION STYLES
+-----------*/
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 3rem 5rem;
+  background-color: var(--VeryDarkBlackBlue);
+  border-top-right-radius: 5rem;
+}
+
+footer .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--White);
+}
+footer .list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--VeryDarkGrayishBlue);
+}
+
+/*--------
+ATTRIBUTION SECTION STYLES
+-----------*/
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* MEDIA QUERIES  */
+
+/*--------
+FIRST QUERY
+-----------*/
+
+@media (max-width: 768px) {
+  header .hero-bg {
+    transform: translate(50%, 0%);
+    width: 400%;
+  }
+
+  /* HEADER NAVIGATION  */
+  header nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header nav ul li,
+  header nav .nav-cta {
+    display: none;
+  }
+
+  header nav div > img {
+    display: block;
+    height: 40%;
+    object-fit: contain;
+  }
+
+  /* HERO SECTION */
+
+  .hero .hero-header h1 {
+    font-size: 38px;
+  }
+  .hero .hero-info p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* INTRO SECTION  */
+
+  .intro-section {
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+
+  .intro-section .content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  /* INTRO SECTION - LEFT */
+
+  .intro-section .content .info article h2 {
+    text-align: center;
+  }
+  .intro-section .content .info article p {
+    text-align: center;
+  }
+  /* INTRO SECTION - RIGHT */
+
+  .intro-section .content aside img {
+    transform: translateX(0%);
+  }
+
+  /*--------
+ SECTION THREE STYLES
+-----------*/
+  .section-three {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    background: linear-gradient(
+      to bottom,
+      var(--VeryDarkGrayBlue),
+      var(--VeryDarkDeSaturatedBlue)
+    );
+  }
+  .section-three::before {
+    background-position: 100% 200%;
+    transform: translateY(-0%);
+  }
+
+  .section-three .image {
+    flex: 1;
+    transform: scale(0.95) translateY(-25%);
+    z-index: 99;
+  }
+
+  .section-three .content {
+    transform: translateY(-50%);
+  }
+  .section-three .content > :nth-child(1) {
+    text-align: center;
+    font-size: 45px;
+  }
+  .section-three .content > :nth-child(2) {
+    font-size: 23px;
+    text-align: center;
+    line-height: 24px;
+  }
+
+  /*--------
+ SECTION  FOUR STYLES
+-----------*/
+  .section-four {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  .section-four aside {
+    transform: translateX(0%);
+  }
+
+  .section-four .info {
+    width: 100%;
+    text-align: center;
+  }
+
+  /*--------
+FOOTER MOBILE VIEW STYLES
+-----------*/
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    gap: 3rem;
+  }
+
+  footer .list {
+    gap: 1rem;
+    color: var(--White);
+  }
+  footer .list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--VeryDarkGrayishBlue);
+  }
+}
+
+/*--------
+SECOND QUERY
+-----------*/
+@media (min-width: 768px) {
+  header {
+    padding-inline: 1rem;
+  }
+  header nav {
+    gap: 0.5rem;
+  }
+
+  .hamburger-icon {
+    display: none;
+  }
 }
