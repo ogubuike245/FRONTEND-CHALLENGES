@@ -23,6 +23,8 @@ section {
   width: 100%;
   min-height: 100vh;
 }
+
+/* SEARCH BOX SECTION  */
 section header {
   display: flex;
   justify-content: center;
@@ -40,9 +42,17 @@ section header .search-box-container {
   height: 50px;
   border-radius: 1rem;
   display: flex;
+
+  background-color: var(--white);
+}
+section header .search-box-container form {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--white);
 }
 section header .search-box-container input {
   height: 100%;
@@ -51,8 +61,10 @@ section header .search-box-container input {
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 section header .search-box-container .search-icon {
+  all: unset;
   height: 100%;
   width: 15%;
   border-radius: 0 1rem 1rem 0;
@@ -60,8 +72,14 @@ section header .search-box-container .search-icon {
   justify-content: center;
   align-items: center;
   background-color: var(--black);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+section header .search-box-container .search-icon:hover {
+  background-color: var(--VeryDarkGray);
 }
 
+/* MAP SECTION  */
 section .map-section {
   position: relative;
 }
@@ -81,6 +99,7 @@ section .map-section .info {
   align-items: center;
 
   padding-block: 3rem;
+  z-index: 9999;
 }
 
 section .map-section .info div {
@@ -104,6 +123,12 @@ section .map-section .info p {
 section .map-section .info h1 {
   color: var(--VeryDarkGray);
   text-transform: capitalize;
+}
+
+section .map-section #map {
+  height: 100%;
+  width: 100%;
+  /* background-color: blue; */
 }
 
 /* ATTRIBUTION  */
