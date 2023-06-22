@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --DarkCyan: hsl(185, 75%, 39%);
+  --VeryDarkDesaturatedBlue: hsl(229, 23%, 23%);
+  --DarkGrayishBlue: hsl(227, 10%, 46%);
+
+  /* ### Neutral */
+
+  --DarkGray: hsl(0, 0%, 59%);
+  --white: hsl(0, 0%, 99%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h1 {
+  color: var(--VeryDarkDesaturatedBlue);
+}
+p,
+strong {
+  color: var(--DarkGrayishBlue);
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--DarkCyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.bg-pattern-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-20%, -30%);
+  z-index: 99;
+}
+
+.bg-pattern-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(40%, 50%);
+  z-index: 99;
+}
+
+/* PROFILE CARD  */
+.profile-card {
+  width: 375px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 1rem;
+  z-index: 999;
+}
+
+.profile-card .pattern {
+  height: 30%;
+  background: url("../images/bg-pattern-card.svg");
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* PROFILE INFORMATION e.g personal, image , socials */
+.profile-card .info {
+  height: 70%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-card .info .image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+}
+.profile-card .info .image img {
+  border-radius: 50%;
+}
+
+/* PERSONAL INFO SECTION  e.g name, age */
+.profile-card .info .personal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  height: 50%;
+  width: 100%;
+  border-bottom: 0.3px groove rgba(0, 0, 0, 0.2);
+}
+.profile-card .info .personal h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* SOCIAL COUNTS SECTION  */
+.profile-card .info .counts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 3rem;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}
+
+/* ATTRIBUTION  */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
