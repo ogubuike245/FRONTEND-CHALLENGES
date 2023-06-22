@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+:root {
+  --VeryDarkGray: hsl(0, 0%, 17%);
+  --DarkGray: hsl(0, 0%, 59%);
+  --white: hsl(0, 0%, 99%);
+  --black: hsl(0, 0%, 1%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+/* section  */
+
+section {
+  background-color: var(--DarkGray);
+  display: grid;
+  grid-template-rows: 40% auto;
+  width: 100%;
+  min-height: 100vh;
+}
+section header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--white);
+  background: url("../images/pattern-bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section header .search-box-container {
+  width: 50%;
+  height: 50px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+}
+section header .search-box-container input {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+section header .search-box-container .search-icon {
+  height: 100%;
+  width: 15%;
+  border-radius: 0 1rem 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+}
+
+section .map-section {
+  position: relative;
+}
+
+section .map-section .info {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 80%;
+  border-radius: 1rem;
+  background-color: var(--white);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding-block: 3rem;
+}
+
+section .map-section .info div {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+section .map-section .info div:not(:first-child) {
+  border-left: 1px solid var(--DarkGray);
+}
+
+section .map-section .info p {
+  color: var(--DarkGray);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+section .map-section .info h1 {
+  color: var(--VeryDarkGray);
+  text-transform: capitalize;
+}
+
+/* ATTRIBUTION  */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 800px) {
+  section header {
+    padding-block-start: 2rem;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  section header .search-box-container {
+    width: 90%;
+  }
+
+  section .map-section {
+    position: relative;
+    padding-inline: 2rem;
+  }
+
+  section .map-section .info {
+    transform: translate(-50%, -20%);
+    height: 100%;
+    width: 90%;
+    align-items: center;
+    flex-direction: column;
+    padding-block: 1rem;
+  }
+
+  section .map-section .info div {
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
+  section .map-section .info div:not(:first-child) {
+    border-left: none;
+  }
+}
