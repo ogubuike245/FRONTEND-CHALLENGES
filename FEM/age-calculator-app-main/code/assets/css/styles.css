@@ -85,14 +85,19 @@ section header {
 
 section header div:not(:last-child) {
   width: 25%;
-  font-family: "Poppins-Bold", sans-serif;
-  font-weight: 900;
-  color: var(--smokeyGrey);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
 }
 section header div:not(:last-child) p {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1px;
+  transition: all 0.5s ease;
+  font-family: "Poppins-Bold", sans-serif;
+  font-weight: 900;
+  color: var(--smokeyGrey);
 }
 section header div:not(:last-child) input {
   width: 100%;
@@ -105,6 +110,15 @@ section header div:not(:last-child) input {
   font-weight: 900;
   font-family: "Poppins-Extra-Bold", sans-serif;
   cursor: pointer;
+  transition: all 0.5s ease;
+}
+section header div:not(:last-child) span {
+  color: var(--LightRed);
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0;
+  transition: all 0.5s ease;
+  height: 10px;
 }
 section header .arrow {
   position: absolute;
@@ -174,6 +188,10 @@ section article div h1 {
   section header {
     position: relative;
     justify-content: space-between;
+  }
+
+  section header div:not(:last-child) span {
+    white-space: nowrap;
   }
 
   section header .arrow {
