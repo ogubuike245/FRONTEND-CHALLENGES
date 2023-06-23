@@ -1,0 +1,258 @@
+/* FONT FACE  */
+@font-face {
+  font-family: HankenGrotesk;
+  src: url("../fonts/HankenGrotesk-VariableFont_wght.ttf");
+}
+
+:root {
+  /* COLORS  */
+
+  /* ### Primary */
+
+  --lightRed: hsl(0, 100%, 87%);
+  --orangeyYellow: hsl(39, 100%, 56%);
+  --greenTeal: hsl(166, 100%, 37%);
+  --cobaltBlue: hsl(234, 85%, 45%);
+
+  /* lighter primary */
+  --lighterRed: hsl(0, 100%, 98%);
+  --LighterGreenTeal: hsl(166, 100%, 98%);
+  --LighterCobaltBlue: hsl(234, 85%, 98%);
+
+  /* ## Gradients */
+
+  /* bg  */
+  --LightSlateBlue: hsl(252, 100%, 61%);
+  --LightRoyalBlue: hsl(241, 81%, 54%);
+
+  /* circle */
+  --VioletBlue: hsla(256, 72%, 46%, 1);
+  --PersianBlue: hsla(241, 72%, 46%, 0);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --PaleBlue: hsl(221, 100%, 96%);
+  --LightLavender: hsl(241, 100%, 89%);
+  --DarkGrayBlue: hsl(224, 30%, 27%);
+
+  /* ### Notes */
+
+  /* Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`. */
+
+  /* FONTS  */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: HankenGrotesk;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  min-height: 100vh;
+}
+
+section {
+  width: 70%;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background-color: var(--White);
+  box-shadow: 1px 3px 50px var(--PaleBlue);
+  border-radius: 1rem;
+}
+
+section article {
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+}
+
+/* RESULT  SCORE SECTION  */
+section article:first-child {
+  background: linear-gradient(
+    to bottom,
+    var(--LightSlateBlue),
+    var(--LightRoyalBlue)
+  );
+  border-radius: 1rem;
+  grid-template-rows: 20px repeat(3, auto);
+  place-items: center;
+}
+
+section article:first-child .result-heading h2 {
+  color: var(--LightLavender);
+  font-size: 15px;
+  font-weight: 200;
+}
+section article:first-child .result-score {
+  background: linear-gradient(to bottom, var(--VioletBlue), var(--PersianBlue));
+  border-radius: 50%;
+  padding: 1rem;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 1px 1px 80px rgba(255, 255, 255, 0.1);
+}
+
+section article:first-child .result-score h3 {
+  color: var(--White);
+  font-size: 40px;
+}
+section article:first-child .result-score span {
+  color: var(--LightLavender);
+  font-size: 10px;
+}
+section article:first-child .result-remark h3 {
+  color: var(--White);
+  font-size: 20px;
+  font-weight: 200;
+}
+
+section article:first-child .result-comment p {
+  width: 200px;
+  color: var(--LightLavender);
+  font-size: 14px;
+  font-weight: 200;
+  text-align: center;
+}
+
+/* SUMMARY SECTION  */
+section article:last-child {
+  grid-template-rows: 20px auto 50px;
+  gap: 1rem;
+}
+
+section article:last-child .summary-heading h2 {
+  color: var(--DarkGrayBlue);
+  font-size: 18px;
+  font-weight: 900;
+  border: none;
+}
+section article:last-child .summary-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+section article:last-child .summary-items .item {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+  /* border: 1px solid red; */
+}
+section article:last-child .summary-items .item .image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+section article:last-child .summary-items .item img {
+  width: 20px;
+  height: 20px;
+}
+
+section article:last-child .summary-items .reaction,
+section article:last-child .summary-items .memory {
+  background-color: var(--lighterRed);
+}
+section article:last-child .summary-items .verbal {
+  background-color: var(--LighterGreenTeal);
+}
+section article:last-child .summary-items .visual {
+  background-color: var(--LighterCobaltBlue);
+}
+section article:last-child .summary-items .reaction p {
+  color: var(--lightRed);
+}
+section article:last-child .summary-items .memory p {
+  color: var(--orangeyYellow);
+}
+section article:last-child .summary-items .verbal p {
+  color: var(--greenTeal);
+}
+section article:last-child .summary-items .visual p {
+  color: var(--cobaltBlue);
+}
+section article:last-child .summary-items .item div .student-score {
+  color: var(--DarkGrayBlue);
+  font-weight: 900;
+  padding-inline-end: 3px;
+}
+section article:last-child .summary-items .item div .overall-score {
+  color: var(--LightLavender);
+  font-weight: 500;
+}
+
+section article:last-child .summary-cta button {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  background-color: var(--DarkGrayBlue);
+  color: var(--White);
+  font-weight: 200;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+section article:last-child .summary-cta button:hover {
+  background-color: var(--LightRoyalBlue);
+}
+
+@media (max-width: 800px) {
+  body {
+    justify-content: space-between;
+    gap: 10rem;
+    min-height: 100vh;
+  }
+  section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* RESULT  SCORE SECTION  */
+  section article:first-child {
+    border-radius: 0 0 2rem 2rem;
+    grid-template-rows: 50px repeat(3, auto);
+    height: 120%;
+    gap: 1rem;
+  }
+
+  section article:first-child .result-heading h2 {
+    font-size: 18px;
+  }
+
+  /* SUMMARY SECTION  */
+  section article:last-child {
+    grid-template-rows: 20px auto 50px;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  section article:last-child .summary-items {
+    gap: 1rem;
+  }
+
+  section article:last-child .summary-items .item .image {
+    gap: 1rem;
+  }
+}
