@@ -5,6 +5,10 @@
 }
 @font-face {
   font-family: "Poppins-Extra-Bold";
+  src: url("../../assets/fonts/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Extra-Bold-Italic";
   src: url("../../assets/fonts/Poppins-ExtraBoldItalic.ttf");
 }
 @font-face {
@@ -36,6 +40,13 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+/* CSS to remove the number input spin buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 body {
@@ -87,9 +98,12 @@ section header div:not(:last-child) input {
   width: 100%;
   outline: none;
   border: 1px solid var(--lightGrey);
+  color: var(--offBlack);
   border-radius: 0.2rem;
   padding: 0.5rem;
   font-size: 1rem;
+  font-weight: 900;
+  font-family: "Poppins-Extra-Bold", sans-serif;
   cursor: pointer;
 }
 section header .arrow {
@@ -127,7 +141,7 @@ section article div p,
 section article div h1 {
   font-size: 58px;
   font-weight: 900;
-  font-family: "Poppins-Extra-Bold", sans-serif;
+  font-family: "Poppins-Extra-Bold-Italic", sans-serif;
 }
 section article div p {
   color: var(--Purple);
