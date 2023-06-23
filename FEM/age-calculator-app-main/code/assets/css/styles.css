@@ -3,6 +3,14 @@
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins-Regular.ttf");
 }
+@font-face {
+  font-family: "Poppins-Extra-Bold";
+  src: url("../../assets/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../assets/fonts/Poppins-Bold.ttf");
+}
 
 :root {
   /* ## Colors */
@@ -43,17 +51,89 @@ body {
 section {
   background-color: var(--white);
   height: 70vh;
-  width: 50%;
+  width: 40%;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-bottom-right-radius: 20%;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0, 6);
+
+  display: grid;
+  grid-template-rows: 30% auto;
+  gap: 1rem;
 }
 section header {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
+  width: 100%;
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+section header div:not(:last-child) {
+  width: 25%;
+  font-family: "Poppins-Bold", sans-serif;
+  font-weight: 900;
+  color: var(--smokeyGrey);
+}
+section header div:not(:last-child) p {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+section header div:not(:last-child) input {
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--lightGrey);
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+section header .arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(50%);
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--Purple);
+  padding: 0.9rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+section header .arrow:hover {
+  background-color: var(--offBlack);
+}
+section header .arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section article {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+section article div {
+  display: flex;
+  align-items: center;
+}
+section article div p,
+section article div h1 {
+  font-size: 58px;
+  font-weight: 900;
+  font-family: "Poppins-Extra-Bold", sans-serif;
+}
+section article div p {
+  color: var(--Purple);
+  letter-spacing: 10px;
+}
+section article div h1 {
+  color: var(--offBlack);
 }
 
 /* ATTRIBUTION  */
