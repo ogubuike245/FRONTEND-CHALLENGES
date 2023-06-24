@@ -21,7 +21,7 @@
   <body>
     <!-- Sign-up form start -->
 
-    <section>
+    <section class="newsletter">
       <article>
         <h1>Stay updated!</h1>
 
@@ -42,17 +42,19 @@
           </li>
         </ul>
 
-        <form>
-          <label for="email-input"> Email address</label>
+        <form class="newsletter-form">
+          <div>
+            <label for="email-input"> Email address</label>
+            <span class="error-message"></span>
+          </div>
           <input
             type="email"
             name="email-input"
             id="email-input"
             placeholder="email@company.com"
           />
+          <button>Subscribe to monthly newsletter</button>
         </form>
-
-        <button>Subscribe to monthly newsletter</button>
       </article>
       <article></article>
     </section>
@@ -61,18 +63,23 @@
 
     <!-- Success message start -->
 
-    Thanks for subscribing! A confirmation email has been sent to
-    ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription. Dismiss message
+    <section class="success">
+      <article>
+        <div>
+          <img src="./assets/images/icon-list.svg" alt="" />
+        </div>
+        <h1>Thanks for subscribing!</h1>
+
+        <p>
+          A confirmation email has been sent to
+          <strong class="user-email"></strong>. Please open it and click the
+          button inside to confirm your subscription.
+        </p>
+        <button class="dismiss">Dismiss message</button>
+      </article>
+    </section>
 
     <!-- Success message end -->
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Ogubuike Emejuru</a>.
-    </div>
 
     <script src="./assets/js/script.js"></script>
   </body>
