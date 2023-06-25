@@ -1,3 +1,33 @@
+/* imports  */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+
+:root {
+  --white: whitesmoke;
+  --offWhite: rgb(193, 195, 199);
+  --grey: rgb(64, 70, 82);
+  --black: rgb(1, 1, 2);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-family: "Barlow Condensed", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
 
 :root {
