@@ -11,6 +11,8 @@
 
   /* (Background) */
   --LightGrayishCyan: hsl(180, 52%, 96%);
+  --white: hsl(0, 0%, 99%);
+  --black: hsl(0, 0%, 0%);
   /* (Filter Tablets) */
   --LightGrayishCyan: hsl(180, 31%, 95%);
   --DarkGrayishCyan: hsl(180, 8%, 52%);
@@ -50,7 +52,7 @@ section.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 3rem;
+  padding-inline: 5rem;
   padding-block: 1rem;
 }
 
@@ -63,6 +65,9 @@ section.wrapper {
 }
 
 .job-list {
-  padding-inline: 3rem;
+  padding-inline: 5rem;
   padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

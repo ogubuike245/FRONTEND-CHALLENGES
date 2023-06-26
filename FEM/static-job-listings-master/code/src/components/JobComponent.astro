@@ -1,0 +1,182 @@
+---
+import Item from "./Item.astro";
+const { jobDetails } = Astro.props;
+
+const {
+    logo,
+    company,
+    featured,
+    newJob,
+    position,
+    location,
+    postedAt,
+    contract,
+    role,
+    level,
+    languages,
+    tools,
+} = jobDetails;
+---
+
+<article class="job">
+    <div class="job-info">
+        <div class="image">
+            <img src={logo} alt={company} />
+        </div>
+        <div class="details">
+            <div class="row-one">
+                <p>{company}</p>
+                <a href="#" class={newJob ? "new" : ""}
+                    >{newJob ? "new!" : ""}</a
+                >
+                <a href="#" class={featured ? "featured" : ""}
+                    >{featured ? "Featured" : ""}</a
+                >
+            </div>
+            <div class="row-two">
+                <p class="position">{position}</p>
+            </div>
+            <div class="row-three">
+                <p>{postedAt}</p>
+                <div class="dot"></div>
+                <p>{contract}</p>
+                <div class="dot"></div>
+                <p>{location}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="items">
+        <Item title={role} />
+
+        <Item title={level} />
+        {
+            languages.map((language) => {
+                return <Item title={language} />;
+            })
+        }
+        {
+            tools.map((tool) => {
+                return <Item title={tool} />;
+            })
+        }
+    </div>
+</article>
+
+<style>
+    .job {
+        width: 100%;
+        height: 100px;
+        padding: 1rem;
+        background-color: var(--white);
+        border-radius: 0.2rem;
+        border-left: 5px solid transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+
+    .job:hover {
+        border-left: 5px solid var(--DesaturatedDarkCyan);
+    }
+
+    .job > div:nth-child(1) {
+        width: 40%;
+        height: 100%;
+    }
+
+    .job > div:nth-child(2) {
+        width: 60%;
+        height: 100%;
+    }
+
+    .job-info {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .job .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .job .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .details .row-one {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .details .row-one a {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0.4rem;
+        border-radius: 1rem;
+        font-size: 10px;
+        color: var(--LightGrayishCyan);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .details .row-one p.company {
+        color: var(--DesaturatedDarkCyan);
+        font-weight: 700;
+    }
+
+    .details .row-one .new {
+        background-color: var(--DesaturatedDarkCyan);
+    }
+
+    .details .row-one .featured {
+        background-color: var(--VeryDarkGrayishCyan);
+    }
+
+    .details .row-two .position {
+        color: var(--black);
+        font-weight: 900;
+        font-size: 18px;
+        transition: all 0.5s ease;
+    }
+
+    .details .row-two .position:hover {
+        color: var(--DesaturatedDarkCyan);
+    }
+
+    .details .row-three {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--DarkGrayishCyan);
+    }
+
+    .details .row-three .dot {
+        background-color: var(--DarkGrayishCyan);
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+    }
+
+    .items {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+</style>
