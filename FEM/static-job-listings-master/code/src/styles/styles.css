@@ -43,6 +43,11 @@ section.wrapper {
   grid-template-rows: 20vh 1fr 3vh;
 }
 
+.container {
+  padding-inline: 5rem;
+  padding-block: 1rem;
+}
+
 .header {
   background: url("../../public/images/bg-header-desktop.svg");
   background-repeat: no-repeat;
@@ -52,8 +57,6 @@ section.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 5rem;
-  padding-block: 1rem;
 }
 
 .header input {
@@ -65,8 +68,6 @@ section.wrapper {
 }
 
 .job-list {
-  padding-inline: 5rem;
-  padding-block: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;

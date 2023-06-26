@@ -1,6 +1,7 @@
 ---
+import JobsListAndFilter from "../components/JobsListAndFilter.astro";
 import "../styles/styles.css";
-import JobComponent from "../components/JobComponent.astro";
+
 import jobs from "../data.json";
 ---
 
@@ -8,7 +9,6 @@ import jobs from "../data.json";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- displays site properly based on user's device -->
 
 		<link
 			rel="icon"
@@ -21,16 +21,7 @@ import jobs from "../data.json";
 	</head>
 	<body>
 		<section class="wrapper">
-			<header class="header">
-				<input type="text" name="" id="" />
-			</header>
-			<div class="job-list">
-				{
-					jobs.map((jobDetails) => {
-						return <JobComponent {jobDetails} />;
-					})
-				}
-			</div>
+			<JobsListAndFilter {jobs} />
 		</section>
 
 		<div class="attribution">
@@ -38,7 +29,7 @@ import jobs from "../data.json";
 			<a
 				href="https://www.frontendmentor.io?ref=challenge"
 				target="_blank">Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
+			>. Coded by <a href="#">Ogubuike Emejuru</a>.
 		</div>
 	</body>
 </html>
