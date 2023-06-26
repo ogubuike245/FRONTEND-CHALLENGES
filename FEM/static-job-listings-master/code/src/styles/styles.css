@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&display=swap");
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --DesaturatedDarkCyan: hsl(180, 29%, 50%);
+
+  /* ### Neutral */
+
+  /* (Background) */
+  --LightGrayishCyan: hsl(180, 52%, 96%);
+  /* (Filter Tablets) */
+  --LightGrayishCyan: hsl(180, 31%, 95%);
+  --DarkGrayishCyan: hsl(180, 8%, 52%);
+  --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--LightGrayishCyan);
+}
+
+section.wrapper {
+  display: grid;
+  grid-template-rows: 20vh 1fr 3vh;
+}
+
+.header {
+  background: url("../../public/images/bg-header-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--DesaturatedDarkCyan);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+}
+
+.header input {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.job-list {
+  padding-inline: 3rem;
+  padding-block: 1rem;
+}
