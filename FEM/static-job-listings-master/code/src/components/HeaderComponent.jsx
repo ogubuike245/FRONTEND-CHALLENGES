@@ -19,7 +19,7 @@ const HeaderComponent = ({
                 className="remove-tag"
                 onClick={() => handleTagRemove(tag)}
               >
-                <img src="../../public/images/icon-remove.svg" alt="" />
+                <img src="/images/icon-remove.svg" alt="" />
               </button>
             </span>
           ))}
