@@ -1,25 +1,66 @@
+import React, { useState } from "react";
 import JobComponent from "./JobComponent.jsx";
-
-import jobs from "../data.json";
-
-console.log(
-  jobs.map((job) => {
-    return job.company;
-  })
-);
+import data from "../data.json";
+import HeaderComponent from "./HeaderComponent.jsx";
 
 const JobsListAndFilter = () => {
+  const [filterValue, setFilterValue] = useState("");
+  const [tags, setTags] = useState([]);
+
+  const handleFilterChange = (event) => {
+    setFilterValue(event.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === " " && filterValue.trim() !== "") {
+      event.preventDefault();
+      setTags([...tags, filterValue.trim()]);
+      setFilterValue("");
+    }
+  };
+
+  const handleTagRemove = (tag) => {
+    setTags(tags.filter((t) => t !== tag));
+  };
+  const handleTagsRemove = (tag) => {
+    setTags([]);
+  };
+
+  const filterJobs = (jobs, tags) => {
+    if (tags.length > 0) {
+      return jobs.filter((job) => {
+        const { role, level, languages, tools } = job;
+        return tags.every(
+          (tag) =>
+            role.toLowerCase().includes(tag.toLowerCase()) ||
+            level.toLowerCase().includes(tag.toLowerCase()) ||
+            languages.some((language) =>
+              language.toLowerCase().includes(tag.toLowerCase())
+            ) ||
+            tools.some((tool) => tool.toLowerCase().includes(tag.toLowerCase()))
+        );
+      });
+    }
+    return jobs;
+  };
+
+  const filteredJobs = filterJobs(data, tags);
+
   return (
     <>
-      <header class="header container">
-        <input type="text" name="filter-input" id="filter-input" />
-      </header>
+      <HeaderComponent
+        filterValue={filterValue}
+        handleFilterChange={handleFilterChange}
+        handleKeyDown={handleKeyDown}
+        tags={tags}
+        handleTagRemove={handleTagRemove}
+        handleTagsRemove={handleTagsRemove}
+      />
 
-      <div class="job-list container">
-        <h1>TEST</h1>
-        {jobs.map((job) => {
-          return <JobComponent {...job} key={job.id} />;
-        })}
+      <div className="job-list container">
+        {filteredJobs.map((job) => (
+          <JobComponent {...job} key={job.id} />
+        ))}
       </div>
     </>
   );
