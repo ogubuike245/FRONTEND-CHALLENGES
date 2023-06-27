@@ -49,7 +49,7 @@ section.wrapper {
 }
 
 .header {
-  background: url("../../public/images/bg-header-desktop.svg");
+  background: url("/images/bg-header-desktop.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--DesaturatedDarkCyan);
@@ -71,4 +71,136 @@ section.wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+/* JOB COMPONENT  */
+
+.job {
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 0.2rem;
+  border-left: 5px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.job:hover {
+  border-left: 5px solid var(--DesaturatedDarkCyan);
+}
+
+.job > div:nth-child(1) {
+  width: 40%;
+  height: 100%;
+}
+
+.job > div:nth-child(2) {
+  width: 60%;
+  height: 100%;
+}
+
+.job-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.job .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.job .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.job .details .row-one {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.job .details .row-one a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  font-size: 10px;
+  color: var(--LightGrayishCyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job .details .row-one p {
+  color: var(--DesaturatedDarkCyan);
+  font-weight: 700;
+}
+
+.job .details .row-one .new {
+  background-color: var(--DesaturatedDarkCyan);
+}
+
+.job .details .row-one .featured {
+  background-color: var(--VeryDarkGrayishCyan);
+}
+
+.job .details .row-two .position {
+  color: var(--black);
+  font-weight: 900;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.job .details .row-two .position:hover {
+  color: var(--DesaturatedDarkCyan);
+}
+
+.job .details .row-three {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--DarkGrayishCyan);
+}
+
+.job .details .row-three .dot {
+  background-color: var(--DarkGrayishCyan);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+}
+
+.job .items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.item-link {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--LightGrayishCyan);
+  color: var(--DesaturatedDarkCyan);
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.item-link:hover {
+  background-color: var(--DesaturatedDarkCyan);
+  color: var(--LightGrayishCyan);
 }

@@ -1,8 +1,6 @@
 ---
-import JobsListAndFilter from "../components/JobsListAndFilter.astro";
+import JobsListAndFilter from "../components/JobsListAndFilter.jsx";
 import "../styles/styles.css";
-
-import jobs from "../data.json";
 ---
 
 <html lang="en">
@@ -21,7 +19,7 @@ import jobs from "../data.json";
 	</head>
 	<body>
 		<section class="wrapper">
-			<JobsListAndFilter {jobs} />
+			<JobsListAndFilter />
 		</section>
 
 		<div class="attribution">
