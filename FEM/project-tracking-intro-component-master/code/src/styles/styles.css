@@ -172,7 +172,7 @@ section .content article:last-child img {
 }
 
 /* MEDIA QUERIES  */
-@media (max-width: 1024px) {
+@media (max-width: 924px) {
   section header {
     padding-inline: 2rem;
   }
