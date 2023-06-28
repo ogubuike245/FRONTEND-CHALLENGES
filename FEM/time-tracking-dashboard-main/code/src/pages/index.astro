@@ -1,0 +1,18 @@
+---
+import "../styles/styles.css";
+
+import MainView from "../components/MainView.jsx";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<MainView client:load />
+	</body>
+</html>
