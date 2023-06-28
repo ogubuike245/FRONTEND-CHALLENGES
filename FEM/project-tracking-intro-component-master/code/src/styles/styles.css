@@ -39,10 +39,11 @@ section header {
 
   padding-inline: 5rem;
   padding-block-start: 3rem;
-
-  /* border: 1px solid red; */
 }
 .hamburger {
+  display: none;
+}
+.close {
   display: none;
 }
 header nav {
@@ -63,9 +64,11 @@ header nav ul {
 header nav ul li {
   list-style-type: none;
   color: var(--VeryDarkBlue);
+  cursor: pointer;
 }
 header nav a {
   text-decoration: none;
+  cursor: pointer;
 
   color: var(--DarkGrayishBlue);
 }
@@ -99,7 +102,6 @@ section .content article:last-child {
 section .content article:last-child img {
   width: 150%;
   height: 100%;
-  /* object-fit: cover; */
   transform: translateX(38%);
 }
 
@@ -120,6 +122,9 @@ section .content article:last-child img {
   background-color: var(--VeryDarkBlue);
   color: white;
   border-radius: 2rem;
+
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .row-one p {
@@ -157,6 +162,8 @@ section .content article:last-child img {
   text-transform: uppercase;
 
   font-weight: 700;
+
+  cursor: pointer;
 }
 
 .row-four span {
@@ -164,93 +171,69 @@ section .content article:last-child img {
   word-spacing: 5px;
 }
 
+/* MEDIA QUERIES  */
 @media (max-width: 1024px) {
   section header {
-    top: 3rem;
-    left: 0;
-
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    z-index: 2;
-
-    padding-inline: 5rem;
-    padding-block-start: 3rem;
-
-    /* border: 1px solid red; */
+    padding-inline: 2rem;
   }
 
   .hamburger {
     display: block;
+    cursor: pointer;
   }
 
   header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 14px;
-
     display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 6rem;
+    transform: translate(-50%);
+    z-index: 99;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    width: 60%;
+    border-radius: 0.5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    gap: 2rem;
   }
   header nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-  }
-  header nav ul li {
-    list-style-type: none;
-    color: var(--VeryDarkBlue);
-  }
-  header nav a {
-    text-decoration: none;
+    flex-direction: column;
 
-    color: var(--DarkGrayishBlue);
+    padding-bottom: 1rem;
+    width: 100%;
+    border-bottom: 1px solid grey;
   }
 
-  section .pattern {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 70vh;
-    width: 50%;
-    z-index: -1;
-    border-bottom-left-radius: 3rem;
-    background-color: var(--LightGrayishBlue);
+  .close {
+    display: none;
   }
 
   /* HERO CONTENT  */
 
   section .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    padding-inline: 5rem;
-    padding-block-start: 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5rem;
+    padding: 2rem 0;
   }
   section .content article:last-child {
-    padding-left: 1rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    padding: 0;
   }
   section .content article:last-child img {
-    width: 150%;
+    width: 100%;
     height: 100%;
-    /* object-fit: cover; */
-    transform: translateX(38%);
+    transform: translateX(28%);
   }
 
   .content .info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding-inline: 2rem;
   }
 
   .info .row-one {
@@ -259,52 +242,12 @@ section .content article:last-child img {
     gap: 1rem;
   }
 
-  .row-one span {
-    padding: 0.2rem 0.5rem;
-    background-color: var(--VeryDarkBlue);
-    color: white;
-    border-radius: 2rem;
-  }
-
-  .row-one p {
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
   .info > h1 {
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 35px;
     color: var(--VeryDarkBlue);
   }
   .info > p {
-    width: 45%;
-    font-size: 16px;
-    color: var(--VeryDarkBlue);
-  }
-
-  .row-four {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .row-four button {
-    padding: 1rem;
-    border: none;
-    outline: none;
-
-    background-color: var(--Red);
-    border-radius: 0.5rem;
-
-    color: white;
-    text-transform: uppercase;
-
-    font-weight: 700;
-  }
-
-  .row-four span {
-    text-transform: uppercase;
-    word-spacing: 5px;
+    width: 85%;
   }
 }
