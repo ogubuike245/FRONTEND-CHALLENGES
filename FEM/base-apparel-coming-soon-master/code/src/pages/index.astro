@@ -1,5 +1,6 @@
 ---
 import "../styles/styles.css";
+import Form from "../components/Form.jsx";
 ---
 
 <html lang="en">
@@ -12,34 +13,21 @@ import "../styles/styles.css";
 	</head>
 	<body>
 		<section>
-			<div class="hero-content">
-				<header>
-					<img src="../../public/images/logo.svg" alt="" />
-				</header>
-				<article>
-					<h1>WE'RE <br /> <span> COMING <br /> SOON</span></h1>
+			<header>
+				<img src="../../public/images/logo.svg" alt="" />
+			</header>
 
-					<p>
-						Hello fellow shoppers! We're currently building our new
-						fashion store. Add your email below to stay up-to-date
-						with announcements and our launch deals.
-					</p>
+			<article class="hero-image"></article>
 
-					<form>
-						<input
-							type="email"
-							name="email"
-							id="email"
-							placeholder="Email address"
-						/>
-						<div>
-							<img src="/images/icon-arrow.svg" alt="" />
-						</div>
-					</form>
-				</article>
-			</div>
-
-			<div class="hero-image"></div>
+			<article class="content-container">
+				<h2>WE'RE <br /> <span> COMING <br /> SOON</span></h2>
+				<p>
+					Hello fellow shoppers! We're currently building our new
+					fashion store. Add your email below to stay up-to-date with
+					announcements and our launch deals.
+				</p>
+				<Form client:load />
+			</article>
 		</section>
 	</body>
 </html>
