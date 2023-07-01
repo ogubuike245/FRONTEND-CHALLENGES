@@ -1,0 +1,70 @@
+/* imports  */
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --GrayishBlue: hsl(237, 18%, 59%);
+  --SoftRed: hsl(345, 95%, 68%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --DarkDesaturatedBlue: hsl(236, 21%, 26%);
+  --VeryDarkBlue: hsl(235, 16%, 14%);
+  --VeryDarkBlue: hsl(234, 17%, 12%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Text", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--VeryDarkBlue);
+  background-image: url("../../public/images/bg-stars.svg");
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  min-height: 100vh;
+  width: 100%;
+
+  background: url("../../public/images/pattern-hills.svg");
+
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+section > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.heading {
+  color: var(--White);
+  text-transform: uppercase;
+}
+
+.count-down_container {
+  border: 2px solid red;
+}
