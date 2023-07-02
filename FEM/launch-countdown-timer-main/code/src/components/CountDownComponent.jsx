@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Item from "./Item.jsx";
 
 const CountDownComponent = () => {
@@ -9,11 +9,11 @@ const CountDownComponent = () => {
     seconds: "00",
   });
 
-  const intervalRef = useRef();
+  let intervalRef = useRef();
 
   const calculateCountdown = () => {
     const countdownDate = Date.now() + 14 * 24 * 60 * 60 * 1000; // Set the countdown date to current time + 14 days in milliseconds
-    intervalRef.current = setInterval(() => {
+    intervalRef = setInterval(() => {
       const now = new Date().getTime(); // Get the current time
       const distance = countdownDate - now; // Calculate the remaining time in milliseconds
 
