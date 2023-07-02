@@ -1,5 +1,6 @@
 ---
 import "../styles/styles.css";
+import CountDownComponent from "../components/CountDownComponent.jsx";
 ---
 
 <html lang="en">
@@ -12,38 +13,7 @@ import "../styles/styles.css";
 		<title>Frontend Mentor | Launch countdown timer</title>
 	</head>
 	<body>
-		<section>
-			<div class="heading">
-				<h1>We're launching soon</h1>
-			</div>
-
-			<div class="count-down_container">
-				<article>
-					<div class="item">
-						<p>08</p>
-					</div>
-					<h3>Days</h3>
-				</article>
-				<article>
-					<div class="item">
-						<p>23</p>
-					</div>
-					<h3>Hours</h3>
-				</article>
-				<article>
-					<div class="item">
-						<p>55</p>
-					</div>
-					<h3>Minutes</h3>
-				</article>
-				<article>
-					<div class="item">
-						<p>41</p>
-					</div>
-					<h3>Seconds</h3>
-				</article>
-			</div>
-		</section>
+		<CountDownComponent client:load />
 
 		<div class="attribution">
 			Challenge by <a
