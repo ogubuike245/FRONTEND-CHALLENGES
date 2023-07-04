@@ -72,6 +72,10 @@ header nav ul li {
   font-size: 13px;
 }
 
+header nav .hamburger {
+  display: none;
+}
+
 /* SECTION  */
 
 main {
@@ -434,8 +438,221 @@ section {
 
 /* MEDIA QUERIES  */
 @media (max-width: 1024px) {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+      url("../../public/images/image-hero-mobile.jpg");
+    padding: 2rem 3rem;
+  }
+
+  header nav ul {
+    display: none;
+  }
+
+  header nav .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  /* SECTION  */
+
   section {
     width: 80%;
-    margin: auto;
+  }
+
+  .article-first .btn-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .article-first .btn-action a {
+    font-size: 14px;
+    flex: 1;
+  }
+
+  .article-first .btn-action button {
+    height: 50px;
+    width: 50px;
+  }
+
+  .article-first .btn-action button span {
+    display: none;
+  }
+
+  /* SECOND  */
+  .row-2 {
+    gap: 2rem;
+    height: 100%;
+    padding: 2rem;
+  }
+  .article-second .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .article-second .content .item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 2rem 2rem;
+
+    border: none;
+    width: 70%;
+  }
+
+  .article-second .content .item:last-child {
+    border: none;
+  }
+  .article-second .content .item:not(:last-child) {
+    border: none;
+    border-bottom: 1px solid var(--border-color-gray);
+  }
+
+  /* THIRD  */
+
+  .article-third .editions .item .heading {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .article-third .editions .item .actions {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* MODAL STYLES  */
+
+  .modal {
+    padding: 4rem;
+  }
+  .dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    height: 100%;
+    width: 80%;
+    background-color: var(--White);
+    padding: 2rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .dialog img {
+    cursor: pointer;
+  }
+
+  .dialog::-webkit-scrollbar {
+    display: none;
+  }
+
+  .close-modal {
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+  }
+
+  .dialog .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .dialog .wrapper > h1 {
+    font-size: 20px;
+  }
+  .dialog .wrapper p {
+    font-size: 12.5px;
+    color: var(--DarkGray2);
+  }
+  .dialog .wrapper .editions {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+  }
+  .dialog .wrapper .editions article {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 3rem 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--border-color-gray);
+    position: relative;
+  }
+
+  .dialog .wrapper .editions article > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .dialog .wrapper .editions article > div:first-child {
+    padding: 0.8rem 0;
+  }
+
+  .dialog .wrapper .editions article:first-child > div:first-child {
+    padding: 0.2rem 0;
+  }
+  .dialog .wrapper .editions article .heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 100%;
+  }
+  .dialog .wrapper .editions article .heading a {
+    color: var(--ModerateCyan);
+  }
+  .dialog .wrapper .editions article h3 {
+    font-size: 13px;
+  }
+  .dialog .wrapper .editions article .heading .amount-left {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.8rem;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+
+    /* border: 1px solid red; */
+  }
+
+  .dialog .wrapper .editions article:last-child {
+    color: var(--DarkGray);
+    display: flex;
+    gap: 1rem;
+  }
+
+  .dialog .wrapper .editions article:last-child .heading a {
+    color: hsl(176, 50%, 77%);
+  }
+  .dialog .wrapper .editions article p {
+    margin-left: -2rem;
+  }
+  .dialog .wrapper .editions article:last-child p {
+    color: hsl(0, 0%, 70%);
+    font-weight: 100;
+  }
+
+  .dialog .wrapper .editions article:last-child .actions .amount-left span {
+    color: hsl(0, 0%, 70%);
+    font-weight: 100;
+  }
+  .article-third .editions .item:last-child .actions button {
+    background-color: hsl(0, 0%, 70%);
+    font-weight: 100;
   }
 }
