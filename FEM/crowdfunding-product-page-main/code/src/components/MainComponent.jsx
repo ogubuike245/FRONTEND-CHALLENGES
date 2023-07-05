@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 
 import Modal from "./Modal.jsx";
+import MainEditionList from "./MainEditionList.jsx";
+import InfoItem from "./InfoItem.jsx";
 const Main = () => {
   const dialogRef = useRef(null);
 
@@ -19,7 +21,7 @@ const Main = () => {
         <section className="container">
           <article className="article-first">
             <div className="image">
-              <img src="../../public/images/logo-mastercraft.svg" alt="" />
+              <img src="/images/logo-mastercraft.svg" alt="" />
             </div>
             <h1>Mastercraft Bamboo Monitor Riser</h1>
             <p>
@@ -33,7 +35,7 @@ const Main = () => {
               </a>
               <button>
                 <div>
-                  <img src="../../public/images/icon-bookmark.svg" alt="" />
+                  <img src="/images/icon-bookmark.svg" alt="" />
                 </div>
                 <span>Bookmark</span>
               </button>
@@ -41,18 +43,9 @@ const Main = () => {
           </article>
           <article className="article-second row-2">
             <div className="content">
-              <div className="item">
-                <h1>$89,914</h1>
-                <span>of $100,000 backed</span>
-              </div>
-              <div className="item">
-                <h1>5,007</h1>
-                <span>total backers</span>
-              </div>
-              <div className="item">
-                <h1>56</h1>
-                <span>days left</span>
-              </div>
+              <InfoItem heading="$89,914" description="of $100,000 backed" />
+              <InfoItem heading="5,007" description="total backers" />
+              <InfoItem heading="56" description="days left" />
             </div>
             <div className="progress">
               <div className="bar"></div>
@@ -75,63 +68,7 @@ const Main = () => {
             </p>
 
             <div className="editions">
-              <div className="item">
-                <div className="heading">
-                  <h3>Bamboo Stand</h3>
-                  <a href="#"> Pledge $25 or more</a>
-                </div>
-                <p>
-                  You get an ergonomic stand made of natural bamboo. You've
-                  helped us launch our promotional campaign, and you’ll be added
-                  to a special Backer member list.
-                </p>
-
-                <div className="actions">
-                  <div className="amount-left">
-                    <strong>101</strong>
-                    <span>left</span>
-                  </div>
-                  <button> Select Reward</button>
-                </div>
-              </div>
-              <div className="item">
-                <div className="heading">
-                  <h3>Black Edition</h3>
-                  <a href="#"> Pledge $75 or more</a>
-                </div>
-                <p>
-                  You get a Black Special Edition computer stand and a personal
-                  thank you. You’ll be added to our Backer member list. Shipping
-                  is included.
-                </p>
-
-                <div className="actions">
-                  <div className="amount-left">
-                    <strong>64</strong>
-                    <span>left</span>
-                  </div>
-                  <button> Select Reward</button>
-                </div>
-              </div>
-              <div className="item">
-                <div className="heading">
-                  <h3>Mahogany Special Edition</h3>
-                  <a href="#"> Pledge $200 or more</a>
-                </div>
-                <p>
-                  You get two Special Edition Mahogany stands, a Backer T-Shirt,
-                  and a personal thank you. You’ll be added to our Backer member
-                  list. Shipping is included.
-                </p>
-
-                <div className="actions">
-                  <div className="amount-left">
-                    <strong>0</strong>
-                    <span>left</span>
-                  </div>
-                  <button> Out of Stock</button>
-                </div>
-              </div>
+              <MainEditionList />
             </div>
           </article>
         </section>

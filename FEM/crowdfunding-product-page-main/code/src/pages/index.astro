@@ -1,6 +1,7 @@
 ---
 import "../styles/styles.css";
 import MainComponent from "../components/MainComponent.jsx";
+import Header from "../components/Header.jsx";
 ---
 
 <html lang="en">
@@ -9,26 +10,10 @@ import MainComponent from "../components/MainComponent.jsx";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Frontend Mentor | Crowdfunding product page</title>
 	</head>
 	<body>
-		<header>
-			<div class="logo">
-				<img src="../../public/images/logo.svg" alt="" />
-			</div>
-
-			<nav>
-				<ul>
-					<li>About</li>
-					<li>Discover</li>
-					<li>Get Started</li>
-				</ul>
-
-				<div class="hamburger">
-					<img src="../../public/images/icon-hamburger.svg" alt="" />
-				</div>
-			</nav>
-		</header>
+		<Header client:load />
 
 		<MainComponent client:load />
 	</body>
