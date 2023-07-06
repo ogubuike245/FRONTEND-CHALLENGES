@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import sunIcon from "/images/icon-sun.svg";
+import moonIcon from "/images/icon-moon.svg";
 
-const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
+const Header = ({ isDarkMode, toggleDarkMode }) => {
   return (
-    <header className={isDarkMode ? "dark" : "light"}>
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+    <header>
+      <h1> Todo</h1>
+      <div>
+        <img
+          onClick={toggleDarkMode}
+          src={isDarkMode ? sunIcon : moonIcon}
+          alt="theme-switcher-icon"
+        />
+      </div>
     </header>
   );
 };

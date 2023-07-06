@@ -44,26 +44,42 @@ li {
 a {
   text-decoration: none;
 }
-
 body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 30vh 1fr;
+  background-color: whitesmoke;
 }
-
-header {
+main {
+  height: 50vh;
   transition: all 0.5s ease;
 }
 
 .light {
-  background: url("../../public/images/bg-desktop-light.jpg");
-  /* background-color: red; */
+  background-image: url("/images/bg-desktop-light.jpg");
 }
 .dark {
-  background: url("../../public/images/bg-desktop-dark.jpg");
-  /* background-color: green; */
+  background-image: url("/images/bg-desktop-dark.jpg");
 }
 
-section {
-  background-color: whitesmoke;
+/* TODO AREA  */
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container > * {
+  border: 3px solid red;
+}
+header {
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: whitesmoke;
 }

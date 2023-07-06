@@ -1,7 +1,6 @@
 ---
 import "../styles/styles.css";
-import Header from "../components/Header.jsx";
-import TodoSection from "../components/TodoSection.jsx";
+import MainContainer from "../components/MainContainer.jsx";
 ---
 
 <html lang="en">
@@ -20,8 +19,7 @@ import TodoSection from "../components/TodoSection.jsx";
 		<title>Astro</title>
 	</head>
 	<body>
-		<Header client:load />
-		<TodoSection client:load />
+		<MainContainer client:load />
 
 		<div class="attribution">
 			Challenge by <a
