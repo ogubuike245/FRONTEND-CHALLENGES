@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --ModerateViolet: hsl(263, 55%, 52%);
+  --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --VeryDarkBlackishBlue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  /* ### Neutral */
+
+  --LightGray: hsl(0, 0%, 81%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+
+  /* Note for text colors: */
+
+  /* 1. "Verified Graduate" has the same color as the person's name with 50% opacity */
+  /* 2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 1rem;
+
+  background-color: var(--LightGrayishBlue);
+  padding: 4rem;
+}
+
+@media (max-width: 578px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, minmax(200px, auto));
+    padding: 1rem;
+  }
+}
+@media (min-width: 579px) and (max-width: 1068px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    padding: 1rem;
+  }
+}
