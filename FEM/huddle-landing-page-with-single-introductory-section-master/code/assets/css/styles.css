@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --Violet: hsl(257, 40%, 49%);
+  --SoftMagenta: hsl(300, 69%, 71%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("../images/bg-desktop.svg");
+  background-color: var(--Violet);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  margin-bottom: 5rem;
+}
+
+.hero article {
+  min-height: 100vh;
+}
+
+.hero article:nth-child(1) {
+  background-image: url("../images/illustration-mockups.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  border: 1px solid red;
+}
+/* ATTR */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
