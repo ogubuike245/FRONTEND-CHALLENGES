@@ -1,18 +1,12 @@
-/* imports  */
-
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
 
 .theme-1 {
-  /* ### Theme 1 */
-
   /* #### Backgrounds */
-
   --mainBackground: hsl(222, 26%, 31%);
   --screenBackground: hsl(224, 36%, 15%);
   --toggleAndKeypadBackground: hsl(223, 31%, 20%);
 
   /* #### Keys */
-
   --keyBackground: hsl(30, 25%, 89%);
   --keyBackgroundHover: hsl(0, 0%, 100%);
   --keyShadow: hsl(28, 16%, 65%);
@@ -26,23 +20,18 @@
   --deleteAndResetKeysBackgroundShadow: hsl(224, 28%, 35%);
 
   /* #### Text */
-
   --keyTextColor: hsl(221, 14%, 31%);
   --White: hsl(0, 0%, 100%);
   --inputAndLogoTextColor: hsl(0, 0%, 100%);
   --actionButtonTextColor: hsl(0, 0%, 100%);
 }
 .theme-2 {
-  /* ### Theme 2 */
-
   /* #### Backgrounds */
-
   --mainBackground: hsl(0, 0%, 90%);
   --toggleAndKeypadBackground: hsl(0, 5%, 81%);
   --screenBackground: hsl(0, 0%, 93%);
 
   /* #### Keys */
-
   --keyBackground: hsl(45, 7%, 89%);
   --keyBackgroundHover: hsl(0, 0%, 100%);
   --keyShadow: hsl(35, 11%, 61%);
@@ -56,23 +45,18 @@
   --deleteAndResetKeysBackgroundShadow: hsl(185, 58%, 25%);
 
   /* #### Text */
-
   --keyTextColor: hsl(60, 10%, 19%);
   --White: hsl(0, 0%, 100%);
   --inputAndLogoTextColor: hsl(60, 10%, 19%);
   --actionButtonTextColor: hsl(0, 0%, 100%);
 }
 .theme-3 {
-  /* ### Theme 3 */
-
   /* #### Backgrounds */
-
   --mainBackground: hsl(268, 75%, 9%);
   --toggleAndKeypadBackground: hsl(268, 71%, 12%);
   --screenBackground: hsl(268, 71%, 12%);
 
   /* #### Keys */
-
   --keyBackground: hsl(268, 47%, 21%);
   --keyBackgroundHover: hsl(268, 47%, 51%);
   --keyShadow: hsl(290, 70%, 36%);
@@ -86,7 +70,6 @@
   --deleteAndResetKeysBackgroundShadow: hsl(285, 91%, 52%);
 
   /* #### Text */
-
   --keyTextColor: hsl(52, 100%, 62%);
   --White: hsl(0, 0%, 100%);
   --inputAndLogoTextColor: hsl(52, 100%, 62%);
@@ -116,7 +99,6 @@ main {
   justify-content: center;
   align-items: center;
   background-color: var(--mainBackground);
-
   transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
@@ -124,7 +106,6 @@ main {
   width: 50%;
   min-height: 80vh;
   border-radius: 1rem;
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -143,7 +124,6 @@ main {
   align-items: center;
   gap: 1rem;
   text-transform: uppercase;
-
   width: 150px;
 }
 
@@ -192,7 +172,6 @@ main {
   border: none;
   outline: none;
   border-radius: 0.5rem;
-
   color: var(--inputAndLogoTextColor);
   background-color: var(--screenBackground);
 }
@@ -204,9 +183,7 @@ main {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 2rem;
-
   border-radius: 0.5rem;
-
   color: var(--White);
   background-color: var(--toggleAndKeypadBackground);
 }
@@ -218,13 +195,10 @@ main {
   padding: 1rem;
   text-transform: uppercase;
   font-size: 32px;
-
   color: var(--keyTextColor);
   background-color: var(--keyBackground);
   box-shadow: 0px 5px 1px var(--keyShadow);
-
   cursor: pointer;
-
   transition: all 0.5s ease;
 }
 
