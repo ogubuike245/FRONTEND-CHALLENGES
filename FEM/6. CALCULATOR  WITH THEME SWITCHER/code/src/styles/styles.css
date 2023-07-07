@@ -265,3 +265,38 @@ input[type="range"]::-webkit-slider-thumb {
 .attribution a {
   color: var(--inputAndLogoTextColor);
 }
+
+/* MEDIA QUERIES  */
+@media (max-width: 768px) {
+  main {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainBackground);
+    transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  .wrapper {
+    width: 100%;
+
+    padding: 1rem;
+  }
+
+  .row-one .theme-switcher {
+    gap: 1rem;
+  }
+
+  /* ROW THREE  */
+
+  .row-three {
+    background-color: var(--toggleAndKeypadBackground);
+  }
+
+  .row-three button {
+    font-size: 22px;
+  }
+}
