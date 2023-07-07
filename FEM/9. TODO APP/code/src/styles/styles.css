@@ -141,8 +141,8 @@ form input {
 .todo-container article {
   background-color: var(--VeryLightGray);
   border-radius: 0.5rem;
-
-  min-height: 50vh;
+  position: relative;
+  /* min-height: 50vh; */
 }
 
 article .todo-list {
@@ -189,7 +189,7 @@ article .todo-item .checkbox {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /* border: 1px solid red; */
+  /* */
 }
 
 .text-area img {
@@ -200,7 +200,6 @@ article .info {
   bottom: 0;
   left: 0;
   width: 100%;
-  /* border: 1px solid red; */
   padding-block: 1rem;
   padding-inline: 1rem;
 
@@ -220,4 +219,17 @@ article .info ul {
 
 .clear-completed {
   cursor: pointer;
+}
+
+/* ATTR  */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
