@@ -3,32 +3,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 :root {
-  /* ## Colors
+  /* ## Colors */
 
-### Primary
+  /* ### Primary */
 
-- Bright Blue: hsl(220, 98%, 61%)
-- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+  --BrightBlue: hsl(220, 98%, 61%);
+  --CheckBackground: linear-gradient(
+    110deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
 
-### Neutral
+  /* ### Neutral */
 
-### Light Theme
+  /* ### Light Theme */
 
-- Very Light Gray: hsl(0, 0%, 98%)
-- Very Light Grayish Blue: hsl(236, 33%, 92%)
-- Light Grayish Blue: hsl(233, 11%, 84%)
-- Dark Grayish Blue: hsl(236, 9%, 61%)
-- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
 
-### Dark Theme
+  /* ### Dark Theme */
 
-- Very Dark Blue: hsl(235, 21%, 11%)
-- Very Dark Desaturated Blue: hsl(235, 24%, 19%)
-- Light Grayish Blue: hsl(234, 39%, 85%)
-- Light Grayish Blue (hover): hsl(236, 33%, 92%)
-- Dark Grayish Blue: hsl(234, 11%, 52%)
-- Very Dark Grayish Blue: hsl(233, 14%, 35%)
-- Very Dark Grayish Blue: hsl(237, 14%, 26%) */
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBlue: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
 }
 
 * {
@@ -44,11 +48,16 @@ li {
 a {
   text-decoration: none;
 }
+
+li {
+  cursor: pointer;
+}
 body {
-  background-color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 main {
   height: 50vh;
+  background-color: rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
 }
 
@@ -66,20 +75,149 @@ main {
   left: 50%;
   top: 25%;
   transform: translate(-50%);
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 600px;
 }
 
-.container > * {
-  border: 3px solid red;
-}
 header {
   transition: all 0.5s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+header h1 {
+  font-size: 30px;
   text-transform: uppercase;
   color: whitesmoke;
+  letter-spacing: 10px;
+}
+
+header img {
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+/* TODO CONTAINER  */
+
+.todo-container {
+  min-height: 50vh;
+
+  display: grid;
+  grid-template-rows: 60px 1fr;
+
+  gap: 1rem;
+}
+
+.todo-container form {
+  padding-inline: 1rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--VeryLightGray);
+
+  border-radius: 0.5rem;
+}
+
+form div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--VeryLightGrayishBlue);
+}
+
+form input {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+
+  border: none;
+  outline: none;
+}
+
+.todo-container article {
+  background-color: var(--VeryLightGray);
+  border-radius: 0.5rem;
+
+  min-height: 50vh;
+}
+
+article .todo-list {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 3rem;
+}
+article .todo-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  border-bottom: 1px solid var(--VeryLightGrayishBlue);
+
+  transition: all 0.5s ease;
+}
+article .todo-item .checkbox {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--VeryLightGrayishBlue);
+
+  cursor: pointer;
+}
+
+.checkbox-image {
+  background: var(--CheckBackground);
+  border: none !important;
+}
+
+.todo-item-strike {
+  text-decoration: line-through;
+  color: var(--DarkGrayishBlue);
+}
+
+.text-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.text-area img {
+  cursor: pointer;
+}
+article .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* border: 1px solid red; */
+  padding-block: 1rem;
+  padding-inline: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+}
+
+.info p {
+  display: flex;
+  gap: 0.5rem;
+}
+article .info ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.clear-completed {
+  cursor: pointer;
 }
