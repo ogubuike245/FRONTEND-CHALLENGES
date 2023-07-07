@@ -1,0 +1,267 @@
+/* imports  */
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+.theme-1 {
+  /* ### Theme 1 */
+
+  /* #### Backgrounds */
+
+  --mainBackground: hsl(222, 26%, 31%);
+  --screenBackground: hsl(224, 36%, 15%);
+  --toggleAndKeypadBackground: hsl(223, 31%, 20%);
+
+  /* #### Keys */
+
+  --keyBackground: hsl(30, 25%, 89%);
+  --keyBackgroundHover: hsl(0, 0%, 100%);
+  --keyShadow: hsl(28, 16%, 65%);
+
+  --equalsKeyBackground: hsl(6, 63%, 50%);
+  --equalsKeyBackgroundHover: hsl(6, 70%, 64%);
+  --equalsKeyBackgroundShadow: hsl(6, 70%, 34%);
+
+  --deleteAndResetKeysBackground: hsl(225, 21%, 49%);
+  --deleteAndResetKeysBackgroundHover: hsl(224, 28%, 65%);
+  --deleteAndResetKeysBackgroundShadow: hsl(224, 28%, 35%);
+
+  /* #### Text */
+
+  --keyTextColor: hsl(221, 14%, 31%);
+  --White: hsl(0, 0%, 100%);
+  --inputAndLogoTextColor: hsl(0, 0%, 100%);
+  --actionButtonTextColor: hsl(0, 0%, 100%);
+}
+.theme-2 {
+  /* ### Theme 2 */
+
+  /* #### Backgrounds */
+
+  --mainBackground: hsl(0, 0%, 90%);
+  --toggleAndKeypadBackground: hsl(0, 5%, 81%);
+  --screenBackground: hsl(0, 0%, 93%);
+
+  /* #### Keys */
+
+  --keyBackground: hsl(45, 7%, 89%);
+  --keyBackgroundHover: hsl(0, 0%, 100%);
+  --keyShadow: hsl(35, 11%, 61%);
+
+  --equalsKeyBackground: hsl(25, 98%, 40%);
+  --equalsKeyBackgroundHover: hsl(25, 98%, 60%);
+  --equalsKeyBackgroundShadow: hsl(25, 99%, 27%);
+
+  --deleteAndResetKeysBackground: hsl(185, 42%, 37%);
+  --deleteAndResetKeysBackgroundHover: hsl(185, 42%, 67%);
+  --deleteAndResetKeysBackgroundShadow: hsl(185, 58%, 25%);
+
+  /* #### Text */
+
+  --keyTextColor: hsl(60, 10%, 19%);
+  --White: hsl(0, 0%, 100%);
+  --inputAndLogoTextColor: hsl(60, 10%, 19%);
+  --actionButtonTextColor: hsl(0, 0%, 100%);
+}
+.theme-3 {
+  /* ### Theme 3 */
+
+  /* #### Backgrounds */
+
+  --mainBackground: hsl(268, 75%, 9%);
+  --toggleAndKeypadBackground: hsl(268, 71%, 12%);
+  --screenBackground: hsl(268, 71%, 12%);
+
+  /* #### Keys */
+
+  --keyBackground: hsl(268, 47%, 21%);
+  --keyBackgroundHover: hsl(268, 47%, 51%);
+  --keyShadow: hsl(290, 70%, 36%);
+
+  --equalsKeyBackground: hsl(176, 100%, 44%);
+  --equalsKeyBackgroundHover: hsl(176, 100%, 74%);
+  --equalsKeyBackgroundShadow: hsl(177, 92%, 70%);
+
+  --deleteAndResetKeysBackground: hsl(281, 89%, 26%);
+  --deleteAndResetKeysBackgroundHover: hsl(281, 89%, 56%);
+  --deleteAndResetKeysBackgroundShadow: hsl(285, 91%, 52%);
+
+  /* #### Text */
+
+  --keyTextColor: hsl(52, 100%, 62%);
+  --White: hsl(0, 0%, 100%);
+  --inputAndLogoTextColor: hsl(52, 100%, 62%);
+  --actionButtonTextColor: hsl(0, 0%, 0%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainBackground);
+
+  transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.wrapper {
+  width: 50%;
+  min-height: 80vh;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.row-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--inputAndLogoTextColor);
+}
+
+.row-one .theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+
+  width: 150px;
+}
+
+.theme-switcher span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding-top: 1.2rem;
+  color: var(--inputAndLogoTextColor);
+}
+
+.theme-switcher .switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.switcher .ranges {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+}
+
+.slider {
+  width: 100%;
+  height: 30px;
+}
+
+.slider input {
+  width: 100%;
+  height: 100%;
+}
+
+.row-two {
+  width: 100%;
+  height: 100px;
+  border-radius: 0.5rem;
+}
+
+.row-two input {
+  width: 100%;
+  height: 100%;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  text-align: right;
+  font-size: 50px;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+
+  color: var(--inputAndLogoTextColor);
+  background-color: var(--screenBackground);
+}
+
+/* ROW THREE  */
+
+.row-three {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+
+  border-radius: 0.5rem;
+
+  color: var(--White);
+  background-color: var(--toggleAndKeypadBackground);
+}
+
+.row-three button {
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 32px;
+
+  color: var(--keyTextColor);
+  background-color: var(--keyBackground);
+  box-shadow: 0px 5px 1px var(--keyShadow);
+
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+}
+
+.row-three button:hover {
+  background-color: var(--keyBackgroundHover);
+}
+.reset,
+.equals {
+  grid-column: span 2;
+}
+
+.reset,
+.delete {
+  color: var(--White) !important;
+  background-color: var(--deleteAndResetKeysBackground) !important;
+  box-shadow: 0px 5px 1px var(--deleteAndResetKeysBackgroundShadow) !important;
+}
+.reset:hover,
+.delete:hover {
+  background-color: var(--deleteAndResetKeysBackgroundHover) !important;
+}
+
+.equals {
+  color: var(--actionButtonTextColor) !important;
+  background-color: var(--equalsKeyBackground) !important;
+  box-shadow: 0px 5px 1px var(--equalsKeyBackgroundShadow) !important;
+}
+
+.equals:hover {
+  background-color: var(--equalsKeyBackgroundHover) !important;
+}
+/* ATTR  */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--inputAndLogoTextColor);
+}
