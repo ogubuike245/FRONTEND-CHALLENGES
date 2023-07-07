@@ -68,6 +68,7 @@ const CalculatorComponent = () => {
                   max="3"
                   value={theme}
                   onChange={handleThemeChange}
+                  className="custom-range-slider"
                 />
               </div>
             </div>

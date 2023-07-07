@@ -81,6 +81,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
+
+  transition: all 0.1s ease;
 }
 li {
   list-style: none;
@@ -143,7 +145,11 @@ main {
 .switcher .ranges {
   display: flex;
   justify-content: space-between;
-  padding-inline: 0.5rem;
+  padding-inline: 1rem;
+}
+
+.switcher .ranges li {
+  font-size: 11px;
 }
 
 .slider {
@@ -151,9 +157,28 @@ main {
   height: 30px;
 }
 
-.slider input {
+.slider {
+  background-color: var(--toggleAndKeypadBackground);
+  border-radius: 2rem;
+  padding-inline: 0.5rem;
+}
+.slider input[type="range"] {
   width: 100%;
   height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.slider input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 2rem;
+  background: var(--equalsKeyBackground);
+  -webkit-appearance: none;
 }
 
 .row-two {
@@ -230,6 +255,7 @@ main {
 .equals:hover {
   background-color: var(--equalsKeyBackgroundHover) !important;
 }
+
 /* ATTR  */
 
 .attribution {
