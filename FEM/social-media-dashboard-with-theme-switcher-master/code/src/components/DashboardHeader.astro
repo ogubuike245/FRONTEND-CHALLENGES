@@ -11,25 +11,19 @@
 
 <script>
     const toggle = document.getElementById("toggle");
-    const currentTheme = localStorage.getItem("theme");
-    document.body.classList.add(currentTheme);
+    let currentTheme = localStorage.getItem("theme");
+    const documentBody = document.body;
 
-    if (currentTheme === "light-theme") {
-        toggle.value = 1;
-    } else if (currentTheme === "dark-theme") {
-        toggle.value = 2;
-    }
+    documentBody.classList.add(currentTheme);
+    toggle.value = currentTheme === "light-theme" ? "2" : "1";
 
     toggle.addEventListener("input", function () {
-        const theme = parseInt(this.value);
+        const number = this.value;
+        const newTheme = number === "2" ? "light-theme" : "dark-theme";
 
-        if (theme === 2) {
-            document.body.classList.replace("light-theme", "dark-theme");
-            localStorage.setItem("theme", "dark-theme");
-        } else {
-            document.body.classList.replace("dark-theme", "light-theme");
-            localStorage.setItem("theme", "light-theme");
-        }
+        documentBody.classList.replace(currentTheme, newTheme);
+        localStorage.setItem("theme", newTheme);
+        currentTheme = newTheme;
     });
 </script>
 <style>
