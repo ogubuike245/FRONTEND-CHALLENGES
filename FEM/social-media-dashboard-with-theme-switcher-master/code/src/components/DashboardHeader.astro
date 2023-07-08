@@ -1,0 +1,88 @@
+<div class="header">
+    <div>
+        <h1>Social Media Dashboard</h1>
+        <span>Total Followers: 23,004</span>
+    </div>
+    <div class="switch">
+        <span>Dark Mode</span>
+        <input type="range" name="" id="toggle" max="2" min="1" />
+    </div>
+</div>
+
+<script>
+    const toggle = document.getElementById("toggle");
+    const currentTheme = localStorage.getItem("theme");
+    document.body.classList.add(currentTheme);
+
+    if (currentTheme === "light-theme") {
+        toggle.value = 1;
+    } else if (currentTheme === "dark-theme") {
+        toggle.value = 2;
+    }
+
+    toggle.addEventListener("input", function () {
+        const theme = parseInt(this.value);
+
+        if (theme === 2) {
+            document.body.classList.replace("light-theme", "dark-theme");
+            localStorage.setItem("theme", "dark-theme");
+        } else {
+            document.body.classList.replace("dark-theme", "light-theme");
+            localStorage.setItem("theme", "light-theme");
+        }
+    });
+</script>
+<style>
+    h1 {
+        color: var(--colorThree);
+    }
+
+    span {
+        color: var(--colorTwo);
+    }
+
+    .switch {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .switch span {
+        font-weight: 700;
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 50px;
+        height: 25px;
+        border-radius: 2rem;
+        padding: 0.2rem;
+        background: var(--Toggle);
+        cursor: pointer;
+    }
+
+    input[type="range"]:focus {
+        outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        border: none;
+        outline: none;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: var(--colorOne);
+        cursor: pointer;
+        -webkit-appearance: none;
+        padding: 0.5rem;
+    }
+
+    input[type="range"]:focus::-webkit-slider-runnable-track {
+        background: transparent;
+    }
+</style>

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  /* ### Primary */
+
+  --LimeGreen: hsl(163, 72%, 41%);
+  --BrightRed: hsl(356, 69%, 56%);
+
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+}
+
+.dark-theme {
+  /* toggle switch  */
+  --Toggle: linear-gradient(0deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+  --colorOne: hsl(230, 17%, 14%);
+  --colorTwo: hsl(228, 34%, 66%);
+  --colorThree: hsl(0, 0%, 100%);
+
+  /* card colors  */
+  --colorCard: hsl(228, 28%, 20%);
+  --White: hsl(0, 0%, 100%);
+}
+
+.light-theme {
+  /* toggle switch      */
+  --Toggle: hsl(230, 22%, 74%);
+
+  --colorOne: hsl(225, 100%, 98%);
+  --colorTwo: hsl(228, 12%, 44%);
+  --colorThree: hsl(228, 28%, 20%);
+
+  /* card colors  */
+  --colorCard: hsl(227, 47%, 96%);
+  --LightGrayishBlue: hsl(227, 47%, 96%);
+  --White: hsl(0, 0%, 100%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: all 0.2s ease;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  gap: 5rem;
+  background-color: var(--colorOne);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+/* FIRST CARDS  */
+
+.first-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* SECOND CARDS  */
+
+.second-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gain-true {
+  color: var(--LimeGreen);
+}
+.gain-false {
+  color: var(--BrightRed);
+}

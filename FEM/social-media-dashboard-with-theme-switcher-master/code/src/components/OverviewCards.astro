@@ -1,0 +1,66 @@
+---
+const { card } = Astro.props;
+---
+
+<div class="card">
+    <div>
+        <p>{card.info.type}</p>
+        <h3>{card.info.actions}</h3>
+    </div>
+    <div>
+        <i class=`fa-brands fa-${card.platform} ${card.platform}-icon `></i>
+        <span class=`${card.info.gain ? "gain-true"  : "gain-false"}`
+            >{card.info.percent}%</span
+        >
+    </div>
+</div>
+
+<style>
+    .card {
+        min-height: 120px;
+        background-color: var(--colorCard);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card div {
+        display: flex;
+        flex-direction: column;
+        color: var(--colorTwo);
+        justify-content: space-between;
+        text-transform: capitalize;
+    }
+    .card div:nth-child(2) {
+        align-items: flex-end;
+    }
+
+    .card div p {
+        font-weight: 600;
+    }
+
+    .card div h3 {
+        font-size: 30px;
+        color: var(--colorThree);
+    }
+    .card div i {
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .card div span {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .facebook-icon {
+        color: var(--Facebook);
+    }
+    .twitter-icon {
+        color: var(--Twitter);
+    }
+    .instagram-icon {
+        color: var(--Instagram);
+    }
+    .youtube-icon {
+        color: var(--YouTube);
+    }
+</style>

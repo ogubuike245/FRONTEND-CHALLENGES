@@ -1,0 +1,90 @@
+---
+import OverviewCards from "./OverviewCards.astro";
+import OverviewHeader from "./OverviewHeader.astro";
+
+const overviewData = [
+    {
+        platform: "facebook",
+        info: {
+            type: "page views",
+            actions: 87,
+            percent: 3,
+            gain: true,
+        },
+    },
+    {
+        platform: "facebook",
+        info: {
+            type: "likes",
+            actions: 52,
+            percent: 2,
+            gain: false,
+        },
+    },
+    {
+        platform: "instagram",
+        info: {
+            type: "likes",
+            actions: 5462,
+            percent: 2257,
+            gain: true,
+        },
+    },
+    {
+        platform: "instagram",
+        info: {
+            type: "profile views",
+            actions: 52,
+            percent: 1375,
+            gain: true,
+        },
+    },
+    {
+        platform: "twitter",
+        info: {
+            type: "retweets",
+            actions: 117,
+            percent: 303,
+            gain: true,
+        },
+    },
+    {
+        platform: "twitter",
+        info: {
+            type: "likes",
+            actions: 507,
+            percent: 553,
+            gain: true,
+        },
+    },
+    {
+        platform: "youtube",
+        info: {
+            type: "likes",
+            actions: 107,
+            percent: 19,
+            gain: false,
+        },
+    },
+    {
+        platform: "youtube",
+        info: {
+            type: "total views",
+            actions: 1407,
+            percent: 12,
+            gain: false,
+        },
+    },
+];
+---
+
+<div class="second-container container">
+    <OverviewHeader />
+    <div class="second-cards">
+        {
+            overviewData.map((item, index) => (
+                <OverviewCards key={index} card={item} />
+            ))
+        }
+    </div>
+</div>

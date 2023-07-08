@@ -1,0 +1,85 @@
+---
+const { info } = Astro.props;
+---
+
+<div class=`card ${info.platform}-border`>
+    <div class="username">
+        <span>
+            <i class=`fa-brands fa-${info.platform}  ${info.platform}`></i>
+        </span>
+        <span>{info.username}</span>
+    </div>
+
+    <h1>{info.followers}</h1>
+    <p>FOLLOWERS</p>
+    <span class=`${info.gain ? "gain-true": "gain-false"}`
+        >{info.todayCount}</span
+    >
+</div>
+
+<style>
+    .card {
+        min-height: 200px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+    }
+    .card * {
+        z-index: 99;
+    }
+    .card h1 {
+        color: var(--colorThree);
+        font-size: 45px;
+    }
+    .card p {
+        font-size: 13px;
+        color: var(--colorTwo);
+        letter-spacing: 5px;
+    }
+    .card .username {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        color: var(--colorThree);
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 97%;
+        background-color: var(--colorCard);
+    }
+
+    /* COLORS  */
+    .card .facebook {
+        color: var(--Facebook);
+    }
+    .card .twitter {
+        color: var(--Twitter);
+    }
+    .card .instagram {
+        color: var(--Instagram);
+    }
+    .card .youtube {
+        color: var(--YouTube);
+    }
+
+    .facebook-border {
+        background: var(--Facebook);
+    }
+    .twitter-border {
+        background: var(--Twitter);
+    }
+    .instagram-border {
+        background: var(--Instagram);
+    }
+    .youtube-border {
+        background: var(--YouTube);
+    }
+</style>

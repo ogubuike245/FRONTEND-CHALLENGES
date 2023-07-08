@@ -1,0 +1,42 @@
+---
+import DashboardCards from "./DashboardCards.astro";
+import DashboardHeader from "./DashboardHeader.astro";
+
+const dashboardData = [
+    {
+        platform: "facebook",
+        username: "@nathanf",
+        followers: "1987",
+        todayCount: "12",
+        gain: true,
+    },
+    {
+        platform: "twitter",
+        username: "@nathanf",
+        followers: "1044",
+        todayCount: "99",
+        gain: true,
+    },
+    {
+        platform: "instagram",
+        username: "@realnathanf",
+        followers: "11k",
+        todayCount: "1099",
+        gain: true,
+    },
+    {
+        platform: "youtube",
+        username: "Nathan F.",
+        followers: "8239",
+        todayCount: "144",
+        gain: false,
+    },
+];
+---
+
+<div class="first-container container">
+    <DashboardHeader />
+    <div class="first-cards">
+        {dashboardData.map((item) => <DashboardCards info={item} />)}
+    </div>
+</div>

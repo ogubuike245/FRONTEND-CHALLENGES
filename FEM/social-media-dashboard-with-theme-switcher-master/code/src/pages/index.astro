@@ -1,0 +1,33 @@
+---
+import MainSection from "../components/MainSection.astro";
+import Attribution from "../components/Attribution.astro";
+
+import "../styles/styles.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>
+			Frontend Mentor | SOCIAL MEDIA DASHBOARD WITH THEME SWITCHER
+		</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+	<!-- <body class="light-theme"> -->
+	<body>
+		<MainSection />
+
+		<Attribution />
+	</body>
+</html>
