@@ -36,7 +36,7 @@ body {
 
 section {
   background-color: var(--VeryLightGrayishBlue);
-  background-image: url("../../public/images/bg-top.svg");
+  background-image: url("./images/bg-top.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -61,7 +61,7 @@ section::before {
   width: 350px;
   height: 50vh;
 
-  background-image: url("../../public/images/bg-bottom.svg");
+  background-image: url("./images/bg-bottom.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom left;
