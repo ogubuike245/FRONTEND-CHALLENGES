@@ -1,0 +1,24 @@
+---
+import Heading from "../components/Heading.astro";
+import MainContainer from "../components/MainContainer.jsx";
+import Attribution from "../components/Attribution.astro";
+import "../styles/styles.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Frontend Mentor | PRICING COMPONENT WITH TOGGLE</title>
+	</head>
+	<body>
+		<section>
+			<Heading />
+			<MainContainer client:load />
+		</section>
+
+		<Attribution />
+	</body>
+</html>

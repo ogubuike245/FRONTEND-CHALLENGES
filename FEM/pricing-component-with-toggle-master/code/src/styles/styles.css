@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --LinearGradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+
+  /* ### Neutral */
+
+  --VeryLightGrayishBlue: hsl(240, 78%, 98%);
+  --LightGrayishBlue: hsl(234, 14%, 74%);
+  --GrayishBlue: hsl(233, 13%, 49%);
+  --DarkGrayishBlue: hsl(232, 13%, 33%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+
+  transition: all 0.5s ease;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+section {
+  background-color: var(--VeryLightGrayishBlue);
+  background-image: url("../../public/images/bg-top.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  padding-inline: 5rem;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 50vh;
+
+  background-image: url("../../public/images/bg-bottom.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.toggle-switch {
+  width: 60px;
+  height: 30px;
+  border-radius: 2rem;
+  background: linear-gradient(0deg, var(--LinearGradient) 90%);
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-switch-container span {
+  color: var(--LightGrayishBlue);
+}
+.toggle-switch .thumb {
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle-switch.annually .thumb {
+  transform: translate(20%, -50%);
+}
+.toggle-switch.monthly .thumb {
+  transform: translate(180%, -50%);
+}
+
+/* CARDS  */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr; */
+  align-items: center;
+  margin-block: 4rem;
+}
+
+.card {
+  min-height: 100%;
+  width: 350px;
+  background-color: white;
+  color: var(--DarkGrayishBlue);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  z-index: 20;
+}
+
+.card h3 {
+  font-size: 25px;
+  color: var(--GrayishBlue);
+}
+
+.card h1 {
+  font-size: 70px;
+}
+
+.card ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card ul li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+.card ul li:nth-child(1) {
+  border-top: 2px solid var(--LightGrayishBlue);
+  border-bottom: 2px solid var(--LightGrayishBlue);
+}
+.card ul li:nth-child(2) {
+  border-bottom: 2px solid var(--LightGrayishBlue);
+}
+.card ul li:nth-child(3) {
+  border-bottom: 2px solid var(--LightGrayishBlue);
+}
+
+.card button {
+  width: 100%;
+  padding: 1rem;
+
+  border: 0.5px solid transparent;
+  outline: none;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(to right, var(--LinearGradient) 90%);
+
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: transparent;
+  color: hsl(236, 72%, 59%);
+  border: 0.5px solid hsl(236, 72%, 59%);
+}
+.basic {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.professional {
+  min-height: 110%;
+  background: linear-gradient(to bottom, var(--LinearGradient));
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.professional h3 {
+  color: white;
+}
+.professional button {
+  background: white;
+  color: hsl(236, 72%, 59%);
+}
+.professional button:hover {
+  background: transparent;
+  border: 0.5px solid white;
+  color: white;
+}
+.master {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+@media (max-width: 1024px) {
+  section {
+    background-position: 2000% 50%;
+    gap: 2rem;
+    padding-inline: 1rem;
+  }
+
+  /* CARDS  */
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-block: 2rem;
+  }
+
+  .card {
+    min-height: 100%;
+    min-width: auto;
+    border-radius: 0.5rem;
+  }
+
+  .professional {
+    min-height: 110%;
+    background: linear-gradient(to bottom, var(--LinearGradient));
+    border-radius: 0.5rem;
+    color: white;
+  }
+
+  .master {
+    border-radius: 0.5rem;
+  }
+}
