@@ -1,5 +1,5 @@
 <div class="header">
-    <div>
+    <div class="info">
         <h1>Social Media Dashboard</h1>
         <span>Total Followers: 23,004</span>
     </div>
@@ -78,5 +78,28 @@
 
     input[type="range"]:focus::-webkit-slider-runnable-track {
         background: transparent;
+    }
+
+    /* MEDIA QUERIES  */
+    @media (max-width: 800px) {
+        .header {
+            flex-direction: column;
+            gap: 2rem;
+            height: 100%;
+        }
+
+        .header .info {
+            width: 100%;
+            height: 100%;
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--colorTwo);
+        }
+
+        .switch {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
     }
 </style>

@@ -105,3 +105,10 @@ section {
 .gain-false {
   color: var(--BrightRed);
 }
+
+/* MEDIA QUERIES  */
+@media (max-width: 800px) {
+  section {
+    padding-inline: 1rem;
+  }
+}
