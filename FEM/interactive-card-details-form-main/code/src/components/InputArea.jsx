@@ -10,12 +10,13 @@ const InputArea = ({
   year,
   cvc,
   isSubmitted,
+  setIsSubmitted,
 }) => {
   return (
     <>
       {!isSubmitted ? (
         <form onSubmit={handleSubmit}>
-          <div class="row-one">
+          <div className="row-one">
             <label for="holder">Cardholder Name</label>
             <input
               type="text"
@@ -28,7 +29,7 @@ const InputArea = ({
             />
             {errors.holder && <span className="error">{errors.holder}</span>}
           </div>
-          <div class="row-two">
+          <div className="row-two">
             <label for="number">Card Number</label>
             <input
               type="text"
@@ -42,7 +43,7 @@ const InputArea = ({
             />
             {errors.number && <span className="error">{errors.number}</span>}
           </div>
-          <div class="row-three">
+          <div className="row-three">
             <div>
               <label for="">Exp. Date (MM/YY)</label>
               <div>
@@ -91,7 +92,7 @@ const InputArea = ({
           <button type="submit">Confirm</button>
         </form>
       ) : (
-        <Thankyou />
+        <Thankyou setIsSubmitted={setIsSubmitted} />
       )}
     </>
   );

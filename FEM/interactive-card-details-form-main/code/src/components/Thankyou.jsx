@@ -1,6 +1,4 @@
-import React from "react";
-
-const Thankyou = () => {
+const Thankyou = ({ setIsSubmitted }) => {
   return (
     <div className="thankyou">
       <div className="image">
@@ -11,7 +9,7 @@ const Thankyou = () => {
 
       <span>We've added your card details</span>
 
-      <button>Continue</button>
+      <button onClick={() => setIsSubmitted(false)}>Continue</button>
     </div>
   );
 };

@@ -44,7 +44,12 @@ const MainComponent = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      alert("Form submitted successfully!");
+      setHolder("");
+      setNumber("");
+      setMonth("");
+      setYear("");
+      setCvc("");
+      setIsSubmitted(true);
     }
   };
 
@@ -67,6 +72,7 @@ const MainComponent = () => {
         year={year}
         cvc={cvc}
         isSubmitted={isSubmitted}
+        setIsSubmitted={setIsSubmitted}
       />
     </>
   );
