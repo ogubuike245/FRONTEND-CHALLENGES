@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const FormArea = ({
   handleInputChange,
   handleTipSelection,
@@ -6,12 +8,32 @@ const FormArea = ({
   numberOfPeople,
   tipPercentage,
 }) => {
+  const [isBillInputFocused, setIsBillInputFocused] = useState(false);
+  const [isPeopleInputFocused, setIsPeopleInputFocused] = useState(false);
+
+  const handleBillInputFocus = () => {
+    setIsBillInputFocused(true);
+  };
+
+  const handlePeopleInputFocus = () => {
+    setIsPeopleInputFocused(true);
+  };
+
+  const handleBillInputBlur = () => {
+    setIsBillInputFocused(false);
+  };
+
+  const handlePeopleInputBlur = () => {
+    setIsPeopleInputFocused(false);
+  };
+
   return (
     <div className="input-area">
-      {/* BILL INPUT AREA */}
       <div className="bill">
         <label htmlFor="bill">Bill</label>
-        <div className="bill-input">
+        <div
+          className={`bill-input ${isBillInputFocused ? "input-border" : ""}`}
+        >
           <span>
             <img src="/images/icon-dollar.svg" alt="" />
           </span>
@@ -21,12 +43,13 @@ const FormArea = ({
             id="bill"
             min={0}
             onInput={handleInputChange}
+            onFocus={handleBillInputFocus}
+            onBlur={handleBillInputBlur}
             value={billAmount}
           />
         </div>
       </div>
 
-      {/* TIPS LIST AREA */}
       <div className="tips-list">
         <h3>Select Tip %</h3>
         <ul>
@@ -74,10 +97,9 @@ const FormArea = ({
         </ul>
       </div>
 
-      {/* NUMBER OF PEOPLE AREA */}
       <div className="people">
         <label htmlFor="number-of-people">Number of People</label>
-        <div>
+        <div className={`${isPeopleInputFocused ? "  input-border" : ""}`}>
           <span>
             <img src="/images/icon-person.svg" alt="" />
           </span>
@@ -86,6 +108,8 @@ const FormArea = ({
             name="number-of-people"
             id="number-of-people"
             min={1}
+            onFocus={handlePeopleInputFocus}
+            onBlur={handlePeopleInputBlur}
             onInput={handleNumberOfPeopleChange}
             value={numberOfPeople}
           />

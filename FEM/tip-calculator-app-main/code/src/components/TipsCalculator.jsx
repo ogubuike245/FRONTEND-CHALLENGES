@@ -5,9 +5,19 @@ import DisplayArea from "./DisplayArea";
 const TipsCalculator = () => {
   const [billAmount, setBillAmount] = useState(0);
   const [numberOfPeople, setNumberOfPeople] = useState(1);
-  const [tipPercentage, setTipPercentage] = useState("");
+  const [tipPercentage, setTipPercentage] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
+
+  const calculateTipAndTotal = (bill, percentage, people) => {
+    const tip = (bill * percentage) / 100;
+    const total = bill + tip;
+    const tipPerPerson = tip / people;
+    const totalPerPerson = total / people;
+
+    setTipAmount(tipPerPerson);
+    setTotalAmount(totalPerPerson);
+  };
 
   const handleInputChange = (event) => {
     const bill = parseFloat(event.target.value);
@@ -24,16 +34,6 @@ const TipsCalculator = () => {
     const people = parseInt(event.target.value);
     setNumberOfPeople(people);
     calculateTipAndTotal(billAmount, tipPercentage, people);
-  };
-
-  const calculateTipAndTotal = (bill, percentage, people) => {
-    const tip = (bill * percentage) / 100;
-    const total = bill + tip;
-    const tipPerPerson = tip / people;
-    const totalPerPerson = total / people;
-
-    setTipAmount(tipPerPerson);
-    setTotalAmount(totalPerPerson);
   };
 
   const handleReset = () => {
