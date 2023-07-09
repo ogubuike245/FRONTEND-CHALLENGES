@@ -1,0 +1,28 @@
+---
+import "../styles/styles.css";
+import TipsCalculator from "../components/TipsCalculator.jsx";
+import Attribution from "../components/Attribution.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Frontend Mentor | Tip calculator app</title>
+	</head>
+	<body>
+		<section>
+			<div class="heading">
+				<img src="/images/logo.svg" alt="logo" />
+			</div>
+
+			<article>
+				<TipsCalculator client:load />
+			</article>
+		</section>
+
+		<Attribution />
+	</body>
+</html>
