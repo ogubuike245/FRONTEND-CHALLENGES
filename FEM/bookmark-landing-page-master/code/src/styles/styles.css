@@ -19,13 +19,25 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+  transition: all 0.5s ease;
 }
 li {
   list-style: none;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-color: white;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+button:hover {
+  background-color: white !important;
 }
 
 body {
@@ -43,9 +55,11 @@ header {
 
   padding-block: 4rem;
   padding-inline-start: 3rem;
-  /* border: 2px solid red; */
+
+  overflow: hidden;
 }
 
+/* NAVIGATION AREA */
 header nav {
   display: flex;
   align-items: center;
@@ -63,26 +77,36 @@ nav ul li {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px;
+  font-weight: 400;
   color: var(--VeryDarkBlue);
+}
+nav ul li:hover {
+  color: var(--SoftRed);
 }
 
 nav ul button {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px;
+  font-weight: 500;
   padding: 1rem 2.5rem;
-  border: none;
   border-radius: 0.5rem;
 
   background-color: var(--SoftRed);
   color: white;
 }
 
+nav ul button:hover {
+  border: 2px solid var(--SoftRed);
+  background-color: white;
+  color: var(--SoftRed);
+}
+
+/* HERO SECTION  */
 header section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: visible;
-  /* background-color: red; */
 }
 
 header section .content {
@@ -95,6 +119,7 @@ header section .content {
 header section .content h1 {
   font-size: 45px;
   font-weight: 500;
+  color: var(--VeryDarkBlue);
 }
 header section .content p {
   line-height: 1.5;
@@ -109,7 +134,6 @@ header section .content .cta-hero button {
   text-transform: capitalize;
   font-size: 12px;
   padding: 1rem 2rem;
-  border: none;
   border-radius: 0.5rem;
   font-weight: 500;
 }
@@ -117,14 +141,22 @@ header section .content .cta-hero button:nth-child(1) {
   background-color: var(--SoftBlue);
   color: white;
 }
+header section .content .cta-hero button:nth-child(1):hover {
+  color: var(--SoftBlue);
+  border: 2px solid var(--SoftBlue);
+}
 header section .content .cta-hero button:nth-child(2) {
   color: var(--VeryDarkBlue);
+}
+
+header section .content .cta-hero button:nth-child(2):hover {
+  color: var(--VeryDarkBlue);
+  border: 2px solid var(--VeryDarkBlue);
 }
 header section .illustration {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  /* border: 2px solid yellow; */
 }
 
 .illustration img {
@@ -156,6 +188,7 @@ header section .illustration {
 
   width: 40%;
   margin-inline: auto;
+  padding: 2rem;
   line-height: 1.5;
 }
 .features h1 {
@@ -167,3 +200,111 @@ header section .illustration {
 }
 
 /* TABS AREA  */
+.tabs-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  min-height: 100vh;
+  /* padding-block: 1rem 0; */
+  padding-inline: 4rem 0;
+
+  position: relative;
+
+  border: 2px solid red;
+}
+
+.tabs-area ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  /* margin: auto; */
+  border-bottom: 0.1rem solid var(--GrayishBlue);
+}
+
+.tabs-area ul li {
+  height: 100%;
+  /* opacity: 0.5; */
+  font-weight: 400;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-bottom: 4px solid transparent;
+  color: var(--GrayishBlue);
+  cursor: pointer;
+}
+.tabs-area ul li:hover {
+  opacity: 1;
+  color: var(--VeryDarkBlue);
+  border-bottom: 4px solid var(--SoftRed);
+}
+.tabs-area ul li.active {
+  color: var(--VeryDarkBlue);
+  border-bottom: 4px solid var(--SoftRed);
+}
+
+.tabs-area .feature {
+  position: absolute;
+  top: 15vh;
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+  padding-block: 2rem 3rem;
+  opacity: 0;
+}
+.tabs-area .feature .image {
+  width: 60%;
+  height: 100%;
+}
+
+.tabs-area .feature.active {
+  opacity: 1;
+}
+.tabs-area .feature .image img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+.tabs-area .feature .image::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -25%;
+  height: 70%;
+  width: 60%;
+  background-color: var(--SoftBlue);
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 20%;
+  z-index: -1;
+}
+
+.feature .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 30%;
+}
+
+.feature .content h1 {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--VeryDarkBlue);
+}
+.feature .content p {
+  color: var(--GrayishBlue);
+}
+.feature .content button {
+  text-transform: capitalize;
+  font-size: 12px;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  background-color: var(--SoftBlue);
+  color: white;
+}
+
+.feature .content button {
+  color: white !important;
+  background-color: var(--SoftBlue) !important;
+}
