@@ -13,6 +13,10 @@ const Header = () => {
           <li>Contact</li>
           <button>Login</button>
         </ul>
+
+        <div className="hamburger">
+          <img src="../../public/images/icon-hamburger.svg" alt="" />
+        </div>
       </nav>
 
       <section>
