@@ -1,14 +1,14 @@
 import React from "react";
 import Reply from "./Reply";
 
-const Comment = ({ comment }) => {
+const Comment = ({ comment, person }) => {
   return (
     <>
       <article className="comment">
         <div className="score">
-          <i class="fa-solid fa-plus"></i>
+          <i className="fa-solid fa-plus"></i>
           <h4>{comment.score}</h4>
-          <i class="fa-solid fa-minus"></i>
+          <i className="fa-solid fa-minus"></i>
         </div>
         <div className="content">
           <div className="row-one">
@@ -33,15 +33,16 @@ const Comment = ({ comment }) => {
           </div>
         </div>
       </article>
-
-      {comment.replies &&
-        comment.replies.map((reply, index) => {
-          return (
-            <div className="replies">
-              <Reply key={index} comment={reply} />
-            </div>
-          );
-        })}
+      <div className={comment.replies.length != 0 ? "replies-container" : ""}>
+        {comment.replies &&
+          comment.replies.map((reply, index) => {
+            return (
+              <div className="replies" key={index}>
+                <Reply comment={reply} person={person} />
+              </div>
+            );
+          })}
+      </div>
     </>
   );
 };

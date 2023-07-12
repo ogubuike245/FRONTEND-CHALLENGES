@@ -1,12 +1,13 @@
 import React from "react";
 
-const Reply = ({ comment }) => {
+const Reply = ({ comment, person }) => {
+  //   console.log(person);
   return (
-    <article className="comment">
+    <article className="comment ">
       <div className="score">
-        <i class="fa-solid fa-plus"></i>
+        <i className="fa-solid fa-plus"></i>
         <h4>{comment.score}</h4>
-        <i class="fa-solid fa-minus"></i>
+        <i className="fa-solid fa-minus"></i>
       </div>
       <div className="content">
         <div className="row-one">
@@ -16,18 +17,40 @@ const Reply = ({ comment }) => {
             </div>
             <div className="username">
               <h5>{comment.user.username}</h5>
+              {person.currentUser.username === comment.user.username && (
+                <span>you</span>
+              )}
             </div>
             <div className="createdAt">
               <span>{comment.createdAt}</span>
             </div>
           </div>
           <div className="reply">
-            <i className="fa fa-reply"></i>
-            <span>Reply</span>
+            {person.currentUser.username === comment.user.username ? (
+              <>
+                <span>
+                  <i className="fa fa-edit"></i>Edit
+                </span>
+
+                <span className="delete-icon">
+                  <i className="fa fa-trash"></i>Delete
+                </span>
+              </>
+            ) : (
+              <>
+                <span>
+                  <i className="fa fa-reply"></i>Reply
+                </span>
+              </>
+            )}
           </div>
         </div>
         <div className="row-two">
-          <p>{comment.content}</p>
+          <p>
+            <span className="replyingTo">@{comment.replyingTo}</span>
+            &nbsp;
+            {comment.content}
+          </p>
         </div>
       </div>
     </article>
