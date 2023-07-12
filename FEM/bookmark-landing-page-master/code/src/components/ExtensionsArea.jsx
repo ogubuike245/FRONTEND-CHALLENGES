@@ -15,7 +15,7 @@ const ExtensionsArea = () => {
         <article className="card">
           <div className="row-one">
             <div className="image">
-              <img src="../../public/images/logo-chrome.svg" />
+              <img src="/images/logo-chrome.svg" />
             </div>
           </div>
 
@@ -25,14 +25,14 @@ const ExtensionsArea = () => {
           </div>
 
           <div>
-            <img src="../../public/images/bg-dots.svg" alt="" />
+            <img src="/images/bg-dots.svg" alt="" />
           </div>
           <button>Add & Install Extension</button>
         </article>
         <article className="card">
           <div className="row-one">
             <div className="image">
-              <img src="../../public/images/logo-firefox.svg" />
+              <img src="/images/logo-firefox.svg" />
             </div>
           </div>
           <div className="card-info">
@@ -40,14 +40,14 @@ const ExtensionsArea = () => {
             <p> Minimum version 55</p>
           </div>
           <div>
-            <img src="../../public/images/bg-dots.svg" alt="" />
+            <img src="/images/bg-dots.svg" alt="" />
           </div>
           <button> Add & Install Extension</button>
         </article>
         <article className="card">
           <div className="row-one">
             <div className="image">
-              <img src="../../public/images/logo-opera.svg" />
+              <img src="/images/logo-opera.svg" />
             </div>
           </div>
           <div className="card-info">
@@ -55,7 +55,7 @@ const ExtensionsArea = () => {
             <p> Minimum version 46</p>
           </div>
           <div>
-            <img src="../../public/images/bg-dots.svg" alt="" />
+            <img src="/images/bg-dots.svg" alt="" />
           </div>
           <button>Add & Install Extension</button>
         </article>

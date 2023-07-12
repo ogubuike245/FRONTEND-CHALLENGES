@@ -11,18 +11,18 @@ const Header = () => {
     <header className="header">
       <nav>
         <div className="logo">
-          <img src="../../public/images/logo-bookmark.svg" alt="" />
+          <img src="/images/logo-bookmark.svg" alt="" />
         </div>
 
         <div className="menu-icons">
           <img
-            src="../../public/images/icon-hamburger.svg"
+            src="/images/icon-hamburger.svg"
             alt=""
             className={`open-icon ${isNavOpen ? "hidden" : "visible"}`}
             onClick={toggleNav}
           />
           <img
-            src="../../public/images/icon-close.svg"
+            src="/images/icon-close.svg"
             alt=""
             className={`close-icon ${isNavOpen ? "visible" : "hidden"}`}
             onClick={toggleNav}
@@ -51,7 +51,7 @@ const Header = () => {
           </div>
         </article>
         <article className="illustration">
-          <img src="../../public/images/illustration-hero.svg" alt="" />
+          <img src="/images/illustration-hero.svg" alt="" />
         </article>
       </section>
     </header>
