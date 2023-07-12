@@ -1,22 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <header className="header">
       <nav>
         <div className="logo">
           <img src="../../public/images/logo-bookmark.svg" alt="" />
         </div>
-        <ul>
+
+        <div className="menu-icons">
+          <img
+            src="../../public/images/icon-hamburger.svg"
+            alt=""
+            className={`open-icon ${isNavOpen ? "hidden" : "visible"}`}
+            onClick={toggleNav}
+          />
+          <img
+            src="../../public/images/icon-close.svg"
+            alt=""
+            className={`close-icon ${isNavOpen ? "visible" : "hidden"}`}
+            onClick={toggleNav}
+          />
+        </div>
+
+        <ul className={`${isNavOpen ? "active" : ""}`}>
           <li>Features</li>
           <li>Pricing</li>
           <li>Contact</li>
           <button>Login</button>
         </ul>
-
-        <div className="hamburger">
-          <img src="../../public/images/icon-hamburger.svg" alt="" />
-        </div>
       </nav>
 
       <section>

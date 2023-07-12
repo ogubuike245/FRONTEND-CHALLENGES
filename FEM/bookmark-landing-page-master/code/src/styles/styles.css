@@ -103,7 +103,10 @@ nav ul button:hover {
   color: var(--SoftRed);
 }
 
-.hamburger {
+.open-icon {
+  display: none;
+}
+.close-icon {
   display: none;
 }
 
@@ -595,26 +598,76 @@ footer .socials ul li svg:hover path {
     padding-inline-end: 1rem;
   }
 
-  .hamburger {
+  header .logo {
+    z-index: 1000;
+  }
+
+  .menu-icons {
+    z-index: 1000;
+  }
+  .open-icon.visible {
     display: block;
+    cursor: pointer;
+  }
+  .close-icon.visible {
+    display: block;
+    cursor: pointer;
+  }
+  .open-icon.hidden {
+    display: none;
+  }
+  .close-icon.hidden {
+    display: none;
   }
 
   /* NAVIGATION AREA */
   header nav {
     padding-inline-end: 0rem;
+    position: relative;
   }
 
   nav ul {
+    background-color: rgba(37, 43, 70, 0.9);
+
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: none;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    padding-inline: 1rem;
+    z-index: 1;
+    overflow: hidden;
+  }
+  nav ul.active {
+    display: flex;
   }
 
   nav ul li {
-    color: var(--VeryDarkBlue);
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    width: 100%;
+    text-align: center;
+    padding-block: 1rem;
+    border-bottom: 2px solid var(--GrayishBlue);
+  }
+  nav ul li:nth-child(1) {
+    border-top: 2px solid var(--GrayishBlue);
+  }
+  nav ul li:nth-child(3) {
+    margin-block-end: 2rem;
   }
 
   nav ul button {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid white;
+    font-size: 18px;
   }
   nav .hamburger img {
     cursor: pointer;
