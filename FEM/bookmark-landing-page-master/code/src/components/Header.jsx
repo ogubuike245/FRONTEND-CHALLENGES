@@ -4,7 +4,7 @@ const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
+    setIsNavOpen((prevState) => !prevState);
   };
 
   return (
@@ -29,7 +29,7 @@ const Header = () => {
           />
         </div>
 
-        <ul className={`${isNavOpen ? "active" : ""}`}>
+        <ul className={`nav-menu ${isNavOpen ? "active" : ""}`}>
           <li>Features</li>
           <li>Pricing</li>
           <li>Contact</li>
