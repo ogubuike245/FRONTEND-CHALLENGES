@@ -334,20 +334,64 @@ footer svg path {
   header nav .nav-links ul {
     display: none;
   }
+  header nav .nav-links ul.active {
+    display: block;
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    background-color: var(--DarkViolet);
+    width: 80%;
 
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  header nav .nav-links ul.active li {
+    color: white;
+    font-weight: 800;
+  }
   header nav .actions {
     display: none;
   }
+  header nav .actions.active {
+    display: block;
+    position: absolute;
+    top: 15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    background-color: var(--DarkViolet);
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  header nav .actions.active button {
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+    width: 100%;
+  }
+  header nav .actions.active:before {
+    content: "";
+    position: absolute;
+    background-color: red;
+    border-bottom: 1px solid var(--VeryDarkViolet);
+    top: 0;
+    width: 80%;
+  }
 
   .menu-icons {
+    z-index: 999;
     display: block;
+    /* border: 2px solid red; */
   }
-  .menu-icons .fa-bars {
-    display: block;
-  }
-  .menu-icons .fa-times {
-    display: none;
-  }
+
   .hero {
     padding-inline: 0rem 0;
     flex-wrap: wrap;
