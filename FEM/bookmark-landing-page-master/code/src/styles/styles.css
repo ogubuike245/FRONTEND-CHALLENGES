@@ -105,8 +105,8 @@ nav ul button:hover {
 /* HERO SECTION  */
 header section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: visible;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  gap: 3rem;
 }
 
 header section .content {
@@ -211,7 +211,7 @@ header section .illustration {
 
   position: relative;
 
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .tabs-area ul {
@@ -307,4 +307,278 @@ header section .illustration {
 .feature .content button {
   color: white !important;
   background-color: var(--SoftBlue) !important;
+}
+
+/* EXTENSIONS AREA */
+
+.extensions-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  gap: 2rem;
+  /* border: 10px solid red; */
+}
+
+.extensions-section .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+
+  width: 40%;
+}
+.extensions-section .heading h1 {
+  color: var(--VeryDarkBlue);
+}
+
+.extensions-section .heading p {
+  color: var(--GrayishBlue);
+}
+
+.extensions-section .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+.extensions-section .cards .card {
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 1px 2px 10px rgba(125, 174, 211, 0.2);
+
+  height: 300px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.extensions-section .cards .card .card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+.extensions-section .cards .card .card-info h2 {
+  color: var(--VeryDarkBlue);
+}
+.extensions-section .cards .card .card-info p {
+  color: var(--GrayishBlue);
+}
+
+.extensions-section .cards .card button {
+  text-transform: capitalize;
+  font-size: 12px;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  background-color: var(--SoftBlue);
+  color: white;
+}
+
+.extensions-section .cards .card button:hover {
+  color: var(--SoftBlue);
+  border: 2px solid var(--SoftBlue);
+}
+.extensions-section .cards article:nth-child(1) {
+}
+.extensions-section .cards article:nth-child(2) {
+  transform: translateY(30px);
+}
+.extensions-section .cards article:nth-child(3) {
+  transform: translateY(60px);
+}
+
+/* FAQ  */
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.faq .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  width: 40%;
+}
+
+.faq .heading h1 {
+  color: var(--VeryDarkBlue);
+}
+.faq .heading p {
+  color: var(--GrayishBlue);
+}
+
+.faq-list {
+  width: 50%;
+  margin: auto;
+}
+
+.faq-list .faq-question {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(137, 153, 163, 0.5);
+}
+.faq-list .faq-question:last-child {
+  border-bottom: 1px solid rgba(137, 152, 163, 0.5);
+}
+
+.faq-list .faq-question .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+.faq-list .question {
+  color: var(--VeryDarkBlue);
+}
+.faq-list .question:hover {
+  color: var(--SoftRed);
+}
+.faq-list .answer {
+  /* max-height: 0; */
+  color: var(--GrayishBlue);
+}
+
+.faq-arrow {
+}
+.faq-arrow.active {
+  /* color: var(--SoftRed); */
+  /* fill: var(--SoftRed); */
+  stroke: var(--SoftRed);
+  /* background-color: red; */
+}
+
+.faq-list .answer.active {
+  max-height: 100px;
+}
+
+.faq button {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--SoftBlue);
+  color: white;
+}
+
+.faq button:hover {
+  color: white !important;
+  background-color: var(--SoftBlue) !important;
+}
+
+/* FOOTER  */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  margin-block: 3rem 0;
+}
+
+footer .row-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 3rem;
+  background-color: var(--SoftBlue);
+}
+
+footer .row-one .membership p {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 13px;
+}
+
+footer .row-one .heading {
+  width: 40%;
+}
+
+footer .row-one .heading h1 {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+footer .row-one .input-field {
+  display: flex;
+  gap: 1rem;
+  width: 40%;
+}
+footer .row-one .input-field * {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+footer .row-one .input-field input {
+  width: 70%;
+  border: none;
+  outline: none;
+}
+
+footer .row-one .input-field button {
+  background-color: var(--SoftRed);
+  color: white;
+  font-weight: 500;
+}
+
+footer .row-one .input-field button:hover {
+  border: 2px solid var(--SoftRed);
+  color: var(--SoftRed);
+}
+footer .row-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: var(--VeryDarkBlue);
+  padding-inline: 4rem 2rem;
+}
+
+footer .row-two svg g:nth-child(1) path {
+  fill: white;
+}
+
+footer .row-two .navigation {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+footer .row-two .navigation ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+footer .row-two .navigation ul li {
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+footer .row-two .navigation ul li:hover {
+  color: var(--SoftRed);
+}
+footer .socials ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+footer .socials ul li svg:hover path {
+  fill: var(--SoftRed);
 }

@@ -14,29 +14,49 @@ const ExtensionsArea = () => {
       <div className="cards">
         <article className="card">
           <div className="row-one">
-            <div className="image"></div>
+            <div className="image">
+              <img src="../../public/images/logo-chrome.svg" />
+            </div>
+          </div>
+
+          <div className="card-info">
             <h2> Add to Chrome</h2>
             <p> Minimum version 62</p>
           </div>
 
+          <div>
+            <img src="../../public/images/bg-dots.svg" alt="" />
+          </div>
           <button>Add & Install Extension</button>
         </article>
         <article className="card">
           <div className="row-one">
-            <div className="image"></div>
+            <div className="image">
+              <img src="../../public/images/logo-firefox.svg" />
+            </div>
+          </div>
+          <div className="card-info">
             <h2>Add to Firefox</h2>
             <p> Minimum version 55</p>
           </div>
-
+          <div>
+            <img src="../../public/images/bg-dots.svg" alt="" />
+          </div>
           <button> Add & Install Extension</button>
         </article>
         <article className="card">
           <div className="row-one">
-            <div className="image"></div>
+            <div className="image">
+              <img src="../../public/images/logo-opera.svg" />
+            </div>
+          </div>
+          <div className="card-info">
             <h2> Add to Opera</h2>
             <p> Minimum version 46</p>
           </div>
-
+          <div>
+            <img src="../../public/images/bg-dots.svg" alt="" />
+          </div>
           <button>Add & Install Extension</button>
         </article>
       </div>
