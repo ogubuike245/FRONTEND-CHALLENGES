@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import moment from "moment";
 
 const Reply = ({ comment, person }) => {
-  //   console.log(person);
+  const [score, setScore] = useState(comment.score);
+
+  const handleUpVote = () => {
+    setScore(score + 1);
+  };
+
+  const handleDownVote = () => {
+    if (score > 0) {
+      setScore(score - 1);
+    }
+  };
   return (
     <article className="comment">
       {/* SCORE  */}
       <div className="score">
-        <i className="fa-solid fa-plus"></i>
-        <h4>{comment.score}</h4>
-        <i className="fa-solid fa-minus"></i>
+        <i className="fa-solid fa-plus" onClick={handleUpVote}></i>
+        <h4>{score}</h4>
+        <i className="fa-solid fa-minus" onClick={handleDownVote}></i>
       </div>
 
       {/* USER INFO  */}
@@ -20,7 +31,7 @@ const Reply = ({ comment, person }) => {
           <h5>{comment.user.username}</h5>
         </div>
         <div className="createdAt">
-          <span>{comment.createdAt}</span>
+          <span>{moment(comment.createdAt).fromNow()}</span>
         </div>
       </div>
 

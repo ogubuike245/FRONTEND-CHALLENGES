@@ -105,6 +105,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row-reverse;
   gap: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -193,7 +194,7 @@ body {
   border-radius: 0.5rem;
   outline: none;
   padding: 1rem;
-  color: var(--color-light);
+  color: var(--color-neutral);
 }
 
 .form-button {
