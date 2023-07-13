@@ -1,58 +1,35 @@
 import React, { useState } from "react";
-import Reply from "./Reply";
-
 import moment from "moment";
 
-const Comment = ({ comment, person, setPerson, handleDeleteComment }) => {
-  const [score, setScore] = useState(comment.score);
+import Reply from "./Reply";
+import useVote from "../hooks/useVotes";
+import useDeleteComment from "../hooks/useDeleteComment";
+import useEditComment from "../hooks/useEditComment";
 
-  const handleUpVote = () => {
-    // This function takes care of upvoting a comment.
-    // It first gets the current person object and the comment that was upvoted.
-    const updatedPerson = {
-      ...person,
-      comments: person.comments.map((upVotedComment) => {
-        // If the comment that was upvoted is found,
-        // the score of the comment is incremented by 1.
-        if (upVotedComment.id === comment.id) {
-          return { ...upVotedComment, score: upVotedComment.score + 1 };
-        }
-        // Otherwise, the comment is returned as-is.
-        return upVotedComment;
-      }),
-    };
+const Comment = ({ comment, person, setPerson }) => {
+  const [edit, setEdit] = useState(false);
 
-    // The updated person object is then set to the state of the person component.
-    setPerson(updatedPerson);
+  const [score, handleUpVote, handleDownVote] = useVote(
+    comment.score,
+    person,
+    setPerson,
+    comment
+  );
+  const handleDeleteComment = useDeleteComment(person, setPerson);
 
-    // The score of the comment is also incremented by 1.
-    setScore(score + 1);
+  const [editedContent, setEditedContent, handleSaveEdit] = useEditComment(
+    person,
+    setPerson
+  );
+
+  const handleEditComment = () => {
+    setEditedContent(comment.content);
+    setEdit(!edit);
   };
 
-  const handleDownVote = () => {
-    // This function takes care of downvoting a comment.
-    // It first checks if the score of the comment is greater than 0.
-    // If it is, then the function proceeds to update the comment's score by 1.
-    if (score > 0) {
-      const updatedPerson = {
-        ...person,
-        comments: person.comments.map((downVotedComment) => {
-          // If the comment that was downvoted is found,
-          // the score of the comment is decremented by 1.
-          if (downVotedComment.id === comment.id) {
-            return { ...downVotedComment, score: downVotedComment.score - 1 };
-          }
-          // Otherwise, the comment is returned as-is.
-          return downVotedComment;
-        }),
-      };
-
-      // The updated person object is then set to the state of the person component.
-      setPerson(updatedPerson);
-
-      // The score of the comment is also decremented by 1.
-      setScore(score - 1);
-    }
+  const handleCancelEdit = () => {
+    setEditedContent("");
+    setEdit(false);
   };
 
   return (
@@ -64,11 +41,10 @@ const Comment = ({ comment, person, setPerson, handleDeleteComment }) => {
           <h4>{score}</h4>
           <i className="fa-solid fa-minus" onClick={handleDownVote}></i>
         </div>
-
         {/* USER INFO  */}
         <div className="user-info">
           <div className="avatar">
-            <img src={comment.user?.image} alt="" />
+            <img src={comment.user?.image?.png} alt="" />
           </div>
           <div className="username">
             <h5>{comment.user.username}</h5>
@@ -77,20 +53,32 @@ const Comment = ({ comment, person, setPerson, handleDeleteComment }) => {
             <span>{moment(comment.createdAt).fromNow()}</span>
           </div>
         </div>
-
         {/* ACTIONS  */}
         <div className="actions">
           {person.currentUser.username === comment.user.username ? (
             <div>
-              <span
-                className="delete-icon"
-                onClick={() => handleDeleteComment(comment.id)}
-              >
-                <i className="fa fa-trash"></i>Delete
-              </span>
-              <span>
-                <i className="fa fa-edit"></i>Edit
-              </span>
+              {!edit ? (
+                <>
+                  <span
+                    className="delete-icon"
+                    onClick={() => handleDeleteComment(comment.id)}
+                  >
+                    <i className="fa fa-trash"></i>Delete
+                  </span>
+                  <span onClick={handleEditComment}>
+                    <i className="fa fa-edit"></i>Edit
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span onClick={() => handleSaveEdit(comment.id)}>
+                    <i className="fa fa-save"></i>Save
+                  </span>
+                  <span onClick={handleCancelEdit}>
+                    <i className="fa fa-times"></i>Cancel
+                  </span>
+                </>
+              )}
             </div>
           ) : (
             <div>
@@ -100,6 +88,18 @@ const Comment = ({ comment, person, setPerson, handleDeleteComment }) => {
             </div>
           )}
         </div>
+
+        {edit && (
+          <div className="edit-comment">
+            <textarea
+              placeholder="Edit your comment"
+              rows="3"
+              cols="30"
+              value={editedContent}
+              onChange={(e) => setEditedContent(e.target.value)}
+            ></textarea>
+          </div>
+        )}
 
         {/* COMMENT DESCRIPTION */}
         <div className="description">
@@ -114,6 +114,7 @@ const Comment = ({ comment, person, setPerson, handleDeleteComment }) => {
               <Reply
                 comment={reply}
                 person={person}
+                setPerson={setPerson}
                 key={index}
                 handleDeleteComment={handleDeleteComment}
               />

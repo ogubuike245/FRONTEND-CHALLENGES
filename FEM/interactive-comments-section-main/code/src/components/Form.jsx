@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 
-const Form = ({ person, onSubmit, setNewComment, newComment }) => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  const currentUserImage = person.currentUser.image;
-
-  const handleCloseDialog = () => {
-    setIsDialogOpen(false);
-  };
+const Form = ({ onSubmit, setNewComment, newComment, currentUser }) => {
+  const currentUserImage = currentUser.image.png;
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
@@ -35,20 +29,6 @@ const Form = ({ person, onSubmit, setNewComment, newComment }) => {
           SEND
         </button>
       </form>
-
-      {isDialogOpen && (
-        <div className="dialog-overlay">
-          <div className="dialog-content">
-            <h1>Comment Added</h1>
-
-            <p>Your comment has been added successfully.</p>
-
-            <div className="buttons">
-              <button onClick={handleCloseDialog}>OK</button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

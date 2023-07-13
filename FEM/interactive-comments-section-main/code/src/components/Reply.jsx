@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import moment from "moment";
+import useDeleteComment from "../hooks/useDeleteComment";
+import useVote from "../hooks/useVotes";
 
-const Reply = ({ comment, person, handleDeleteComment }) => {
-  const [score, setScore] = useState(comment.score);
+const Reply = ({ comment, person, setPerson }) => {
+  const [score, handleUpVote, handleDownVote] = useVote(
+    comment.score,
+    person,
+    setPerson,
+    comment
+  );
+  const handleDeleteComment = useDeleteComment(person, setPerson);
 
-  const handleUpVote = () => {
-    setScore(score + 1);
-  };
-
-  const handleDownVote = () => {
-    if (score > 0) {
-      setScore(score - 1);
-    }
-  };
   return (
     <article className="comment">
       {/* SCORE  */}

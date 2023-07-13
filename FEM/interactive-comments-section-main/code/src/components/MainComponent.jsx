@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import data from "../../src/data.json";
 import Form from "./Form";
 import Comments from "./Comments";
+import useCreateComment from "../hooks/useCreateComment";
 
 const MainComponent = () => {
-  const [person, setPerson] = useState({
-    currentUser: {
-      image: "/images/avatars/image-juliusomo.png", // Set a default image value (empty string or a placeholder image URL)
-      username: "juliusomo", // Set a default username value
-    },
-    comments: [],
-  });
-
-  const [newComment, setNewComment] = useState("");
+  const [person, setPerson] = useState(data);
+  const [newComment, setNewComment, handleCreateComment] = useCreateComment(
+    person,
+    setPerson
+  );
 
   // LOAD COMMENTS AND UPDATE COMMENTS FROM STATE
   useEffect(() => {
@@ -28,63 +25,16 @@ const MainComponent = () => {
     localStorage.setItem("personState", JSON.stringify(person));
   }, [person]);
 
-  // CREATE NEW COMMENT
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Create a new comment object
-    const comment = {
-      id: person.comments.length + 1,
-      content: newComment,
-      createdAt: new Date().toLocaleString(),
-      score: 0,
-      user: {
-        image: person.currentUser.image,
-        username: person.currentUser.username,
-      },
-      replies: [],
-    };
-
-    // Create a new copy of the person object with the updated comments array
-    const updatedPerson = {
-      ...person,
-      comments: [...person.comments, comment],
-    };
-
-    setPerson(updatedPerson);
-    setNewComment("");
-  };
-
-  // DELETE COMMENT
-  const handleDeleteComment = (commentId) => {
-    // Filter out the comment with the given id from the comments array
-    const filteredComments = person.comments.filter(
-      (comment) => comment.id !== commentId
-    );
-
-    // Create a new copy of the person object with the updated comments array
-    const updatedPerson = {
-      ...person,
-      comments: filteredComments,
-    };
-
-    setPerson(updatedPerson);
-  };
-
   return (
     <>
       <section className="comments">
-        <Comments
-          person={person}
-          setPerson={setPerson}
-          handleDeleteComment={handleDeleteComment}
-        />
+        <Comments person={person} setPerson={setPerson} />
 
         <Form
-          person={person}
-          onSubmit={handleSubmit}
+          onSubmit={handleCreateComment}
           setNewComment={setNewComment}
           newComment={newComment}
+          currentUser={person.currentUser}
         />
       </section>
     </>
