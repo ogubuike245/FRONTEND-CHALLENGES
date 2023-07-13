@@ -4,9 +4,17 @@ import Form from "./Form";
 import Comments from "./Comments";
 
 const MainComponent = () => {
-  const [person, setPerson] = useState(data);
+  const [person, setPerson] = useState({
+    currentUser: {
+      image: "/images/avatars/image-juliusomo.png", // Set a default image value (empty string or a placeholder image URL)
+      username: "juliusomo", // Set a default username value
+    },
+    comments: [],
+  });
+
   const [newComment, setNewComment] = useState("");
 
+  // LOAD COMMENTS AND UPDATE COMMENTS FROM STATE
   useEffect(() => {
     // Load the state from localStorage
     const storedState = localStorage.getItem("personState");
@@ -20,6 +28,7 @@ const MainComponent = () => {
     localStorage.setItem("personState", JSON.stringify(person));
   }, [person]);
 
+  // CREATE NEW COMMENT
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -46,15 +55,36 @@ const MainComponent = () => {
     setNewComment("");
   };
 
+  // DELETE COMMENT
+  const handleDeleteComment = (commentId) => {
+    // Filter out the comment with the given id from the comments array
+    const filteredComments = person.comments.filter(
+      (comment) => comment.id !== commentId
+    );
+
+    // Create a new copy of the person object with the updated comments array
+    const updatedPerson = {
+      ...person,
+      comments: filteredComments,
+    };
+
+    setPerson(updatedPerson);
+  };
+
   return (
     <>
       <section className="comments">
-        <Comments person={person} setPerson={setPerson} />
+        <Comments
+          person={person}
+          setPerson={setPerson}
+          handleDeleteComment={handleDeleteComment}
+        />
 
         <Form
           person={person}
           onSubmit={handleSubmit}
           setNewComment={setNewComment}
+          newComment={newComment}
         />
       </section>
     </>

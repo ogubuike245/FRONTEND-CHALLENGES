@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
-const Form = ({ person, onSubmit, setNewComment }) => {
+const Form = ({ person, onSubmit, setNewComment, newComment }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const currentUserImage = person.currentUser.image;
 
   const handleCloseDialog = () => {
     setIsDialogOpen(false);
@@ -15,7 +17,7 @@ const Form = ({ person, onSubmit, setNewComment }) => {
     <>
       <form className="form-input" onSubmit={onSubmit}>
         <div className="form-user-avatar">
-          <img src={person.currentUser.image.png} alt="" />
+          <img src={currentUserImage} alt="" />
         </div>
 
         <textarea
@@ -25,6 +27,7 @@ const Form = ({ person, onSubmit, setNewComment }) => {
           rows="4"
           placeholder="Add a comment..."
           className="input-box"
+          value={newComment}
           onChange={handleChange}
         ></textarea>
 

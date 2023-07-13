@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const Reply = ({ comment, person }) => {
+const Reply = ({ comment, person, handleDeleteComment }) => {
   const [score, setScore] = useState(comment.score);
 
   const handleUpVote = () => {
@@ -39,7 +39,10 @@ const Reply = ({ comment, person }) => {
       <div className="actions">
         {person.currentUser.username === comment.user.username ? (
           <div>
-            <span className="delete-icon">
+            <span
+              className="delete-icon"
+              onClick={() => handleDeleteComment(comment.id)}
+            >
               <i className="fa fa-trash"></i>Delete
             </span>
             <span>

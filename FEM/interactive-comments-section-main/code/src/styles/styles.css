@@ -29,6 +29,11 @@ a {
   text-decoration: none;
 }
 
+span i,
+i {
+  cursor: pointer;
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -139,6 +144,7 @@ body {
 
 .actions span {
   color: var(--color-primary);
+  cursor: pointer;
 }
 
 .actions .delete-icon {
@@ -171,7 +177,7 @@ body {
   padding: 1rem;
   border-radius: 0.5rem;
   display: grid;
-  grid-template-columns: 2rem 1fr 6rem;
+  grid-template-columns: 3rem 1fr 6rem;
   grid-template-areas:
     "input input input"
     "avatar ...  button";
@@ -185,6 +191,8 @@ body {
 
 .form-user-avatar img {
   object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .input-box {

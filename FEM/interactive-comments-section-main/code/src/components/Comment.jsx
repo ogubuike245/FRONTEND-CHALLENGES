@@ -3,7 +3,7 @@ import Reply from "./Reply";
 
 import moment from "moment";
 
-const Comment = ({ comment, person, setPerson }) => {
+const Comment = ({ comment, person, setPerson, handleDeleteComment }) => {
   const [score, setScore] = useState(comment.score);
 
   const handleUpVote = () => {
@@ -68,7 +68,7 @@ const Comment = ({ comment, person, setPerson }) => {
         {/* USER INFO  */}
         <div className="user-info">
           <div className="avatar">
-            <img src={comment.user?.image?.png} alt="" />
+            <img src={comment.user?.image} alt="" />
           </div>
           <div className="username">
             <h5>{comment.user.username}</h5>
@@ -82,7 +82,10 @@ const Comment = ({ comment, person, setPerson }) => {
         <div className="actions">
           {person.currentUser.username === comment.user.username ? (
             <div>
-              <span className="delete-icon">
+              <span
+                className="delete-icon"
+                onClick={() => handleDeleteComment(comment.id)}
+              >
                 <i className="fa fa-trash"></i>Delete
               </span>
               <span>
@@ -107,7 +110,14 @@ const Comment = ({ comment, person, setPerson }) => {
       <div className={comment.replies.length !== 0 ? "replies-container" : ""}>
         {comment.replies &&
           comment.replies.map((reply, index) => {
-            return <Reply comment={reply} person={person} key={index} />;
+            return (
+              <Reply
+                comment={reply}
+                person={person}
+                key={index}
+                handleDeleteComment={handleDeleteComment}
+              />
+            );
           })}
       </div>
     </>
