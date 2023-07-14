@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-const useReplyVotes = (initialScore, initialPerson, setPerson, comment) => {
+const useFirstLevelReplyVotes = (
+  initialScore,
+  initialPerson,
+  setPerson,
+  comment
+) => {
   const [score, setScore] = useState(initialScore);
 
   const handleUpVote = () => {
@@ -45,4 +50,4 @@ const useReplyVotes = (initialScore, initialPerson, setPerson, comment) => {
   return [score, handleUpVote, handleDownVote];
 };
 
-export default useReplyVotes;
+export default useFirstLevelReplyVotes;

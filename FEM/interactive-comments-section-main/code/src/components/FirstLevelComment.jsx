@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import moment from "moment";
+import FirstLevelCommentReply from "./FirstLevelCommentReply";
+import FirstLevelCommentReplyForm from "./FirstLevelCommentReplyForm";
 
-import Reply from "./Reply";
-import useVote from "../hooks/useVotes";
-import ReplyForm from "./ReplyForm";
+// HOOKS
+import useFirstLevelVotes from "../hooks/useFirstLevelVotes";
+import useDeleteFirstLevelComment from "../hooks/useDeleteFirstLevelComment";
 
 const Comment = ({ comment, person, setPerson, currentUser }) => {
   const [replyComment, setReplyComment] = useState(false);
-  const [score, handleUpVote, handleDownVote] = useVote(
+  const [score, handleUpVote, handleDownVote] = useFirstLevelVotes(
     comment.score,
     person,
     setPerson,
     comment
   );
+
+  const handleDeleteComment = useDeleteFirstLevelComment(person, setPerson);
+
+  const handleReplyClick = () => {
+    setReplyComment(!replyComment);
+  };
 
   return (
     <>
@@ -33,31 +41,49 @@ const Comment = ({ comment, person, setPerson, currentUser }) => {
             {currentUser.username === comment.user.username && <span>You</span>}
           </div>
           <div className="createdAt">
-            <span>{comment.createdAt}</span>
+            <span>{moment(comment.createdAt).fromNow()}</span>
           </div>
         </div>
         {/* ACTIONS  */}
         <div className="actions">
-          <span onClick={() => setReplyComment(!replyComment)}>
-            <i className="fa fa-reply"></i>Reply
-          </span>
+          {currentUser.username === comment.user.username ? (
+            <>
+              <span onClick={() => handleDeleteComment(comment.id)}>
+                <i className="fa fa-trash"></i>Delete
+              </span>
+
+              <span>
+                <i className="fa fa-edit"></i>Edit
+              </span>
+            </>
+          ) : (
+            <span onClick={handleReplyClick}>
+              <i className="fa fa-reply"></i>Reply
+            </span>
+          )}
         </div>
-        {/* COMMENT EDIT FORM  */}
-        {/* COMMENT REPLY FORM   */}
         {/* COMMENT DESCRIPTION */}
         <div className="description">
           <p>{comment.content}</p>
         </div>
       </article>
 
-      {replyComment && <ReplyForm currentUser={currentUser} />}
-
+      {/* COMMENT REPLY FORM   */}
+      {replyComment && (
+        <FirstLevelCommentReplyForm
+          currentUser={currentUser}
+          comment={comment}
+          person={person}
+          setPerson={setPerson}
+        />
+      )}
+      {/* COMMENT EDIT FORM  */}
       {/* COMMENT REPLY / REPLIES  */}
       <div className={comment.replies.length > 0 ? "replies-container" : ""}>
         {comment.replies &&
           comment.replies.map((reply, index) => {
             return (
-              <Reply
+              <FirstLevelCommentReply
                 comment={reply}
                 person={person}
                 setPerson={setPerson}

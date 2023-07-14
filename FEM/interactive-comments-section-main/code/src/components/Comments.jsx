@@ -1,12 +1,12 @@
 import React from "react";
-import Comment from "./Comment";
+import FirstLevelComment from "./FirstLevelComment";
 
 const Comments = ({ person, setPerson, currentUser }) => {
   return (
     <>
       {person.comments.map((comment) => {
         return (
-          <Comment
+          <FirstLevelComment
             key={comment.id}
             comment={comment}
             person={person}

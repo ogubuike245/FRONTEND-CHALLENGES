@@ -1,10 +1,8 @@
-import useCreateComment from "../hooks/useCreateComment";
+import useCreateFirstLevelComment from "../hooks/useCreateFirstLevelComment";
 
-const FirstLevelForm = ({ person, setPerson, currentUser }) => {
-  const [newComment, setNewComment, handleCreateComment] = useCreateComment(
-    person,
-    setPerson
-  );
+const FirstLevelCommentCreationForm = ({ person, setPerson, currentUser }) => {
+  const [newComment, setNewComment, handleCreateComment] =
+    useCreateFirstLevelComment(person, setPerson);
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
@@ -14,7 +12,7 @@ const FirstLevelForm = ({ person, setPerson, currentUser }) => {
     <>
       <form className="form-input" onSubmit={handleCreateComment}>
         <div className="form-user-avatar">
-          <img src={currentUser.image.png} alt="" />
+          <img src={currentUser?.image?.png} alt="" />
         </div>
 
         <textarea
@@ -36,4 +34,4 @@ const FirstLevelForm = ({ person, setPerson, currentUser }) => {
   );
 };
 
-export default FirstLevelForm;
+export default FirstLevelCommentCreationForm;

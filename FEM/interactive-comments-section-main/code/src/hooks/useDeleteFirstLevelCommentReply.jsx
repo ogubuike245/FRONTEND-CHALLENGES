@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useDeleteComment = (initialPerson, setPerson) => {
+const useDeleteFirstLevelComment = (initialPerson, setPerson) => {
   const handleDeleteComment = (commentId) => {
     const updatedPerson = {
       ...initialPerson,
@@ -14,4 +14,4 @@ const useDeleteComment = (initialPerson, setPerson) => {
   return handleDeleteComment;
 };
 
-export default useDeleteComment;
+export default useDeleteFirstLevelComment;

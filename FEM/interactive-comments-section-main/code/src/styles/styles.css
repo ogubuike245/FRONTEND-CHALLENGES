@@ -44,10 +44,8 @@ body {
   background-color: var(--VeryLightGray);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem;
-  padding-block: 6rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 /* COMMENTS */
@@ -55,27 +53,29 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
-  width: 100%;
+  min-width: 100%;
+  /* border: 5px solid green; */
 }
 
 .comment,
 .reply {
   background-color: var(--White);
-  min-height: 100%;
+  min-height: 250px;
   width: 100%;
   display: grid;
-  grid-template-columns: 6em 1fr 8em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2rem 1fr 3rem;
   grid-template-areas:
     "user-info   user-info   user-info"
     "description description description"
-    "score        .....      actions"
-    "edit        edit      edit";
-  gap: 1rem;
-  padding: 2rem;
+    "score        .....      actions";
+
+  padding: 1rem;
   border-radius: 0.5rem;
+  font-size: 1rem;
+
+  /* border: 2px solid red; */
 }
 
 .user-info {
@@ -98,7 +98,6 @@ body {
   background-color: var(--ModerateBlue);
   padding: 0.2rem;
   border-radius: 0.2rem;
-  font-size: 10px;
 }
 
 .user-info span {
@@ -112,11 +111,17 @@ body {
 
 .description {
   grid-area: description;
+  display: flex;
+  align-items: center;
   line-height: 1.35;
 }
 
 .description p {
   color: var(--GrayishBlue);
+}
+.description p span {
+  padding-right: 0.5rem;
+  color: var(--ModerateBlue);
 }
 
 .score {
@@ -126,9 +131,11 @@ body {
   justify-content: center;
   flex-direction: row-reverse;
   gap: 1rem;
-  padding: 0.5rem;
+  /* height: 50%; */
+  padding: 1rem;
   border-radius: 0.5rem;
   background-color: var(--VeryLightGray);
+  /* border: 1px solid red; */
 }
 
 .score i {
@@ -150,6 +157,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   gap: 0.5rem;
+  /* height: 50%; */
 }
 
 .actions div,
@@ -167,7 +175,7 @@ body {
   color: var(--LightGrayishBlue);
 }
 
-.actions .delete-icon {
+.actions span:has(> .fa-trash) {
   color: var(--SoftRed);
 }
 
@@ -198,7 +206,6 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  /* border: 2px solid red; */
 }
 .edit-comment textarea {
   width: 100%;

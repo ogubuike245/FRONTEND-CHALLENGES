@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as generateRandomId } from "uuid";
 
-const useCreateComment = (initialPerson, setPerson) => {
+const useCreateFirstLevelComment = (initialPerson, setPerson) => {
   const [newComment, setNewComment] = useState("");
 
   const handleCreateComment = (event) => {
@@ -35,4 +35,4 @@ const useCreateComment = (initialPerson, setPerson) => {
   return [newComment, setNewComment, handleCreateComment];
 };
 
-export default useCreateComment;
+export default useCreateFirstLevelComment;
