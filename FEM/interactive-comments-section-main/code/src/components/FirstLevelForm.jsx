@@ -1,6 +1,6 @@
 import useCreateComment from "../hooks/useCreateComment";
 
-const Form = ({ person, setPerson, currentUser }) => {
+const FirstLevelForm = ({ person, setPerson, currentUser }) => {
   const [newComment, setNewComment, handleCreateComment] = useCreateComment(
     person,
     setPerson
@@ -36,4 +36,4 @@ const Form = ({ person, setPerson, currentUser }) => {
   );
 };
 
-export default Form;
+export default FirstLevelForm;
