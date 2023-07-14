@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import useCreateComment from "../hooks/useCreateComment";
 
-const Form = ({ onSubmit, setNewComment, newComment, currentUser }) => {
-  const currentUserImage = currentUser.image.png;
+const Form = ({ person, setPerson, currentUser }) => {
+  const [newComment, setNewComment, handleCreateComment] = useCreateComment(
+    person,
+    setPerson
+  );
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
@@ -9,9 +12,9 @@ const Form = ({ onSubmit, setNewComment, newComment, currentUser }) => {
 
   return (
     <>
-      <form className="form-input" onSubmit={onSubmit}>
+      <form className="form-input" onSubmit={handleCreateComment}>
         <div className="form-user-avatar">
-          <img src={currentUserImage} alt="" />
+          <img src={currentUser.image.png} alt="" />
         </div>
 
         <textarea

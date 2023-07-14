@@ -2,14 +2,9 @@ import React, { useState, useEffect } from "react";
 import data from "../../src/data.json";
 import Form from "./Form";
 import Comments from "./Comments";
-import useCreateComment from "../hooks/useCreateComment";
 
 const MainComponent = () => {
   const [person, setPerson] = useState(data);
-  const [newComment, setNewComment, handleCreateComment] = useCreateComment(
-    person,
-    setPerson
-  );
 
   // LOAD COMMENTS AND UPDATE COMMENTS FROM STATE
   useEffect(() => {
@@ -31,9 +26,8 @@ const MainComponent = () => {
         <Comments person={person} setPerson={setPerson} />
 
         <Form
-          onSubmit={handleCreateComment}
-          setNewComment={setNewComment}
-          newComment={newComment}
+          setPerson={setPerson}
+          person={person}
           currentUser={person.currentUser}
         />
       </section>

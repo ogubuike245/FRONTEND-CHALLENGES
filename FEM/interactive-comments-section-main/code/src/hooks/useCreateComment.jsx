@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { v4 as generateRandomId } from "uuid";
 
 const useCreateComment = (initialPerson, setPerson) => {
   const [newComment, setNewComment] = useState("");
 
   const handleCreateComment = (event) => {
     event.preventDefault();
+    // Generate a new unique ID using uuid
+    const newId = generateRandomId();
+
     // Create a new comment object
     const comment = {
-      id: initialPerson.comments.length + 1,
+      id: newId,
       content: newComment,
       createdAt: new Date().toLocaleString(),
       score: 0,
