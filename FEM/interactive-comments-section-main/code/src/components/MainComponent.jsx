@@ -16,9 +16,6 @@ const MainComponent = () => {
     if (storedState) {
       setPerson(JSON.parse(storedState));
     }
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -26,10 +23,6 @@ const MainComponent = () => {
       localStorage.setItem("personState", JSON.stringify(person));
     }
   }, [person]);
-
-  if (loading) {
-    return <LoadingSpinner />;
-  }
 
   return (
     <section className="comments">
