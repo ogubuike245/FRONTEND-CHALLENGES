@@ -62,7 +62,7 @@ body {
 
 section {
   width: 70%;
-  height: 300px;
+  min-height: 300px;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   background-color: var(--White);
@@ -233,7 +233,7 @@ section article:last-child .summary-cta button:hover {
 
   /* RESULT  SCORE SECTION  */
   section article:first-child {
-    border-radius: 0 0 2rem 2rem;
+    border-radius: 2rem;
     grid-template-rows: 50px repeat(3, auto);
     height: 120%;
     gap: 1rem;
