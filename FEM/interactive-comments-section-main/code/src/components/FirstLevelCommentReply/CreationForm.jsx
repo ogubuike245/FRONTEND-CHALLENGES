@@ -1,20 +1,15 @@
 import { useState } from "react";
-import useCreateFirstLevelCommentReply from "../hooks/useCreateFirstLevelCommentReply";
+import useCreateCommentSystem from "../../hooks/useCreateCommentSystem";
 
 const FirstLevelCommentsReplyForm = ({
   currentUser,
   person,
   setPerson,
   comment,
+  setReplyComment,
 }) => {
   const [newComment, setNewComment] = useState("");
-
-  const handleReplySubmit = useCreateFirstLevelCommentReply(
-    person,
-    setPerson,
-    comment,
-    currentUser
-  );
+  const [, , , handleReplySubmit] = useCreateCommentSystem(person, setPerson);
 
   const handleChange = (event) => {
     setNewComment(event.target.value);
@@ -22,9 +17,12 @@ const FirstLevelCommentsReplyForm = ({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleReplySubmit(newComment);
+    handleReplySubmit(comment, newComment);
     setNewComment("");
+    setReplyComment(false);
   };
+
+  const isFormValid = newComment.trim() !== ""; // Check if newComment is not empty
 
   return (
     <form className="form-input" onSubmit={handleSubmit}>
@@ -37,13 +35,15 @@ const FirstLevelCommentsReplyForm = ({
         id=""
         cols="30"
         rows="4"
-        placeholder="Reply comment..."
+        placeholder={` @${person.currentUser.username}`}
         className="input-box"
         value={newComment}
         onChange={handleChange}
-      ></textarea>
+      >
+        <span>TESTING</span>
+      </textarea>
 
-      <button type="submit" className="form-button">
+      <button type="submit" className="form-button" disabled={!isFormValid}>
         REPLY
       </button>
     </form>

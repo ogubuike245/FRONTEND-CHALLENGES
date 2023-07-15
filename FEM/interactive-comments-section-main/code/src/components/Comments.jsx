@@ -1,7 +1,7 @@
-import React from "react";
 import FirstLevelComment from "./FirstLevelComment";
-
-const Comments = ({ person, setPerson, currentUser }) => {
+import { useCurrentUser } from "../hooks/useCurrentUser";
+const Comments = ({ person, setPerson }) => {
+  const currentUser = useCurrentUser();
   return (
     <>
       {person.comments.map((comment) => {

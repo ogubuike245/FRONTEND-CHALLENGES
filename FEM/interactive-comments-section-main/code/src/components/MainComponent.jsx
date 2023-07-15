@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Comments from "./Comments";
-import FirstLevelCommentsCreationForm from "./FirstLevelCommentCreationForm";
-import LoadingSpinner from "./LoadingSpinner";
+import FirstLevelCommentsCreationForm from "./FirstLevelComment/CreationForm";
+import LoadingSpinner from "./Loader/LoadingSpinner";
 import data from "../data.json";
 
+// HOOKS
+import { CurrentUserProvider } from "../hooks/useCurrentUser";
+
 const MainComponent = () => {
+  const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState(data);
 
   useEffect(() => {
@@ -12,6 +16,9 @@ const MainComponent = () => {
     if (storedState) {
       setPerson(JSON.parse(storedState));
     }
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -20,22 +27,16 @@ const MainComponent = () => {
     }
   }, [person]);
 
-  if (!person) {
+  if (loading) {
     return <LoadingSpinner />;
   }
 
   return (
     <section className="comments">
-      <Comments
-        person={person}
-        setPerson={setPerson}
-        currentUser={person.currentUser}
-      />
-      <FirstLevelCommentsCreationForm
-        setPerson={setPerson}
-        person={person}
-        currentUser={person.currentUser}
-      />
+      <CurrentUserProvider currentUser={data.currentUser}>
+        <Comments person={person} setPerson={setPerson} />
+        <FirstLevelCommentsCreationForm setPerson={setPerson} person={person} />
+      </CurrentUserProvider>
     </section>
   );
 };

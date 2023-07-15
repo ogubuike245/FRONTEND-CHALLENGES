@@ -11,6 +11,11 @@
   --LightGray: hsl(223, 19%, 93%);
   --VeryLightGray: hsl(228, 33%, 97%);
   --White: hsl(0, 0%, 100%);
+
+  --gradient-color-1: var(--VeryLightGray);
+  --gradient-color-2: var(--SoftRed);
+  --gradient-color-3: var(--ModerateBlue);
+  --gradient-color-4: var(--PaleRed);
 }
 
 * {
@@ -178,6 +183,18 @@ body {
 .actions span:has(> .fa-trash) {
   color: var(--SoftRed);
 }
+button:has(> .fa-times) {
+  border: none;
+  outline: none;
+  background-color: var(--SoftRed);
+  width: 100%;
+  color: var(--White);
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+button:has(> .fa-times):hover {
+  background-color: var(--PaleRed);
+}
 
 /* REPLIES */
 .replies-container {
@@ -288,6 +305,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 2em 1fr 8em;
+    gap: 1rem;
     grid-template-areas:
       "score   user-info   actions"
       "score description description"
@@ -378,30 +396,132 @@ body {
   }
 }
 
-/* SPINNER  */
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+.disabled {
+  pointer-events: none; /* Disable pointer events to prevent clicks */
+  opacity: 0.5; /* Reduce opacity to indicate that the button is disabled */
+}
+.not-disabled {
+  pointer-events: all; /* Disable pointer events to prevent clicks */
+  opacity: 1; /* Reduce opacity to indicate that the button is disabled */
+}
+
+/* PRELOADER */
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 30%;
+  margin: auto;
+  /* background-color: var(--LightGrayishBlue); */
+}
+
+.loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  animation: changeToSquare 2s ease infinite;
+}
+
+.loader span {
+  width: 70%;
+  height: 70%;
+  animation: changeToCircle 2s ease infinite;
+  transform-origin: center;
+  background-blend-mode: overlay;
+}
+
+.loader span:nth-child(2),
+.loader span:nth-child(3) {
+  background: linear-gradient(
+    45deg,
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
+  animation-delay: 0.1s;
+}
+
+.loader span:nth-child(1),
+.loader span:nth-child(4) {
+  background: linear-gradient(
+    45deg,
+    var(--gradient-color-3),
+    var(--gradient-color-4)
+  );
+  animation-delay: 0.2s;
+}
+
+@keyframes changeToSquare {
+  50% {
+    width: 300px;
+    height: 300px;
+    transform: rotate(180deg);
   }
 }
 
-.spinner-container {
-  background-color: var(--ModerateBlue);
-  border-radius: 50%;
-  padding: 3rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-block-end: 5rem;
+@keyframes changeToCircle {
+  50% {
+    border-radius: 50%;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
 }
-.loading-spinner {
-  width: 100px;
-  height: 100px;
-  border: 10px dashed var(--SoftRed); /* Light grey */
-  border-radius: 50%;
-  animation: spinner 5s linear infinite;
-  outline: 10px solid var(--VeryLightGray);
+
+/* MODAL  */
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 8px;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-actions button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  color: var(--White);
+  cursor: pointer;
+}
+.modal-actions button:nth-child(1) {
+  background-color: var(--DarkBlue);
+}
+.modal-actions button:nth-child(2) {
+  background-color: var(--SoftRed);
+}
+
+.modal-actions button:hover:nth-child(1) {
+  background-color: var(--GrayishBlue);
+}
+.modal-actions button:hover:nth-child(2) {
+  background-color: var(--PaleRed);
 }
