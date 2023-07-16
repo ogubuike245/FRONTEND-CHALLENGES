@@ -90,7 +90,7 @@ header nav ul li:hover {
 
   background-image: url("../images/image-web-3-desktop.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 /* ASIDE CONTENT  */
@@ -128,7 +128,7 @@ aside .items .item:not(:last-child) {
   border-bottom: 1px solid var(--DarkGrayishBlue);
 }
 aside .items .item h2 {
-  font-size: 20px;
+  font-size: 0.7rem;
   color: var(--OffWhite);
   transition: all 0.5s ease;
   cursor: pointer;
@@ -139,6 +139,7 @@ aside .items .item h2:hover {
 aside .items .item p {
   color: var(--GrayishBlue);
   line-height: 1.5;
+  font-size: 0.7rem;
 }
 
 /* HERO HEADING  */
@@ -169,6 +170,7 @@ aside .items .item p {
 .hero-desc p {
   color: var(--DarkGrayishBlue);
   line-height: 1.5;
+  font-size: 1em;
 }
 
 .hero-desc button {
@@ -243,7 +245,7 @@ aside .items .item p {
 
 /* MEDIA QUERIES  */
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   body {
     padding: 1rem;
   }

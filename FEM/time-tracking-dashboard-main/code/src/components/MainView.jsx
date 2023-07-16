@@ -16,7 +16,7 @@ const MainView = () => {
         <article className="user-section">
           <div className="info">
             <div className="user-avatar">
-              <img src="../../public/images/image-jeremy.png" alt="" />
+              <img src="/images/image-jeremy.png" alt="" />
             </div>
 
             <div className="user-name">
