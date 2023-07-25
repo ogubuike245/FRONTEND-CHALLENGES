@@ -1,15 +1,37 @@
 ---
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+
+import "../styles/styles.css";
+import Posts from "../components/Posts.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/Logo.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Unified Blog</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <main>
+      <Header />
+
+      <Hero
+        className="hero"
+        coverImage={"/images/Main-Article-Image.png"}
+        title={"Weekly Newsletter: Tweets for Higher Engagements"}
+        description={"In this weekly newsletter,we will be covering ten types of engaging tweets.This is the guide if you're just starting out on Twitter."}
+        avatar={"/images/User-Avatar.png"}
+        name={"Jessica Andrews"}
+        position={"Content Manager"}
+      />
+
+      <Posts />
+      <Footer />
+    </main>
   </body>
 </html>

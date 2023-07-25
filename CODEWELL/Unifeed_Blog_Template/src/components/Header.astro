@@ -1,0 +1,71 @@
+---
+---
+
+<header>
+  <div class="logo">
+    <img src="/images/Logo.svg" alt="" />
+  </div>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>Features</li>
+      <li>Pricing</li>
+      <li>Subscribe</li>
+    </ul>
+    <div class="hamburger">
+      <img src="/images/Hamburger-Menu.svg" alt="" />
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+  }
+
+  ul {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  li {
+    color: var(--Grey);
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: flex;
+    align-self: center;
+  }
+
+  @media (min-width: 578px) {
+    header {
+      /* border: 2px solid red; */
+    }
+
+    ul {
+      display: flex;
+    }
+    li:last-child {
+      background-color: var(--Yellow);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      color: var(--Black);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+</style>

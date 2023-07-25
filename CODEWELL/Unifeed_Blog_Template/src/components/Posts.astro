@@ -1,0 +1,62 @@
+---
+import Card from "./Card.astro";
+const postsData = [
+  {
+    coverImage: "/images/Article-1-Image.png",
+    title: "7 Tips for Organic Traffic",
+    description:
+      "From SEO to integrating with Paid Advertising, this article covers it all",
+    avatar: "/images/User-Avatar-1.png",
+    name: "Spencer David",
+    position: "Seo Specialist",
+  },
+  {
+    coverImage: "/images/Article-2-Image.png",
+    title: "How To Start Your Own Business",
+    description: "Starting your own business in 2021 has never been easier.",
+    avatar: "/images/User-Avatar-2.png",
+    name: "Sara Frey",
+    position: "Business Leader",
+  },
+  {
+    coverImage: "/images/Article-3-Image.png",
+    title: "5 Tips for Better Branding",
+    description: "From SEO to integrating with Paid Advertising, this article",
+    avatar: "/images/User-Avatar-3.png",
+    name: "David Suns",
+    position: "Brand Manager",
+  },
+];
+---
+
+<section class="posts">
+  {
+    postsData.map((card) => (
+      <Card
+        coverImage={card.coverImage}
+        title={card.title}
+        description={card.description}
+        avatar={card.avatar}
+        name={card.name}
+        position={card.position}
+      />
+    ))
+  }
+</section>
+
+<!-- STYLES  -->
+<style>
+  .posts {
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .posts {
+      /* flex-direction: row; */
+      /* border: 2px solid red; */
+    }
+  }
+</style>
